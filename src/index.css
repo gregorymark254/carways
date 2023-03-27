@@ -4,16 +4,13 @@
 
 @layer base {
   h1 {
-    @apply text-4xl;
-    @apply font-bold;
+    @apply text-5xl;
   }
   h2 {
     @apply text-3xl;
-    @apply font-bold;
   }
   h3 {
-    @apply text-lg;
-    @apply font-bold;
+    @apply text-2xl;
   }
   h4{
   @apply text-lg
@@ -38,7 +35,165 @@ code {
     monospace;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
-.dropdown:hover .dropdown-menu {
-  display: block;
+/* hero section */
+.hero h1 {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  text-align: left;
+  font-size: 3.5em;
+  margin-top: 0;
+  margin-bottom: 0.8em;
+  margin-left: 20%;
+}
+
+.hero p {
+  display: inline-block;
+  justify-content: left;
+  align-items: center;
+  text-align: left;
+  font-size: 1.3em;
+  margin-left: 20%;
+}
+
+.hero img {
+  background-image : linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
+  height : 70vh;
+  object-fit : cover;
+}
+
+
+
+/*body intoduction*/
+.intro {
+  background-position: 50%; 
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('https://live.themewild.com/carway/assets/img/breadcrumb/01.jpg');
+  height: 400px;
+  background-repeat : no-repeat;
+}
+
+.service-count{
+  font-size: 50px;
+  line-height: 0.8;
+  font-weight: 800;
+  color: transparent;
+  -webkit-text-stroke: 2px #4F5DEC;
+  text-shadow: -5px 5px 0px #e7ecfc;
+}
+
+
+/*header annimations*/
+.header-divider{
+  display: inline-block;
+  position: relative;
+  height: 3px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  border: 3px solid #4F5DEC;
+  width: 90px;
+  height: 10px;
+}
+
+.header-divider:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1px;
+  height: 2px;
+  width: 15px;
+  border-radius: 50px;
+  background-color: #4F5DEC;
+  -webkit-animation: heading-move 5s infinite linear;
+  animation: heading-move 5s infinite linear;
+}
+
+@-webkit-keyframes heading-move {
+  0% {
+    transform: translateX(-1px);
+  }
+  50% {
+    transform: translateX(70px);
+  }
+  100% {
+    transform: translateX(-1px);
+  }
+}
+
+@keyframes heading-move {
+  0% {
+    transform: translateX(-1px);
+  }
+  50% {
+    transform: translateX(70px);
+  }
+  100% {
+    transform: translateX(-1px);
+  }
+}
+
+/*testimonial image paralax*/
+#testimonial {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url('https://live.themewild.com/carway/assets/img/testimonial/bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/*footer*/
+.footer-widget {
+  color: #fff;
+  position: relative;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  font-size: 24px;
+  z-index: 1;
+}
+
+.footer-widget::before {
+  position: absolute;
+  content: '';
+  z-index: -1;
+  width: 12px;
+  height: 2px;
+  background-color: #4F5DEC;
+  bottom: 0;
+  left: 0;
+}
+
+.footer-widget::after {
+  position: absolute;
+  content: '';
+  z-index: -1;
+  width: 30px;
+  height: 2px;
+  background-color: #4F5DEC;
+  bottom: 0;
+  left: 18px;
+}
+
+
+/* Responsiveness */
+@media only screen and (max-width: 768px) {
+  header {
+    display: none;
+  }
+  .nav{
+    position: sticky;
+    top:0px;
+    left:0px;
+    right: 0px;
+    z-index: 10;
+  }
 }
