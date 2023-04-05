@@ -1,6 +1,9 @@
 import React, {useState} from 'react'
 import { FaRegUserCircle } from "react-icons/fa";
 import { FiPhoneCall } from "react-icons/fi";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Nav = () => {
 
@@ -11,6 +14,7 @@ const Nav = () => {
   return (
     <div>
       <div className="container mx-auto py-4">
+      <ToastContainer />
         <nav className='flex justify-between items-center  px-4'>
           {/* Top Nav */}
           <div>
@@ -33,7 +37,7 @@ const Nav = () => {
               <a href="/contact" className="hover:text-[#4F5DEC] px-3 py-2">Contact</a>
             </li>
           </ul>
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="md:flex items-center space-x-8">
             <div className="flex items-center space-x-4">
               <h3 className="bg-[#4F5DEC] text-white rounded-lg p-2"><FiPhoneCall/></h3>
               <div>
@@ -41,7 +45,7 @@ const Nav = () => {
                 <p className="text-[#4F5DEC] font-bold text-lg">+254 798 551 1778</p>
               </div>
             </div>
-            <a href="#cars" className="bg-[#4F5DEC] text-white py-3 px-5 rounded-lg">Explore Cars</a>
+            <a href="/cars" className="bg-[#4F5DEC] text-white py-3 px-5 rounded-lg">Explore Cars</a>
             <a href="/login" className="bg-[#4F5DEC] text-white rounded-lg p-3"><h3><FaRegUserCircle/></h3></a>
           </div>
           
@@ -65,19 +69,19 @@ const Nav = () => {
               </div>
               <ul className=' mb-4'>
                 <li>
-                  <a href="#home" className="px-3 py-2 text-lg">Home</a>
+                  <a href="/" className="px-3 py-2 text-lg">Home</a>
                 </li>
                 <li>
-                  <a href="#about" className=" px-3 py-2 text-lg">About</a>
+                  <a href="/cars" className=" px-3 py-2 text-lg">Cars</a>
                 </li>
                 <li>
-                  <a href="#projects" className=" px-3 py-2 text-lg">Projects</a>
+                  <a href="/about" className=" px-3 py-2 text-lg">About</a>
                 </li>
                 <li>
-                  <a href="#skills" className="px-3 py-2 text-lg">Skills</a>
+                  <a href="/services" className="px-3 py-2 text-lg">Services</a>
                 </li>
                 <li>
-                  <a href="#contact" className="px-3 py-2 text-lg">Contact</a>
+                  <a href="/contact" className="px-3 py-2 text-lg">Contact</a>
                 </li>
               </ul>
             </div>
