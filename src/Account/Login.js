@@ -1,27 +1,35 @@
-import React,{useState} from 'react'
-import { useNavigate } from 'react-router-dom'
+import React,{ useState, useEffect} from 'react'
+import { useNavigate,useLocation } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import axios from '../api/api'
+import { BookingState } from '../Context/BookingContext'
 
-const auth = "/api/v1"
+
+const auth = "/api/v1/login"
 
 const Login = () => {
 
   const [email,setEmail] = useState('')
   const [password,setPassword] = useState('')
   const navigate = useNavigate()
+  const { state : { userInfo }, dispatch } = BookingState()
+  const { search } = useLocation()
+  const redirectInUrl = new URLSearchParams(search).get('redirect')
+  const redirect = redirectInUrl ? redirectInUrl : '/'
+  
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = axios.post(auth,
+      const response = await axios.post(auth,
       JSON.stringify({email,password}),
       {
         headers: {'Content-Type' : 'application/json'},
         withCredential : true
       })
-      localStorage.setItem('userInfo', JSON.stringify(response))
-      toast.success("Login Succesfull")
+      dispatch({type:'USER_SIGNIN', payload:response.data})
+      localStorage.setItem('userInfo', JSON.stringify(response.data))
+      toast.success("Login Succesful")
       navigate('/')
       console.log(response?.data)
     } catch (error) {
@@ -29,6 +37,12 @@ const Login = () => {
       toast.error("Wrong username or password")
     }
   }
+
+  useEffect(() => {
+    if(userInfo){
+      navigate(redirect)
+    }
+  },[navigate, redirect, userInfo])
 
   return (
     <div>

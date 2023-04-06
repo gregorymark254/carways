@@ -10,6 +10,9 @@ import Footer from "./pages/Footer";
 import Login from "./Account/Login"
 import Register from "./Account/Register"
 import Settings from "./Account/Settings"
+import Booking from "./Booking/Booking"
+import CheckOut from "./Booking/Checkout"
+import ConfirmBooking from "./Booking/ConfirmBooking"
 
 import { Routes, Route } from "react-router-dom"
 
@@ -22,6 +25,10 @@ function App() {
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register/>} />
         <Route path="/settings" element={<Settings/>} />
+
+        <Route path="/booking" element={<Booking/>} />
+        <Route path="/checkout" element={<CheckOut/>} />
+        <Route path="/confirmBooking" element={<ConfirmBooking/>} />
 
         <Route path="/" element={<Home/>} />
         <Route path="/cars" element={<Cars/>} />

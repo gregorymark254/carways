@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import axios from '../api/api'
 
-const auth = '/api/v1'
+const auth = '/api/v1/register'
 
 const Register = () => {
 
@@ -16,20 +16,20 @@ const Register = () => {
   const navigate = useNavigate()
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (password !== confirmPassword) {
       alert('Password and confirm password do not match');
       return
     } 
     try {
-      const response =  axios.post(auth,
+      const response = await axios.post(auth,
       JSON.stringify({ firstName,lastName,email,phone,password }),
       {
         headers: {'Content-Type' : 'application/json'},
         withCredential : true
       })
-      console.log(JSON.stringify(response))
+      console.log(JSON.stringify(response.data))
       console.log(response?.data)
       console.log(response?.accessToken)
       toast.success("Registration Succesfull")

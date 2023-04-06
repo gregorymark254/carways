@@ -3,6 +3,7 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { FiPhoneCall } from "react-icons/fi";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { BookingState } from '../Context/BookingContext'
 
 
 const Nav = () => {
@@ -11,6 +12,14 @@ const Nav = () => {
   const toggleNavIsShown = () => {
     setnavIsShown((navIsShown) => !navIsShown);
   };
+
+  const { state: { userInfo }, dispatch } = BookingState()
+
+  const signOut = () => {
+    dispatch({type:'USER_SIGNOUT', })
+    localStorage.removeItem('userInfo')
+  }
+
   return (
     <div>
       <div className="container mx-auto py-4">
@@ -46,7 +55,19 @@ const Nav = () => {
               </div>
             </div>
             <a href="/cars" className="bg-[#4F5DEC] text-white py-3 px-5 rounded-lg">Explore Cars</a>
-            <a href="/login" className="bg-[#4F5DEC] text-white rounded-lg p-3"><h3><FaRegUserCircle/></h3></a>
+            {userInfo ? (
+              <div className="dropdown inline-block relative">
+                <button title={userInfo.email} className=" text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center hover:text-[#de9631]">
+                  <span  onClick={signOut} className="mr-1">User Profile</span>
+                  <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+                </button>
+                <ul className="dropdown-menu absolute hidden text-gray-700 pt-1">
+                  <li><a href="#/" className="rounded-t bg-gray-200 hover:text-[#de9631] py-2 px-8 block whitespace-no-wrap">Sign Out</a></li>
+                </ul>
+              </div>
+              ) 
+              : (<a href="/login" className="bg-[#4F5DEC] text-white rounded-lg p-3"><h3><FaRegUserCircle/></h3></a>)
+            }
           </div>
           
           

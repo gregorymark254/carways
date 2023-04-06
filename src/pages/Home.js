@@ -98,14 +98,14 @@ const Home = () => {
 
       {/* body */}
       <main className="container mx-auto mt-10">
-        {/* car */}
+        {/* car search */}
         <section className="flex items-center justify-center mt-20">
           <div className="shadow-md shadow-slate-500 p-12 rounded-lg w-full">
             <div className="mb-8">
               <h2><b>Let's Find Your Perfect Car</b></h2>
             </div>
             <div>
-              <form action="">
+              <form action="/cars">
                 <div className="md:flex">
                   <div className="w-full mr-4">
                     <label htmlFor="">Your Perfect Car
