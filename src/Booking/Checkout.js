@@ -73,47 +73,41 @@ const Checkout = () => {
         <div className="container mx-auto">
           <div className="grid grid-cols-2 gap-4 p-6">
             <div className="w-1/2">
-              <div>
-                <hr />
-              </div>
-              <div>
+              <div className="space-y-2">
                 <h5><b>Car info</b></h5>
-                <p>Car : benz</p>
-                <p>Car : benz</p>
-                <p>Car : benz</p>
-                <p>Car : benz</p>
+                <p>Car : Toyota</p>
+                <p>Rent  : 1 car</p>
+                <p>People : 2 people</p>
+                <p>Driving services : No</p>
                 <hr />
               </div>
-              <div>
+              <div className="space-y-2">
                 <h5><b>Rent Date & Time</b></h5>
-                <p>Car : benz</p>
-                <p>Car : benz</p>
-                <p>Car : benz</p>
-                <p>Car : benz</p>
+                <p>From : 21/01/2023</p>
+                <p>To : 25/01/2023</p>
+                <p>Duration : 10 days</p>
                 <hr />
               </div>
-              <div>
+              <div className="space-y-2">
                 <h5><b>Rent Location</b></h5>
-                <p>Car : benz</p>
-                <p>Car : benz</p>
-                <p>Car : benz</p>
-                <p>Car : benz</p>
+                <p>Pick up : Nairobi</p>
+                <p>Drop off : Nakuru</p>
                 <hr />
               </div>
-              <div>
+              <div className="space-y-2">
                 <h5><b>Extra Services</b></h5>
-                <p>Car : benz</p>
-                <p>Car : benz</p>
-                <p>Car : benz</p>
-                <p>Car : benz</p>
+                <p>Extra Service One</p>
+                <p>Extra Service two</p>
                 <hr />
               </div>
-              <div>
+              <div className="space-y-2">
                 <h5><b>Payment Summery</b></h5>
-                <p>Car : benz</p>
-                <p>Car : benz</p>
-                <p>Car : benz</p>
-                <p>Car : benz</p>
+                <p>1xGps : $2</p>
+                <p>Insurance Fee : $12</p>
+                <p>Transfer Fee : $1</p>
+                <p>Disposition Fee : $23</p>
+                <p>Driving Fee : $3</p>
+                <p>Tax Fee : 10%</p>
                 <hr />
               </div>
               <div className="flex">
