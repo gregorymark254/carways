@@ -1,9 +1,9 @@
 import React,{ useState }  from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
-import axios from '../api/api'
+import axios from 'axios'
 
-const auth = '/api/v1/register'
+
 
 const Register = () => {
 
@@ -17,38 +17,40 @@ const Register = () => {
 
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (password !== confirmPassword) {
       alert('Password and confirm password do not match');
-      return
+      return;
     } 
     try {
-      const response = await axios.post(auth,
-      JSON.stringify({ firstName,lastName,email,phone,password }),
-      {
-        headers: {'Content-Type' : 'application/json'},
-        withCredential : true
-      })
-      console.log(JSON.stringify(response.data))
-      console.log(response?.data)
-      console.log(response?.accessToken)
-      toast.success("Registration Succesfull")
-      navigate('/login')
-      console.log(response?.data)
+      let response = await axios.post(
+        "https://f3fc-196-216-92-229.in.ngrok.io/api/v1/register",
+        JSON.stringify({ firstName, lastName, email, phone, password }),
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
+        }
+      );
+      console.log(JSON.stringify(response.data));
+      console.log(response?.data);
+      console.log(response?.accessToken);
+      toast.success("Registration Successful");
+      navigate("/login");
+      console.log(response?.data);
     } catch (error) {
       if (!error?.response) {
-        toast.error('No Server Response');
+        toast.error("No Server Response");
       } else if (error.response?.status === 400) {
-        toast.error('All fields are required');
+        toast.error("All fields are required");
       } else if (error.response?.status === 409) {
-        toast.error('Username Taken');
+        toast.error("Username Taken");
       } else {
-        toast.error('Registration Failed')
+        toast.error("Registration Failed");
       }
-      console.log(error)
-      toast.error("Registration Failed")
+      console.log(error);
     }
-  }
+  };
+
 
 
   return (
@@ -117,9 +119,10 @@ const Register = () => {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
               </label>
-              <button className="px-4 py-2 bg-[#4F5DEC] text-white rounded-xl">Login</button>
+              <button className="px-4 py-2 bg-[#4F5DEC] text-white rounded-xl">Sign Up</button>
             </form>
-            <span>Already have an account? <a href="/login">Sign In</a></span>
+            <br />
+            <span>Already have an account? <a href="/login"><u>Sign In</u></a></span>
           </div>
         </div>
       </div>

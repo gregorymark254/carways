@@ -1,11 +1,11 @@
 import React,{ useState, useEffect} from 'react'
 import { useNavigate,useLocation } from 'react-router-dom'
 import { toast } from 'react-toastify';
-import axios from '../api/api'
+import axios from 'axios'
 import { BookingState } from '../Context/BookingContext'
 
 
-const auth = "/api/v1/login"
+
 
 const Login = () => {
 
@@ -21,7 +21,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await axios.post(auth,
+      const response = await axios.post('https://f3fc-196-216-92-229.in.ngrok.io/api/v1/login',
       JSON.stringify({email,password}),
       {
         headers: {'Content-Type' : 'application/json'},
@@ -72,7 +72,8 @@ const Login = () => {
               </label>
               <button className="px-4 py-2 bg-[#4F5DEC] text-white rounded-xl">Login</button>
             </form>
-            <span>Don't have an account? <a href="/register">Register Here</a></span>
+            <br />
+            <span>Don't have an account? <a href="/register"><u>Register Here</u></a></span>
           </div>
         </div>
       </div>

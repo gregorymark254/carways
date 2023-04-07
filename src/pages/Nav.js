@@ -51,14 +51,14 @@ const Nav = () => {
               <h3 className="bg-[#4F5DEC] text-white rounded-lg p-2"><FiPhoneCall/></h3>
               <div>
                 <p>Need Car Rent?</p>
-                <p className="text-[#4F5DEC] font-bold text-lg">+254 798 551 1778</p>
+                <p className="text-[#4F5DEC] font-bold text-lg">+254 702 589 522</p>
               </div>
             </div>
-            <a href="/cars" className="bg-[#4F5DEC] text-white py-3 px-5 rounded-lg">Explore Cars</a>
+            <a href="/admin" className="bg-[#4F5DEC] text-white py-3 px-5 rounded-lg">Admin</a>
             {userInfo ? (
               <div className="dropdown inline-block relative">
                 <button title={userInfo.email} className=" text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center hover:text-[#de9631]">
-                  <span  onClick={signOut} className="mr-1">User Profile</span>
+                  <span  onClick={signOut} className="mr-1">log Out</span>
                   <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
                 </button>
                 <ul className="dropdown-menu absolute hidden text-gray-700 pt-1">

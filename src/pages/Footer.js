@@ -15,7 +15,7 @@ const Footer = () => {
               <div className="flex items-center space-x-4">
                 <h3 className="bg-[#4F5DEC] text-white rounded-lg p-2"><FiPhoneCall/></h3>
                 <div>
-                  <p className="font-bold text-lg">+254 798 551 1778</p>
+                  <p className="font-bold text-lg">+254 702 589 522</p>
                 </div>
               </div>
               <div className="flex items-center space-x-4">

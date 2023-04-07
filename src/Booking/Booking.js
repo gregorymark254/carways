@@ -222,8 +222,8 @@ const Booking = () => {
                         value={services}
                         onChange = { (e) => setService(e.target.value) }
                         className="block px-2 py-3 w-full mb-4 border bg-white border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]">
-                        <option value="">No</option>
-                        <option value="">Yes(pay extra $100)</option>
+                        <option value="No">No</option>
+                        <option value="Yes">Yes(pay extra $100)</option>
                       </select>
                     </label>
                   </div>

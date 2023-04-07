@@ -10,6 +10,7 @@ import Footer from "./pages/Footer";
 import Login from "./Account/Login"
 import Register from "./Account/Register"
 import Settings from "./Account/Settings"
+import Admin from "./Account/Admin"
 import Booking from "./Booking/Booking"
 import CheckOut from "./Booking/Checkout"
 import ConfirmBooking from "./Booking/ConfirmBooking"
@@ -25,6 +26,7 @@ function App() {
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register/>} />
         <Route path="/settings" element={<Settings/>} />
+        <Route path="/admin" element={<Admin/>} />
 
         <Route path="/booking" element={<Booking/>} />
         <Route path="/checkout" element={<CheckOut/>} />
