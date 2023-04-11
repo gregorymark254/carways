@@ -26,7 +26,7 @@ const Checkout = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await axios.post('http://localhost:5000/api/v2/add',
+      const response = await axios.post('https://carways-server.up.railway.app/api/v2/add',
       JSON.stringify({firstName,lastName,email,phone,address,address2,city,state,zip,cardName,cardNumber,expiryDate,cvv,additionalNote}),
     {
       headers : { 'Content-type' : 'application/json'},
