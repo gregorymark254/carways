@@ -24,7 +24,7 @@ const Register = () => {
     } 
     try {
       let response = await axios.post(
-        "https://f3fc-196-216-92-229.in.ngrok.io/api/v1/register",
+        "https://carways-server.up.railway.app/api/v1/register",
         JSON.stringify({ firstName, lastName, email, phone, password }),
         {
           headers: { "Content-Type": "application/json" },

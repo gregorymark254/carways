@@ -25,7 +25,7 @@ const Booking = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await axios.post('http://localhost:4000/api/v3/add',
+      const response = await axios.post('https://carways-server.up.railway.app/api/v3/add',
       JSON.stringify({car,pickLocation,dropLocation,pickDate,dropDate,dropTime,duration,quantity,people,services}),
     {
       headers : { 'Content-type' : 'application/json'},
@@ -113,7 +113,7 @@ const Booking = () => {
                       placeholder="Type city,airport,station"
                       className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
                       value={dropLocation}
-                      onChange = { (e) => setDroplocation(e.target.value) }
+                      onChange = {(e) => setDroplocation(e.target.value) }
                     />
                   </label>
                 </div>
@@ -124,7 +124,7 @@ const Booking = () => {
                       required
                       className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
                       value={pickDate}
-                      onChange = { (e) => setPickdate(e.target.value) }
+                      onChange = {(e) => setPickdate(e.target.value) }
                     />
                   </label>
                 </div>
@@ -223,7 +223,7 @@ const Booking = () => {
                         onChange = { (e) => setService(e.target.value) }
                         className="block px-2 py-3 w-full mb-4 border bg-white border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]">
                         <option value="No">No</option>
-                        <option value="Yes">Yes(pay extra $100)</option>
+                        <option value="Yes">Yes(pay extra Ksh.1000)</option>
                       </select>
                     </label>
                   </div>
