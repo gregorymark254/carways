@@ -67,8 +67,8 @@ const Booking = () => {
       <section className="container mx-auto p-4">
         {/* Car Booking */}
         <form onSubmit={handleSubmit}>
-          <div className="flex flex-wrap justify-center gap-10 mb-20">
-            <div className="bg-white p-6 rounded-xl w-1/4">
+          <div className="md:flex flex-wrap justify-center gap-10 mb-20">
+            <div className="bg-white p-6 rounded-xl xl:w-1/4 mb-3">
               <h4><b>Booking Car Type</b></h4>
               <br />
               <div>
@@ -152,11 +152,11 @@ const Booking = () => {
                 </label>
               </div>
             </div>
-            <div className="bg-white p-6 rounded-xl w-1/2 h-1/2">
+            <div className="bg-white p-6 rounded-xl xl:w-1/2 h-1/2">
               <h4><b>Booking Info</b></h4>
               <br />
-              <div className="flex flex-wrap justify-center">
-                <div className="w-1/2 p-1">
+              <div className="md:flex justify-center">
+                <div className="w-full p-1">
                   <label htmlFor="">Car Rent Duration
                     <select name="duration" id="duration" required
                       value={duration}
@@ -170,7 +170,7 @@ const Booking = () => {
                     </select>
                   </label>
                 </div>
-                <div className="w-1/2 p-1">
+                <div className="w-full p-1">
                   <label htmlFor="">Car Rent Quantity
                     <select name="car" id="car" required
                       value={quantity}
@@ -185,8 +185,8 @@ const Booking = () => {
                   </label>
                 </div>
               </div>
-              <div className="flex flex-wrap justify-center">
-                <div className="w-1/2 p-1">
+              <div className="md:flex justify-center">
+                <div className="w-full p-1">
                   <label htmlFor="">Choose People
                     <select name="people" id="people" required
                       value={people}
@@ -199,7 +199,7 @@ const Booking = () => {
                     </select>
                   </label>
                 </div>
-                <div className="w-1/2 p-1">
+                <div className="w-full p-1">
                   <label htmlFor="">Need Driving Service?
                     <select name="service" id="service" required              
                       value={services}

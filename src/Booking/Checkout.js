@@ -70,7 +70,7 @@ const Checkout = () => {
       <section>
         <div className="container mx-auto p-4">
           <div className="flex flex-wrap justify-center gap-10 mb-20">
-            <div className="bg-white p-6 rounded-xl w-1/4">
+            <div className="bg-white p-6 rounded-xl xl:w-1/4 ">
               <div className="space-y-2 py-4">
                 <h5><b>Car info</b></h5>
                 <div className="flex justify-between">

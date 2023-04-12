@@ -7,9 +7,9 @@ const Footer = () => {
   return (
     <footer>
       <section className="bg-black text-white">
-        <div className="container mx-auto py-8">
+        <div className="container mx-auto py-4">
           <div className="md:grid grid-cols-4 gap-5">
-            <div className="space-y-4">
+            <div className="space-y-4 p-4">
               <img className="h-12" src="https://live.themewild.com/carway/assets/img/logo/logo-light.png" alt="LOGO" />
               <p>We are many variations of passages available but the majority have suffered alteration in some form by injected humour words believable.</p>
               <div className="flex items-center space-x-4">
@@ -31,7 +31,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="space-y-3">
+            <div className="space-y-3 p-4">
               <div className="footer-widget">
                 <h2>Quick Links</h2>
               </div>
@@ -41,7 +41,7 @@ const Footer = () => {
               <p><span className="text-[#4F5DEC]">&#10148;&nbsp; </span><a href="/">Privacy Policy</a></p>
               <p><span className="text-[#4F5DEC]">&#10148;&nbsp; </span><a href="/">Our Team</a></p>
             </div>
-            <div className="space-y-3">
+            <div className="space-y-3 p-4">
               <div className="footer-widget">
                 <h2>Support Center</h2>
               </div>
@@ -51,7 +51,7 @@ const Footer = () => {
               <p><span className="text-[#4F5DEC]">&#10148;&nbsp; </span><a href="/">Live Chat</a></p>
               <p><span className="text-[#4F5DEC]">&#10148;&nbsp; </span><a href="/">Contact Us</a></p>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-4 p-4">
               <div className="footer-widget">
                 <h2>Newsletter</h2>
               </div>
@@ -72,12 +72,12 @@ const Footer = () => {
       </section>
 
       <section className="bg-[#100F0F] text-white">
-        <div className="container mx-auto py-4">
+        <div className="container mx-auto p-4">
           <div className="flex flex-wrap justify-between">
-            <div>
+            <div className="p-1">
               <h4>&copy; copyright 2023 <span className="text-[#4F5DEC]">carway</span> All Rights Reserved.</h4>
             </div>
-            <div className="flex space-x-4 text-[#4F5DEC]">
+            <div className="flex space-x-4 p-1 text-[#4F5DEC]">
               <h4 className="bg-white p-2 rounded-lg"><FaFacebookF/></h4>
               <h4 className="bg-white p-2 rounded-lg"><FaTwitter/></h4>
               <h4 className="bg-white p-2 rounded-lg"><FaLinkedinIn/></h4>
