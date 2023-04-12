@@ -1,10 +1,10 @@
 import React,{ useState, useEffect} from 'react'
 import { useNavigate,useLocation } from 'react-router-dom'
 import { toast } from 'react-toastify';
-import axios from 'axios'
+import axios from '../api/api'
 import { BookingState } from '../Context/BookingContext'
 
-
+const URL = '/api/v1/login'
 
 
 const Login = () => {
@@ -21,7 +21,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await axios.post('https://carways-server.up.railway.app/api/v1/login',
+      const response = await axios.post(URL,
       JSON.stringify({email,password}),
       {
         headers: {'Content-Type' : 'application/json'},
@@ -45,10 +45,10 @@ const Login = () => {
   },[navigate, redirect, userInfo])
 
   return (
-    <div>
+    <div className="bg-blue-100">
       <div className="container mx-auto min-h-screen">
-        <div className="flex items-center justify-center mt-20">
-          <div>
+        <div className="flex items-center justify-center">
+          <div className="bg-white p-4 mt-20 rounded-lg">
             <form onSubmit={handleSubmit}>
               <label htmlFor="">
                 <input 
@@ -73,7 +73,7 @@ const Login = () => {
               <button className="px-4 py-2 bg-[#4F5DEC] text-white rounded-xl">Login</button>
             </form>
             <br />
-            <span>Don't have an account? <a href="/register"><u>Register Here</u></a></span>
+            <span>Don't have an account? <a href="/register" className="text-blue-600"><u>Register Here</u></a></span>
           </div>
         </div>
       </div>

@@ -96,7 +96,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="xl:flex">
-                  <div className="xl:w-1/2 p-1">
+                  <div className="w-full p-1">
                     <label htmlFor="">Pick Up Date
                       <input 
                         type="date" 
@@ -105,7 +105,7 @@ const Home = () => {
                       />
                     </label>
                   </div>
-                  <div className="xl:w-1/2 p-1">
+                  <div className="w-full p-1">
                     <label htmlFor="">Pick Up Time
                       <input 
                         type="time" 
@@ -114,7 +114,7 @@ const Home = () => {
                       />
                     </label>
                   </div>
-                  <div className="xl:w-1/2 p-1">
+                  <div className="w-full p-1">
                     <label htmlFor="">Drop Up Date
                       <input 
                         type="date" 
@@ -123,7 +123,7 @@ const Home = () => {
                       />
                     </label>
                   </div>
-                  <div className="xl:w-1/2 p-1">
+                  <div className="w-full p-1">
                     <label htmlFor="">Drop Up Time
                       <input 
                         type="time" 
@@ -210,7 +210,7 @@ const Home = () => {
             {
               carData.map((cars) => (
                 <div key={cars.id}>
-                  <img className="rounded-xl h-80 object-contain" src={cars.src} alt="car1" />
+                  <img className="rounded-xl h-80" src={cars.src} alt="cars" />
                   <div>
                     <div className="flex justify-between p-3">
                       <h3><b>{cars.title}</b></h3>

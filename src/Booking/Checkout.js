@@ -2,8 +2,9 @@ import React,{useState}  from 'react'
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import axios from "axios"
+import axios from "../api/api"
 
+const URL = '/api/v2/add'
 
 const Checkout = () => {
 
@@ -26,15 +27,12 @@ const Checkout = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await axios.post('https://carways-server.up.railway.app/api/v2/add',
+      await axios.post(URL,
       JSON.stringify({firstName,lastName,email,phone,address,address2,city,state,zip,cardName,cardNumber,expiryDate,cvv,additionalNote}),
     {
       headers : { 'Content-type' : 'application/json'},
       withCredentials : true
     });
-    console.log(JSON.stringify(response))
-    console.log(response?.data)
-    console.log(response?.accessToken)
     toast.success("Added Successfull")
     navigate('/confirmBooking')
     } catch (error) {
@@ -53,7 +51,7 @@ const Checkout = () => {
   }
 
   return (
-    <div>
+    <div className="bg-[#F0F0F0]">
       {/* intro */}
       <section className="mb-20">
         <div className="intro">
@@ -70,162 +68,208 @@ const Checkout = () => {
 
       {/* checkout */}
       <section>
-        <div className="container mx-auto">
-          <div className="grid grid-cols-2 gap-4 p-6">
-            <div className="w-1/2">
-              <div className="space-y-2">
+        <div className="container mx-auto p-4">
+          <div className="flex flex-wrap justify-center gap-10 mb-20">
+            <div className="bg-white p-6 rounded-xl w-1/4">
+              <div className="space-y-2 py-4">
                 <h5><b>Car info</b></h5>
-                <p>Car : Toyota</p>
-                <p>Rent  : 1 car</p>
-                <p>People : 2 people</p>
-                <p>Driving services : No</p>
+                <div className="flex justify-between">
+                  <p>Car </p>
+                  <p>Toyota</p>
+                </div>
+                <div className="flex justify-between">  
+                  <p>Rent</p>
+                  <p>1 car</p>
+                </div>
+                <div className="flex justify-between"> 
+                  <p>People</p>
+                  <p>2 people</p>
+                </div>
+                <div className="flex justify-between">
+                  <p>Driving services</p>
+                  <p>No</p>
+                </div>
                 <hr />
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2 py-4">
                 <h5><b>Rent Date & Time</b></h5>
-                <p>From : 21/01/2023</p>
-                <p>To : 25/01/2023</p>
-                <p>Duration : 10 days</p>
+                <div className="flex justify-between">
+                  <p>From </p>
+                  <p>21/01/2023</p>
+                </div>
+                <div className="flex justify-between">
+                  <p>To </p>
+                  <p>25/01/2023</p>
+                </div>
+                <div className="flex justify-between">
+                  <p>Duration</p>
+                  <p>10 days</p>
+                </div>
                 <hr />
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2 py-4">
                 <h5><b>Rent Location</b></h5>
-                <p>Pick up : Nairobi</p>
-                <p>Drop off : Nakuru</p>
+                <div className="flex justify-between">
+                  <p>Pick up </p>
+                  <p>Nairobi</p>
+                </div>
+                <div className="flex justify-between">
+                  <p>Drop off </p>
+                  <p>Nakuru</p>
+                </div>
                 <hr />
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2 py-4">
                 <h5><b>Extra Services</b></h5>
-                <p>Extra Service One</p>
-                <p>Extra Service two</p>
+                <div>Extra Service One</div>
+                <div>Extra Service two</div>
                 <hr />
               </div>
-              <div className="space-y-2">
+              <div className="space-y-2 py-4">
                 <h5><b>Payment Summery</b></h5>
-                <p>1xGps : $2</p>
-                <p>Insurance Fee : $12</p>
-                <p>Transfer Fee : $1</p>
-                <p>Disposition Fee : $23</p>
-                <p>Driving Fee : $3</p>
-                <p>Tax Fee : 10%</p>
+                <div className="flex justify-between">
+                   
+                  <p>1xGps </p>
+                  <p>$2</p>
+                </div>
+                <div className="flex justify-between">
+                  <p>Insurance Fee</p>
+                  <p>$12</p>
+                </div>
+                <div className="flex justify-between">
+                  <p>Transfer Fee</p>
+                  <p>$1</p>
+                </div>
+                <div className="flex justify-between">
+                  <p>Disposition Fee</p>
+                  <p>$23</p>
+                </div>
+                <div className="flex justify-between">
+                  <p>Driving Fee</p>
+                  <p>$3</p>
+                </div>
+                <div className="flex justify-between">
+                  <p>Tax Fee </p>
+                  <p>10%</p>
+                </div>
                 <hr />
               </div>
-              <div className="flex">
-                <h5><b>Total Pay :</b></h5>
-                <h5>$390</h5>
+              <div className="flex justify-between py-4">
+                <h5><b>Total Pay </b></h5>
+                <h5 className="text-blue-800 text-xl">KSH.3900</h5>
               </div>
             </div>
-            <div>
+            <div className="bg-white p-6 rounded-xl">
               <h3><b>Billing Info</b></h3>
+              <br />
               <form onSubmit={handleSubmit}>
                 <div className="flex">
-                  <div className="w-full mr-4">
+                  <div className="w-full p-1">
                     <label htmlFor="">First Name
                       <input 
                         type="text" 
                         required
                         placeholder="Your First Name"
                         value={firstName}
-                        onChange = { (e) => setFirstname(e.target.value) }
+                        onChange = {(e) => setFirstname(e.target.value)}
                         className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
                       />
                     </label>
                   </div>
-                  <div className="w-full">
+                  <div className="w-full p-1">
                     <label htmlFor="">Last Name
                       <input 
                         type="text" 
                         required
                         placeholder="Your Last Name"
                         value={lastName}
-                        onChange = { (e) => setLastname(e.target.value) }
+                        onChange = {(e) => setLastname(e.target.value)}
                         className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
                       />
                     </label>
                   </div>
                 </div>
                 <div className="flex">
-                  <div className="w-full mr-4">
+                  <div className="w-full p-1">
                     <label htmlFor="">Email
                       <input 
                         type="email" 
                         required
                         placeholder="Your Email"
                         value={email}
-                        onChange = { (e) => setEmail(e.target.value) }
+                        onChange = {(e) => setEmail(e.target.value)}
                         className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
                       />
                     </label>
                   </div>
-                  <div className="w-full">
+                  <div className="w-full p-1">
                     <label htmlFor="">Phone
                       <input 
-                        type="text" 
+                        type="number" 
                         required
                         placeholder="You phone number"
                         value={phone}
-                        onChange = { (e) => setPhone(e.target.value) }
+                        onChange = {(e) => setPhone(e.target.value)}
                         className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
                       />
                     </label>
                   </div>
                 </div>
-                <div className="w-full">
+                <div className="w-full p-1">
                   <label htmlFor="">Address
                     <input 
                       type="text" 
                       required
                       placeholder="Your Address"
                       value={address}
-                      onChange = { (e) => setAddress(e.target.value) }
+                      onChange = {(e) => setAddress(e.target.value)}
                       className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
                     />
                   </label>
                 </div>
-                <div className="w-full">
+                <div className="w-full p-1">
                   <label htmlFor="">Address 2
                     <input 
                       type="text" 
                       placeholder="Your Address 2"
                       value={address2}
-                      onChange = { (e) => setAddress2(e.target.value) }
+                      onChange = {(e) => setAddress2(e.target.value)}
                       className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
                     />
                   </label>
                 </div>
                 <div className="flex">
-                  <div className="w-1/2 mr-4">
+                  <div className="w-1/2 p-1">
                     <label htmlFor="">City
                       <input 
                         type="text" 
                         required
                         placeholder="Your City"
                         value={city}
-                        onChange = { (e) => setCity(e.target.value) }
+                        onChange = {(e) => setCity(e.target.value)}
                         className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
                       />
                     </label>
                   </div>
-                  <div className="w-1/2 mr-2">
+                  <div className="w-1/2 p-1">
                     <label htmlFor="">State
                       <input 
                         type="text" 
                         required
                         placeholder="You State"
                         value={state}
-                        onChange = { (e) => setState(e.target.value) }
+                        onChange = {(e) => setState(e.target.value)}
                         className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
                       />
                     </label>
                   </div>
-                  <div className="w-1/2">
+                  <div className="w-1/2 p-1">
                     <label htmlFor="">Zip
                       <input 
                         type="text" 
-                        required
-                        placeholder="You zip"
+                        placeholder="You zip(Optional)"
                         value={zip}
-                        onChange = { (e) => setZip(e.target.value) }
+                        onChange = {(e) => setZip(e.target.value)}
                         className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
                       />
                     </label>
@@ -233,25 +277,25 @@ const Checkout = () => {
                 </div>
                 <h3><b>Payment Info</b></h3>
                 <div className="flex">
-                  <div className="w-full mr-4">
+                  <div className="w-full p-1">
                     <label htmlFor="">Card Holder Name
                       <input 
                         type="text" 
                         required
                         placeholder="Name on Card"
                         value={cardName}
-                        onChange = { (e) => setCardname(e.target.value) }
+                        onChange = {(e) => setCardname(e.target.value)}
                         className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
                       />
                     </label>
                   </div>
-                  <div className="w-full">
+                  <div className="w-full p-1">
                     <label htmlFor="">Card Number
                       <input 
-                        type="text" 
+                        type="number" 
                         required
                         value={cardNumber}
-                        onChange = { (e) => setCardNumber(e.target.value) }
+                        onChange = {(e) => setCardNumber(e.target.value)}
                         placeholder="Your Card Number"
                         className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
                       />
@@ -259,38 +303,38 @@ const Checkout = () => {
                   </div>
                 </div>
                 <div className="flex">
-                  <div className="w-full mr-4">
+                  <div className="w-full p-1">
                     <label htmlFor="">Expiry Date
                       <input 
-                        type="text" 
+                        type="date" 
                         required
                         value={expiryDate}
-                        onChange = { (e) => setexpirydate(e.target.value) }
+                        onChange = {(e) => setexpirydate(e.target.value) }
                         placeholder="Expiry Date"
                         className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
                       />
                     </label>
                   </div>
-                  <div className="w-full">
+                  <div className="w-full p-1">
                     <label htmlFor="">CVV
                       <input 
-                        type="text" 
+                        type="number" 
                         required
                         value={cvv}
-                        onChange = { (e) => setCvv(e.target.value) }
+                        onChange = {(e) => setCvv(e.target.value)}
                         placeholder="CVV"
                         className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
                       />
                     </label>
                   </div>
                 </div>
-                <div className="w-full">
+                <div className="w-full p-1">
                   <label htmlFor="">
                     <textarea 
                       name="" id="" 
                       cols="30" rows="10"
                       value={additionalNote}
-                      onChange = { (e) => setAdditional(e.target.value) }
+                      onChange = {(e) => setAdditional(e.target.value)}
                       placeholder="Write Note(Optional)"
                       className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
                     ></textarea>

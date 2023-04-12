@@ -2,7 +2,9 @@ import React,{useState}  from 'react'
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import axios from "axios"
+import axios from "../api/api"
+
+const URL = "/api/v3/add"
 
 const Booking = () => {
 
@@ -23,13 +25,12 @@ const Booking = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await axios.post('https://carways-server.up.railway.app/api/v3/add',
+      await axios.post(URL,
       JSON.stringify({car,pickLocation,dropLocation,pickDate,pickTime,dropDate,dropTime,duration,quantity,people,services}),
     {
       headers : { 'Content-type' : 'application/json'},
       withCredentials : true
     });
-    console.log(JSON.stringify(response))
     toast.success("Added Successfull")
     navigate('/checkout')
     } catch (error) {
@@ -66,7 +67,7 @@ const Booking = () => {
       <section className="container mx-auto p-4">
         {/* Car Booking */}
         <form onSubmit={handleSubmit}>
-          <div className="md:flex flex-wrap justify-center gap-10 mb-20">
+          <div className="flex flex-wrap justify-center gap-10 mb-20">
             <div className="bg-white p-6 rounded-xl w-1/4">
               <h4><b>Booking Car Type</b></h4>
               <br />
@@ -157,8 +158,7 @@ const Booking = () => {
               <div className="flex flex-wrap justify-center">
                 <div className="w-1/2 p-1">
                   <label htmlFor="">Car Rent Duration
-                    <select 
-                      name="" id="" 
+                    <select name="duration" id="duration" required
                       value={duration}
                       onChange = {(e) => setDuration(e.target.value)}
                       className="block px-2 py-3 w-full mb-4 border bg-white border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]">
@@ -172,8 +172,7 @@ const Booking = () => {
                 </div>
                 <div className="w-1/2 p-1">
                   <label htmlFor="">Car Rent Quantity
-                    <select 
-                      name="" id="" 
+                    <select name="car" id="car" required
                       value={quantity}
                       onChange = {(e) => setQuantity(e.target.value)}
                       className="block px-2 py-3 w-full mb-4 border bg-white border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]">
@@ -189,8 +188,7 @@ const Booking = () => {
               <div className="flex flex-wrap justify-center">
                 <div className="w-1/2 p-1">
                   <label htmlFor="">Choose People
-                    <select 
-                      name="" id="" 
+                    <select name="people" id="people" required
                       value={people}
                       onChange = {(e) => setPeople(e.target.value)}
                       className="block px-2 py-3 w-full mb-4 border bg-white border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]">
@@ -203,8 +201,7 @@ const Booking = () => {
                 </div>
                 <div className="w-1/2 p-1">
                   <label htmlFor="">Need Driving Service?
-                    <select 
-                      name="" id="" 
+                    <select name="service" id="service" required              
                       value={services}
                       onChange = {(e) => setService(e.target.value)}
                       className="block px-2 py-3 w-full mb-4 border bg-white border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]">
