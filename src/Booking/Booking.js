@@ -1,13 +1,11 @@
 import React,{useState}  from 'react'
 import { IoIosArrowRoundForward } from "react-icons/io";
-import { BookingState } from '../Context/BookingContext'
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axios from "axios"
 
 const Booking = () => {
 
-  const { state : {booking} } = BookingState()
   const [car,setCar] = useState('')
   const [pickLocation,setPicklocation] = useState('')
   const [dropLocation,setDroplocation] = useState('')
@@ -26,14 +24,12 @@ const Booking = () => {
     e.preventDefault()
     try {
       const response = await axios.post('https://carways-server.up.railway.app/api/v3/add',
-      JSON.stringify({car,pickLocation,dropLocation,pickDate,dropDate,dropTime,duration,quantity,people,services}),
+      JSON.stringify({car,pickLocation,dropLocation,pickDate,pickTime,dropDate,dropTime,duration,quantity,people,services}),
     {
       headers : { 'Content-type' : 'application/json'},
       withCredentials : true
     });
     console.log(JSON.stringify(response))
-    console.log(response?.data)
-    console.log(response?.accessToken)
     toast.success("Added Successfull")
     navigate('/checkout')
     } catch (error) {
@@ -42,9 +38,9 @@ const Booking = () => {
       } else if (error.response?.status === 400) {
         toast.error('All fields are required');
       } else if (error.response?.status === 409) {
-        toast.error('Username Taken');
+        toast.error('Car Taken');
       } else {
-        toast.error('Registration Failed')
+        toast.error('Booking Failed')
       }
       console.log(error)
       console.log(error.response)
@@ -52,7 +48,7 @@ const Booking = () => {
   }
 
   return (
-    <div>
+    <div className="bg-[#F0F0F0]">
       {/* intro */}
       <section className="mb-20">
         <div className="intro">
@@ -67,175 +63,164 @@ const Booking = () => {
         </div>
       </section>
 
-      <div className="container mx-auto">
+      <section className="container mx-auto p-4">
         {/* Car Booking */}
-        <section>
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <h3><b>Booking Car</b></h3>
-              {
-                booking.map((cars) => (
-                  <div key={cars.id} className="p-4">
-                    <img className="rounded-xl " src={cars.src} alt="cars" />
-                  </div>
-                ))
-              }
-              <form onSubmit={handleSubmit}>
-                <div className="w-1/2 mr-4">
-                  <label htmlFor="">Your Perfect Car
-                    <input 
-                      type="text" 
-                      required
-                      placeholder="Type car,model,brand"
-                      className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
-                      value={car}
-                      onChange = { (e) => setCar(e.target.value) }
-                    />
-                  </label>
-                </div>
-                <div className="w-1/2 mr-4">
-                  <label htmlFor="">Pick Up Location
-                    <input 
-                      type="text" 
-                      required
-                      placeholder="Type city,airport,station"
-                      className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
-                      value={pickLocation}
-                      onChange = { (e) => setPicklocation(e.target.value) }
-                    />
-                  </label>
-                </div>
-                <div className="w-1/2 ">
-                  <label htmlFor="">Drop Off Location
-                    <input 
-                      type="text" 
-                      required
-                      placeholder="Type city,airport,station"
-                      className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
-                      value={dropLocation}
-                      onChange = {(e) => setDroplocation(e.target.value) }
-                    />
-                  </label>
-                </div>
-                <div className="w-1/2 mr-2">
-                  <label htmlFor="">Pick Up Date
-                    <input 
-                      type="date" 
-                      required
-                      className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
-                      value={pickDate}
-                      onChange = {(e) => setPickdate(e.target.value) }
-                    />
-                  </label>
-                </div>
-                <div className="w-1/2 mr-4">
-                  <label htmlFor="">Pick Up Time
-                    <input 
-                      type="time" 
-                      required
-                      placeholder="Type city,airport,station"
-                      className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
-                      value={pickTime}
-                      onChange = { (e) => setpicktime(e.target.value) }
-                    />
-                  </label>
-                </div>
-                <div className="w-1/2 mr-4">
-                  <label htmlFor="">Drop Off Date
-                    <input 
-                      type="date" 
-                      required
-                      className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
-                      value={dropDate}
-                      onChange = { (e) => setDropdate(e.target.value) }
-                    />
-                  </label>
-                </div>
-                <div className="w-1/2 mr-2">
-                  <label htmlFor="">Drop Off Time
-                    <input 
-                      type="time" 
-                      required
-                      placeholder="Type city,airport,station"
-                      className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
-                      value={dropTime}
-                      onChange = { (e) => setDroptime(e.target.value) }
-                    />
-                  </label>
-                </div>
-              </form>
+        <form onSubmit={handleSubmit}>
+          <div className="md:flex flex-wrap justify-center gap-10 mb-20">
+            <div className="bg-white p-6 rounded-xl w-1/4">
+              <h4><b>Booking Car Type</b></h4>
+              <br />
+              <div>
+                <label htmlFor="">Your Perfect Car
+                  <input 
+                    type="text" 
+                    required
+                    placeholder="Type car,model,brand"
+                    className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
+                    value={car}
+                    onChange = {(e) => setCar(e.target.value)}
+                  />
+                </label>
+              </div>
+              <div>
+                <label htmlFor="">Pick Up Location
+                  <input 
+                    type="text" 
+                    required
+                    placeholder="Type city,airport,station"
+                    className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
+                    value={pickLocation}
+                    onChange = {(e) => setPicklocation(e.target.value)}
+                  />
+                </label>
+              </div>
+              <div>
+                <label htmlFor="">Drop Off Location
+                  <input 
+                    type="text" 
+                    required
+                    placeholder="Type city,airport,station"
+                    className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
+                    value={dropLocation}
+                    onChange = {(e) => setDroplocation(e.target.value)}
+                  />
+                </label>
+              </div>
+              <div>
+                <label htmlFor="">Pick Up Date
+                  <input 
+                    type="date" 
+                    required
+                    className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
+                    value={pickDate}
+                    onChange = {(e) => setPickdate(e.target.value) }
+                  />
+                </label>
+              </div>
+              <div>
+                <label htmlFor="">Pick Up Time
+                  <input 
+                    type="time" 
+                    required
+                    className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
+                    value={pickTime}
+                    onChange = {(e) => setpicktime(e.target.value)}
+                  />
+                </label>
+              </div>
+              <div>
+                <label htmlFor="">Drop Off Date
+                  <input 
+                    type="date" 
+                    required
+                    className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
+                    value={dropDate}
+                    onChange = {(e) => setDropdate(e.target.value)}
+                  />
+                </label>
+              </div>
+              <div>
+                <label htmlFor="">Drop Off Time
+                  <input 
+                    type="time" 
+                    required
+                    className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
+                    value={dropTime}
+                    onChange = {(e) => setDroptime(e.target.value)}
+                  />
+                </label>
+              </div>
             </div>
-            <div>
-              <h3><b>Booking Info</b></h3>
-              <form onSubmit={handleSubmit}>
-                <div className="flex ">
-                  <div className="w-full mr-3">
-                    <label htmlFor="">Car Rent Duration
-                      <select 
-                        name="" id="" 
-                        value={duration}
-                        onChange = { (e) => setDuration(e.target.value) }
-                        className="block px-2 py-3 w-full mb-4 border bg-white border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]">
-                        <option value="1 mnth">For 1 month</option>
-                        <option value="1 day">For 1 day</option>
-                        <option value="5 Days">For 5 days</option>
-                        <option value="10 Days">For 10 days</option>
-                        <option value="15 Days">For 15 days</option>
-                      </select>
-                    </label>
-                  </div>
-                  <div className="w-full mr-3">
-                    <label htmlFor="">Car Rent Quantity
-                      <select 
-                        name="" id="" 
-                        value={quantity}
-                        onChange = { (e) => setQuantity(e.target.value) }
-                        className="block px-2 py-3 w-full mb-4 border bg-white border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]">
-                        <option value="1">1 Car</option>
-                        <option value="2">2 Cars</option>
-                        <option value="3">3 Cars</option>
-                        <option value="4">4 Cars</option>
-                        <option value="5">5 Cars</option>
-                      </select>
-                    </label>
-                  </div>
+            <div className="bg-white p-6 rounded-xl w-1/2 h-1/2">
+              <h4><b>Booking Info</b></h4>
+              <br />
+              <div className="flex flex-wrap justify-center">
+                <div className="w-1/2 p-1">
+                  <label htmlFor="">Car Rent Duration
+                    <select 
+                      name="" id="" 
+                      value={duration}
+                      onChange = {(e) => setDuration(e.target.value)}
+                      className="block px-2 py-3 w-full mb-4 border bg-white border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]">
+                      <option value="1 Month">For 1 month</option>
+                      <option value="1 Day">For 1 day</option>
+                      <option value="5 Days">For 5 days</option>
+                      <option value="10 Days">For 10 days</option>
+                      <option value="15 Days">For 15 days</option>
+                    </select>
+                  </label>
                 </div>
-                <div className="flex">
-                  <div className="w-full mr-3">
-                    <label htmlFor="">Choose People
-                      <select 
-                        name="" id="" 
-                        value={people}
-                        onChange = { (e) => setPeople(e.target.value) }
-                        className="block px-2 py-3 w-full mb-4 border bg-white border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]">
-                        <option value="1 person">1 person</option>
-                        <option value="2 people">2 people</option>
-                        <option value="3 people">3 people</option>
-                        <option value="4 people">4 people</option>
-                      </select>
-                    </label>
-                  </div>
-                  <div className="w-full mr-3">
-                    <label htmlFor="">Need Driving Service?
-                      <select 
-                        name="" id="" 
-                        value={services}
-                        onChange = { (e) => setService(e.target.value) }
-                        className="block px-2 py-3 w-full mb-4 border bg-white border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]">
-                        <option value="No">No</option>
-                        <option value="Yes">Yes(pay extra Ksh.1000)</option>
-                      </select>
-                    </label>
-                  </div>
+                <div className="w-1/2 p-1">
+                  <label htmlFor="">Car Rent Quantity
+                    <select 
+                      name="" id="" 
+                      value={quantity}
+                      onChange = {(e) => setQuantity(e.target.value)}
+                      className="block px-2 py-3 w-full mb-4 border bg-white border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]">
+                      <option value="1 Car">1 Car</option>
+                      <option value="2 Cars">2 Cars</option>
+                      <option value="3 Cars">3 Cars</option>
+                      <option value="4 Cars">4 Cars</option>
+                      <option value="5 Cars">5 Cars</option>
+                    </select>
+                  </label>
                 </div>
-                <div>
-                  <button className="flex items-center justify-center space-x-2 bg-[#4F5DEC] text-white px-5 py-3 rounded-lg w-full">Check Out<h3><IoIosArrowRoundForward/></h3></button>
+              </div>
+              <div className="flex flex-wrap justify-center">
+                <div className="w-1/2 p-1">
+                  <label htmlFor="">Choose People
+                    <select 
+                      name="" id="" 
+                      value={people}
+                      onChange = {(e) => setPeople(e.target.value)}
+                      className="block px-2 py-3 w-full mb-4 border bg-white border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]">
+                      <option value="1 person">1 person</option>
+                      <option value="2 People">2 people</option>
+                      <option value="3 People">3 people</option>
+                      <option value="4 People">4 people</option>
+                    </select>
+                  </label>
                 </div>
-              </form>
+                <div className="w-1/2 p-1">
+                  <label htmlFor="">Need Driving Service?
+                    <select 
+                      name="" id="" 
+                      value={services}
+                      onChange = {(e) => setService(e.target.value)}
+                      className="block px-2 py-3 w-full mb-4 border bg-white border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]">
+                      <option value="No">No</option>
+                      <option value="Yes">Yes(pay extra Ksh.1000)</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+              <div>
+                <button className="flex items-center justify-center space-x-2 bg-[#4F5DEC] text-white px-5 py-3 rounded-lg w-full">Check Out<h3><IoIosArrowRoundForward/></h3></button>
+              </div>
             </div>
           </div>
-        </section>
-      </div>
+        </form>
+      </section>
       
     </div>
   )

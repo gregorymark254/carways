@@ -3,17 +3,14 @@ import carData from "../Booking/CarData"
 import { FaRegHeart,FaCarAlt,FaGasPump } from "react-icons/fa";
 import { TbRoad,TbSteeringWheel } from "react-icons/tb";
 import { IoPeople } from "react-icons/io5";
-import { BookingState } from '../Context/BookingContext'
 import { useNavigate } from 'react-router-dom'
 
 const Cars = () => {
 
-  const { state : {booking}, dispatch } = BookingState()
   const navigate = useNavigate()
 
   const handleClick = (e) => {
     e.preventDefault()
-    dispatch({type: 'ADD_TO_BOOKING'})
     navigate("/booking")
   }
   
@@ -60,7 +57,7 @@ const Cars = () => {
         </section>
 
         <section>
-          <div className="flex flex-wrap  items-center gap-8 mb-20">
+          <div className="flex flex-wrap items-center gap-8 mb-20">
             {
               carData.length > 0 ? (
                 carData.map((cars) => (
@@ -87,10 +84,7 @@ const Cars = () => {
                         <h4><span className="text-xl text-[#4F5DEC]">{cars.amount}</span>/day</h4>
                         <div className="flex items-center space-x-3 mt-2">
                           <span className="bg-[#4f5dec3d] text-[#4F5DEC] p-2 rounded-lg"><FaRegHeart/></span>
-                          {booking.some((d) => d.id === cars.id) ? (<button onClick={(e) => {dispatch({type: 'REMOVE_FROM_BOOKING', payload:cars})}}  className="w-full border bg-red-600 text-white hover:bg-red-300  py-2 px-4">Cancel</button>
-                            ) : (
-                            <button onClick={handleClick} className="bg-[#4F5DEC] text-white px-4 py-2 rounded-lg">Rent Now</button>
-                          )}
+                          <button onClick={handleClick} className="bg-[#4F5DEC] text-white px-4 py-2 rounded-lg">Rent Now</button>
                         </div>
                       </div>
                     </div>
