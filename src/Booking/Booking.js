@@ -31,7 +31,7 @@ const Booking = () => {
       headers : { 'Content-type' : 'application/json'},
       withCredentials : true
     });
-    toast.success("Added Successfull")
+    toast.success("Added Successful")
     navigate('/checkout')
     } catch (error) {
       if (!error?.response) {

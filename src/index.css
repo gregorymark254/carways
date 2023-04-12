@@ -39,6 +39,15 @@ html {
   scroll-behavior: smooth;
 }
 
+/* navbar */
+.nav{
+  position: sticky;
+  top:0px;
+  left:0px;
+  right: 0px;
+  z-index: 10;
+}
+
 /* hero section */
 #hero h1 {
   display: flex;

@@ -1,8 +1,41 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { MdAccessTime,MdOutlineMarkEmailRead,MdOutlineLocationOn,MdSend } from "react-icons/md";
 import { FiPhoneCall } from "react-icons/fi";
+import { toast } from 'react-toastify';
+import axios from "../api/api"
+
+const URL = "/api/v4/send-email"
 
 const Contact = () => {
+
+  const [name,setName] = useState('')
+  const [email,setEmail] = useState('')
+  const [subject,setSubject] = useState('')
+  const [message,setMessage] = useState('')
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      await axios.post(URL,
+      JSON.stringify({name,email,subject,message}),
+    {
+      headers : { 'Content-type' : 'application/json'},
+      withCredentials : true
+    });
+    toast.success("Email Sent Successfully")
+    } catch (error) {
+      if (!error?.response) {
+        toast.error('No Server Response');
+      } else if (error.response?.status === 400) {
+        toast.error('All fields are required');
+      } else {
+        toast.error('Sending Failed')
+      }
+      console.log(error)
+      console.log(error.response)
+    }
+  }
+
   return (
     <main>
       <section class="mb-20">
@@ -58,9 +91,8 @@ const Contact = () => {
             <div className="space-y-5">
               <h2><b>Get In Touch</b></h2>
               <p>It is a long established fact that a reader will be distracted by the readable content of a page randomised words which don't look even slightly when looking at its layout.</p>
-              
               <br />
-              <form action="">
+              <form onSubmit={handleSubmit}>
                 <div className="md:flex">
                   <div className="w-full mr-2">
                     <label htmlFor="">
@@ -69,6 +101,8 @@ const Contact = () => {
                         placeholder="Your Name"
                         required
                         className="block px-2 py-3 mb-4 w-full border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
+                        value={name}
+                        onChange = {(e) => setName(e.target.value)}
                       />
                     </label>
                   </div>
@@ -79,6 +113,8 @@ const Contact = () => {
                         placeholder="Your Email"
                         required
                         className="block px-2 py-3 mb-4 w-full border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
+                        value={email}
+                        onChange = {(e) => setEmail(e.target.value)}
                       />
                     </label>
                   </div>
@@ -89,6 +125,8 @@ const Contact = () => {
                     placeholder="Your Subject"
                     required
                     className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
+                    value={subject}
+                    onChange = {(e) => setSubject(e.target.value)}
                   />
                 </label>
                 <label htmlFor="">
@@ -96,6 +134,8 @@ const Contact = () => {
                     cols="30" rows="5"
                     placeholder="Your Message"
                     required
+                    value={message}
+                    onChange = {(e) => setMessage(e.target.value)}
                     className="px-2 py-3 block w-full mb-4 mr-2 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
                   ></textarea>
                 </label>
