@@ -5,6 +5,8 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import { FaRegHeart,FaRegUserCircle,FaCarAlt,FaGasPump } from "react-icons/fa";
 import { MdToday } from "react-icons/md";
 import { TbRoad,TbSteeringWheel } from "react-icons/tb";
+import carData from "../Booking/CarData"
+
 
 const Home = () => {
   return (
@@ -12,40 +14,17 @@ const Home = () => {
       {/* hero section */}
       <section className="relative overflow-hidden ">
         <main id="carouselExampleCaptions" className="relative " data-te-carousel-init data-te-carousel-slide>
-          {/* <div className="absolute right-0 bottom-0 left-0 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0" data-te-carousel-indicators>
-            <button
-              type="button"
-              data-te-target="#carouselExampleCaptions"
-              data-te-slide-to="0"
-              data-te-carousel-active
-              className="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
-              aria-current="true"
-              aria-label="Slide 1"></button>
-            <button
-              type="button"
-              data-te-target="#carouselExampleCaptions"
-              data-te-slide-to="1"
-              className="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
-              aria-label="Slide 2"></button>
-            <button
-              type="button"
-              data-te-target="#carouselExampleCaptions"
-              data-te-slide-to="2"
-              className="mx-[3px] box-content h-[3px] w-[30px] flex-initial cursor-pointer border-0 border-y-[10px] border-solid border-transparent bg-white bg-clip-padding p-0 -indent-[999px] opacity-50 transition-opacity duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1.0)] motion-reduce:transition-none"
-              aria-label="Slide 3"></button>
-          </div> */}
-          <div className="relative w-full overflow-hidden after:clear-both after:block after:content-[''] hero">
-            <div className="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none hero" data-te-carousel-active data-te-carousel-item >
+          <div className="relative w-full overflow-hidden after:clear-both after:block after:content-['']" id="hero">
+            <div className="brightness-50 relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none hero" data-te-carousel-active data-te-carousel-item >
               <img src="https://live.themewild.com/carway/assets/img/slider/slider-1.jpg" className="block w-full" alt="..." />
             </div>
-            <div className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none" data-te-carousel-item>
+            <div className="brightness-50 relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none" data-te-carousel-item>
               <img src="https://live.themewild.com/carway/assets/img/slider/slider-2.jpg" className="block w-full" alt="..." />
             </div>
-            <div className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none" data-te-carousel-item>
+            <div className="brightness-50 relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none" data-te-carousel-item>
               <img src="https://live.themewild.com/carway/assets/img/slider/slider-3.jpg" className="block w-full" alt="..." />
             </div>
-            <div className="carousel-caption hidden md:block top-36 absolute text-center text-white">
-              {/* <h2 className="bg-[#4F5DEC] px-2 py-4 rounded-xl"><b>50% OFF RESERVED NOW!</b></h2> */}
+            <div className="carousel-caption md:block top-36 absolute text-center text-white">
               <h1 className="text-xl font-bold">Car Rental In Your</h1>
               <h1 className="text-xl font-bold"><span className="text-[#4F5DEC]">Desired</span> Destination</h1>
               <p>There are many variations of passages orem psum available but the majority have suffered <br />
@@ -54,40 +33,18 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <button className="absolute top-0 bottom-0 left-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
-            type="button" data-te-target="#carouselExampleCaptions" data-te-slide="prev">
+          <button className="absolute top-0 bottom-0 left-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none" type="button" data-te-target="#carouselExampleCaptions" data-te-slide="prev">
             <span className="inline-block h-8 w-8">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-Width="1.5"
-                stroke="currentColor"
-                className="h-6 w-6">
-                <path
-                  stroke-Linecap="round"
-                  stroke-Linejoin="round"
-                  d="M15.75 19.5L8.25 12l7.5-7.5" />
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-6 w-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
               </svg>
             </span>
             <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]" >Previous</span>
           </button>
-          <button className="absolute top-0 bottom-0 right-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
-            type="button"
-            data-te-target="#carouselExampleCaptions"
-            data-te-slide="next">
+          <button className="absolute top-0 bottom-0 right-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none" type="button" data-te-target="#carouselExampleCaptions" data-te-slide="next">
             <span className="inline-block h-8 w-8">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-Width="1.5"
-                stroke="currentColor"
-                className="h-6 w-6">
-                <path
-                  stroke-Linecap="round"
-                  stroke-Linejoin="round"
-                  d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="h-6 w-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
               </svg>
             </span>
             <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Next</span >
@@ -97,17 +54,17 @@ const Home = () => {
 
 
       {/* body */}
-      <main className="container mx-auto mt-10">
+      <main className="container mx-auto p-4">
         {/* car search */}
-        <section className="flex items-center justify-center mt-20">
-          <div className="shadow-md shadow-slate-500 p-12 rounded-lg w-full">
+        <section className="flex items-center justify-center ">
+          <div className="shadow-md shadow-slate-500 p-6 rounded-lg w-full">
             <div className="mb-8">
               <h2><b>Let's Find Your Perfect Car</b></h2>
             </div>
             <div>
               <form action="/cars">
-                <div className="md:flex">
-                  <div className="w-full mr-4">
+                <div className="xl:flex">
+                  <div className="w-full p-1">
                     <label htmlFor="">Your Perfect Car
                       <input 
                         type="text" 
@@ -117,9 +74,9 @@ const Home = () => {
                       />
                     </label>
                   </div>
-                  <div className="w-full mr-4">
+                  <div className="w-full p-1">
                     <label htmlFor="">Pick Up Location
-                      <input 
+                      <input
                         type="text" 
                         required
                         placeholder="Type city,airport,station"
@@ -127,7 +84,7 @@ const Home = () => {
                       />
                     </label>
                   </div>
-                  <div className="w-full ">
+                  <div className="w-full p-1">
                     <label htmlFor="">Drop Off Location
                       <input 
                         type="text" 
@@ -138,8 +95,8 @@ const Home = () => {
                     </label>
                   </div>
                 </div>
-                <div className="md:flex">
-                  <div className="w-1/2 mr-2">
+                <div className="xl:flex">
+                  <div className="xl:w-1/2 p-1">
                     <label htmlFor="">Pick Up Date
                       <input 
                         type="date" 
@@ -148,17 +105,16 @@ const Home = () => {
                       />
                     </label>
                   </div>
-                  <div className="w-1/2 mr-4">
+                  <div className="xl:w-1/2 p-1">
                     <label htmlFor="">Pick Up Time
                       <input 
                         type="time" 
                         required
-                        placeholder="Type city,airport,station"
                         className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
                       />
                     </label>
                   </div>
-                  <div className="w-1/2 mr-4">
+                  <div className="xl:w-1/2 p-1">
                     <label htmlFor="">Drop Up Date
                       <input 
                         type="date" 
@@ -167,17 +123,16 @@ const Home = () => {
                       />
                     </label>
                   </div>
-                  <div className="w-1/2 mr-2">
+                  <div className="xl:w-1/2 p-1">
                     <label htmlFor="">Drop Up Time
                       <input 
                         type="time" 
                         required
-                        placeholder="Type city,airport,station"
                         className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
                       />
                     </label>
                   </div>
-                  <div className="items-center flex mt-2 w-full">
+                  <div className="items-center flex p-1 w-full">
                     <button className="flex items-center justify-center space-x-2 bg-[#4F5DEC] text-white px-5 py-3 rounded-lg w-full">Find Your Car<h3><IoIosArrowRoundForward/></h3></button>
                   </div>
                 </div>
@@ -188,22 +143,22 @@ const Home = () => {
 
 
         {/* artcile */}
-        <section className="md:grid grid-cols-3 gap-5 my-20">
-          <div className="text-center space-y-4 shadow-xl p-4">
+        <section className="flex flex-wrap xl:flex-wrap items-center xl:justify-center gap-10 my-20">
+          <div className="text-center space-y-4 shadow-xl p-8">
             <div className="flex justify-center text-justify items-center">
               <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/quality-service.svg" alt="icon" />
             </div>
             <h3>Quality Service</h3>
             <p>There are many variations of passages <br /> available but the majority have suffered <br />alteration in some form.</p>
           </div>
-          <div className="text-center space-y-4 shadow-xl p-4">
+          <div className="text-center space-y-4 shadow-xl p-8">
             <div className="flex justify-center text-justify items-center">
               <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/booking.svg" alt="icon" />
             </div>
             <h3>Online Booking</h3>
             <p>There are many variations of passages <br /> available but the majority have suffered<br /> alteration in some form.</p>
           </div>
-          <div className="text-center space-y-4 py-8 shadow-xl p-4">
+          <div className="text-center space-y-4 shadow-xl p-8">
             <div className="flex justify-center text-justify items-center">
               <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/money.svg" alt="icon" />
             </div>
@@ -213,22 +168,33 @@ const Home = () => {
         </section>
 
         {/* about */}
-        <section className="md:flex mb-28 gap-20">
-          <div className="border-8 p-4 items-center justify-center flex rounded-xl border-[#4F5DEC] w-full h-full">
-            <img className="rounded-lg" src="https://live.themewild.com/carway/assets/img/about/01.jpg" alt="" />
+        <section className="xl:flex items-center mb-28 gap-20">
+          <div className="w-full mb-8">
+            <div className="border-8 p-4 justify-center flex rounded-xl border-[#4F5DEC]">
+              <img className="rounded-lg" src="https://live.themewild.com/carway/assets/img/about/01.jpg" alt="" />
+            </div>
           </div>
-          <div className="w-full space-y-5">
+          <div className="w-full space-y-5 mb-8">
             <h3 className="text-[#4F5DEC]">ABOUT US</h3>
-            <h1><b>We Provide Quality <span className="text-[#4F5DEC]">Car <br /> Rental</span> Services</b></h1>
+            <h1 id="about"><b>We Provide Quality <span className="text-[#4F5DEC]">Car Rental</span> Services</b></h1>
             <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
             <div className="space-y-4">  
-              <p className="flex items-center mr-4"><span className="text-[#4F5DEC]"><IoCheckmarkCircleOutline/></span>At vero eos et accusamus et iusto odio</p>
-              <p className="flex items-center mr-4"><span className="text-[#4F5DEC]"><IoCheckmarkCircleOutline/></span>Established fact that a reader will be distracted</p>
-              <p className="flex items-center mr-4"><span className="text-[#4F5DEC]"><IoCheckmarkCircleOutline/></span>Sed ut perspiciatis unde omnis iste natus sit</p>
+              <div className="flex items-baseline space-x-3">
+                <p className="text-[#4F5DEC] font-bold"><IoCheckmarkCircleOutline/></p>
+                <p>At vero eos et accusamus et iusto odi</p>
+              </div>
+              <div className="flex items-baseline space-x-3">
+                <h5 className="text-[#4F5DEC] font-bold"><IoCheckmarkCircleOutline/></h5>
+                <p>Established fact that a reader will be distracted</p>
+              </div>
+              <div className="flex items-baseline space-x-3">
+                <h5 className="text-[#4F5DEC] font-bold"><IoCheckmarkCircleOutline/></h5>
+                <p>Sed ut perspiciatis unde omnis iste natus sit</p>
+              </div>
             </div>
             <br />
             <div>
-              <button className="flex items-center space-x-2 bg-[#4F5DEC] text-white px-5 py-3 rounded-lg">Discover More <h3><IoIosArrowRoundForward/></h3></button>
+              <button onClick={(e) => window.location.assign("/cars")} className="flex items-center space-x-2 bg-[#4F5DEC] hover:bg-blue-500 text-white px-5 py-3 rounded-lg">Discover More <h3><IoIosArrowRoundForward/></h3></button>
             </div>
           </div>
         </section>
@@ -237,178 +203,42 @@ const Home = () => {
         <section>
           <div className="text-center mb-20">
             <h4 className="text-[#4F5DEC]"><b>CARS</b></h4>
-            <h1><b>Features <span className="text-[#4F5DEC]">Cars</span></b></h1>
+            <h1><b>Featured <span className="text-[#4F5DEC]">Cars</span></b></h1>
             <div className="header-divider"></div>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 mb-20">
-            <div>
-              <img className="rounded-xl " src="https://imgs.search.brave.com/q8qhIuBbr6jigNW-Wl41GbBflNYFXXAvy3xZgzmC_Zo/rs:fit:640:426:1/g:ce/aHR0cHM6Ly90b3Bj/YXIuY28ua2Uvd3At/Y29udGVudC91cGxv/YWRzLzIwMjAvMDEv/MjAxMy1Ub3lvdGEt/UHJhZG8tNC1taW4u/anBn" alt="car1" />
-              <div>
-                <div className="flex justify-between p-3">
-                  <h3><b>Toyota Prado</b></h3>
-                  <span>5.0</span>
-                </div>
-                <div className="p-2">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaCarAlt/></span><h5>Model: 2020</h5></div>
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><IoPeople/></span><h5>4 peolpe</h5></div>
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaGasPump/></span><h5>Hybrid</h5></div>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><TbRoad/></span><h5>10.15km/1-litre</h5></div>
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><TbSteeringWheel/></span><h5>Automatic</h5></div>
-                  </div>
-                </div>
-                <hr />
-                <div className="flex items-center space-x-3 justify-between p-2">
-                  <h4><span className="text-3xl text-[#4F5DEC]">KSH.2500</span>/month</h4>
-                  <div className="flex items-center space-x-3 mt-2">
-                    <span className="bg-[#4f5dec3d] text-[#4F5DEC] p-2 rounded-lg"><FaRegHeart/></span>
-                    <button className="bg-[#4F5DEC] text-white px-4 py-2 rounded-lg">Rent Now</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <img className="rounded-xl " src="https://imgs.search.brave.com/2smioM8zVYyVbpfa6ckvSt3Z7ZQBpyr5MUsFTIX8v4E/rs:fit:757:497:1/g:ce/aHR0cDovL25haWJ1/enouY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDE0LzA1L3g2/LmpwZw" alt="car1" />
-              <div>
-                <div className="flex justify-between p-2">
-                  <h3><b>Bmw E46 Car</b></h3>
-                  <span>5.0</span>
-                </div>
-                <div className="p-2">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaCarAlt/></span><h5>Model: 2020</h5></div>
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><IoPeople/></span><h5>4 peolpe</h5></div>
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaGasPump/></span><h5>Hybrid</h5></div>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><TbRoad/></span><h5>10.15km/1-litre</h5></div>
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><TbSteeringWheel/></span><h5>Automatic</h5></div>
+          <div className="flex flex-wrap justify-center items-center gap-8 mb-20">
+            {
+              carData.map((cars) => (
+                <div key={cars.id}>
+                  <img className="rounded-xl h-80 object-contain" src={cars.src} alt="car1" />
+                  <div>
+                    <div className="flex justify-between p-3">
+                      <h3><b>{cars.title}</b></h3>
+                      <span>5.0</span>
+                    </div>
+                    <div className="p-2">
+                      <div className="flex flex-wrap items-center justify-between mb-4">
+                        <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaCarAlt/></span><h5>Model: 2020</h5></div>
+                        <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><IoPeople/></span><h5>4 peolpe</h5></div>
+                        <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaGasPump/></span><h5>Hybrid</h5></div>
+                      </div>
+                      <div className="flex flex-wrap items-center justify-between">
+                        <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><TbRoad/></span><h5>10.15km/1-litre</h5></div>
+                        <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><TbSteeringWheel/></span><h5>Automatic</h5></div>
+                      </div>
+                    </div>
+                    <hr />
+                    <div className="flex flex-wrap items-center space-x-3 justify-between py-2">
+                      <h4><span className="text-3xl text-[#4F5DEC]">{cars.amount}</span>/day</h4>
+                      <div className="flex items-center space-x-3 mt-2">
+                        <span className="bg-[#4f5dec3d] text-[#4F5DEC] p-2 rounded-lg"><FaRegHeart/></span>
+                        <button className="bg-[#4F5DEC] text-white px-4 py-2 rounded-lg">Rent Now</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <hr />
-                <div className="flex items-center space-x-3 justify-between p-2">
-                  <h4><span className="text-3xl text-[#4F5DEC]">KSH.3900</span>/month</h4>
-                  <div className="flex items-center space-x-3 mt-2">
-                    <span className="bg-[#4f5dec3d] text-[#4F5DEC] p-2 rounded-lg"><FaRegHeart/></span>
-                    <button className="bg-[#4F5DEC] text-white px-4 py-2 rounded-lg">Rent Now</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <img className="rounded-xl " src="https://imgs.search.brave.com/9ruD6dFs_u6tdM5Obwq2VXCP0s70isnd4RFsXE9x9x4/rs:fit:586:420:1/g:ce/aHR0cHM6Ly92aWN0/b3JtYXRhcmEuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDE3/LzA2LzE2NTg1NTgz/Xzc3MTIyMTIxNjM2/MDg5OV82NTQ1Nzkx/OTI0NDc1Nzg5MzEy/X24tNTg2eDQyMC0x/LmpwZw" alt="car1" />
-              <div>
-                <div className="flex justify-between p-2">
-                  <h3><b>Mercedes Benz Car</b></h3>
-                  <span>5.0</span>
-                </div>
-                <div className="p-2">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaCarAlt/></span><h5>Model: 2020</h5></div>
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><IoPeople/></span><h5>4 peolpe</h5></div>
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaGasPump/></span><h5>Hybrid</h5></div>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><TbRoad/></span><h5>10.15km/1-litre</h5></div>
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><TbSteeringWheel/></span><h5>Automatic</h5></div>
-                  </div>
-                </div>
-                <hr />
-                <div className="flex items-center space-x-3 justify-between p-2">
-                  <h4><span className="text-3xl text-[#4F5DEC]">KSH.3100</span>/month</h4>
-                  <div className="flex items-center space-x-3 mt-2">
-                    <span className="bg-[#4f5dec3d] text-[#4F5DEC] p-2 rounded-lg"><FaRegHeart/></span>
-                    <button className="bg-[#4F5DEC] text-white px-4 py-2 rounded-lg">Rent Now</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <img className="rounded-xl " src="https://imgs.search.brave.com/2SB8_tvn7SofswXPuDNclDfr07pZW3OA3U6hGoI3nJg/rs:fit:600:450:1/g:ce/aHR0cDovL3lvdXRo/dmlsbGFnZS5jby5r/ZS93cC1jb250ZW50/L3VwbG9hZHMvNDk1/OTEwMTQuanBn" alt="car1" />
-              <div>
-                <div className="flex justify-between p-2">
-                  <h3><b>Audi R8 Car</b></h3>
-                  <span>5.0</span>
-                </div>
-                <div className="p-2">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaCarAlt/></span><h5>Model: 2020</h5></div>
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><IoPeople/></span><h5>4 peolpe</h5></div>
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaGasPump/></span><h5>Hybrid</h5></div>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><TbRoad/></span><h5>10.15km/1-litre</h5></div>
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><TbSteeringWheel/></span><h5>Automatic</h5></div>
-                  </div>
-                </div>
-                <hr />
-                <div className="flex items-center space-x-3 justify-between p-2">
-                  <h4><span className="text-3xl text-[#4F5DEC]">KSH.2300</span>/month</h4>
-                  <div className="flex items-center space-x-3 mt-2">
-                    <span className="bg-[#4f5dec3d] text-[#4F5DEC] p-2 rounded-lg"><FaRegHeart/></span>
-                    <button className="bg-[#4F5DEC] text-white px-4 py-2 rounded-lg">Rent Now</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <img className="rounded-xl " src="https://imgs.search.brave.com/O97wbY2RzCwE9mW9E0-GTmkuvhhYOdMzawJdzwMiG44/rs:fit:1200:900:1/g:ce/aHR0cHM6Ly9uZXRz/dG9yYWdlLXR1a28u/YWthbWFpemVkLm5l/dC9pbWFnZXMvOTE0/NTVhZGZjODI1YThj/My5qcGc_aW13aWR0/aD0xMDgw" alt="car1" />
-              <div>
-                <div className="flex justify-between p-2">
-                  <h3><b>Nissan Tida</b></h3>
-                  <span>5.0</span>
-                </div>
-                <div className="p-2">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaCarAlt/></span><h5>Model: 2020</h5></div>
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><IoPeople/></span><h5>4 peolpe</h5></div>
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaGasPump/></span><h5>Hybrid</h5></div>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><TbRoad/></span><h5>10.15km/1-litre</h5></div>
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><TbSteeringWheel/></span><h5>Automatic</h5></div>
-                  </div>
-                </div>
-                <hr />
-                <div className="flex items-center space-x-3 justify-between p-2">
-                  <h4><span className="text-3xl text-[#4F5DEC]">KSH.2000</span>/month</h4>
-                  <div className="flex items-center space-x-3 mt-2">
-                    <span className="bg-[#4f5dec3d] text-[#4F5DEC] p-2 rounded-lg"><FaRegHeart/></span>
-                    <button className="bg-[#4F5DEC] text-white px-4 py-2 rounded-lg">Rent Now</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <img className="rounded-xl " src="https://live.themewild.com/carway/assets/img/car/06.jpg" alt="car1" />
-              <div>
-                <div className="flex justify-between p-2">
-                  <h3><b>Mercedes Suv Car</b></h3>
-                  <span>5.0</span>
-                </div>
-                <div className="p-2">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaCarAlt/></span><h5>Model: 2020</h5></div>
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><IoPeople/></span><h5>4 peolpe</h5></div>
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaGasPump/></span><h5>Hybrid</h5></div>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><TbRoad/></span><h5>10.15km/1-litre</h5></div>
-                    <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><TbSteeringWheel/></span><h5>Automatic</h5></div>
-                  </div>
-                </div>
-                <hr />
-                <div className="flex items-center space-x-3 justify-between p-2">
-                  <h4><span className="text-3xl text-[#4F5DEC]">kSH.2900</span>/month</h4>
-                  <div className="flex items-center space-x-3 mt-2">
-                    <span className="bg-[#4f5dec3d] text-[#4F5DEC] p-2 rounded-lg"><FaRegHeart/></span>
-                    <button className="bg-[#4F5DEC] text-white px-4 py-2 rounded-lg">Rent Now</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+              ))
+            }
           </div>
         </section>
 
@@ -478,14 +308,21 @@ const Home = () => {
             <h1><b>latest News & <span className="text-[#4F5DEC]">Blog</span></b></h1>
             <div className="header-divider"></div>
           </div>
+          
           <div className="md:grid grid-cols-3 gap-5">
-            <div className="p-4">
+            <div className='py-4'>
               <div>
                 <img className="rounded-xl" src="https://live.themewild.com/carway/assets/img/blog/01.jpg" alt="blog" />
               </div>
-              <div className="flex items-center justify-between py-3">
-                <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaRegUserCircle/></span><h5>By Alicia Davis</h5></div>
-                <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><MdToday/></span><h5>March 17,2023</h5></div>
+              <div className="flex flex-wrap items-center justify-between py-3">
+                <div className="flex items-center space-x-2">
+                  <span className="text-[#4F5DEC]"><FaRegUserCircle/></span>
+                  <h5>By Alicia Davis</h5>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <span className="text-[#4F5DEC]"><MdToday/></span>
+                  <h5>March 17,2023</h5>
+                </div>
               </div>
               <hr />
               <div className="py-4">
@@ -495,13 +332,19 @@ const Home = () => {
                 <button className="flex items-center space-x-2 bg-[#4F5DEC] text-white px-5 py-3 rounded-lg">Read More <h3><IoIosArrowRoundForward/></h3></button>
               </div>
             </div>
-            <div className="p-4">
-              <div >
+            <div className='py-4'>
+              <div>
                 <img className="rounded-xl" src="https://live.themewild.com/carway/assets/img/blog/02.jpg" alt="blog" />
               </div>
-              <div className="flex items-center justify-between py-3">
-                <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaRegUserCircle/></span><h5>By Alicia Davis</h5></div>
-                <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><MdToday/></span><h5>March 17,2023</h5></div>
+              <div className="flex flex-wrap items-center justify-between py-3">
+                <div className="flex items-center space-x-2">
+                  <span className="text-[#4F5DEC]"><FaRegUserCircle/></span>
+                  <h5>By Alicia Davis</h5>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <span className="text-[#4F5DEC]"><MdToday/>
+                  </span><h5>March 17,2023</h5>
+                </div>
               </div>
               <hr />
               <div className="py-4">
@@ -511,13 +354,19 @@ const Home = () => {
                 <button className="flex items-center space-x-2 bg-[#4F5DEC] text-white px-5 py-3 rounded-lg">Read More <h3><IoIosArrowRoundForward/></h3></button>
               </div>
             </div>
-            <div className="p-4">
+            <div className='py-4'>
               <div>
                 <img className="rounded-xl" src="https://live.themewild.com/carway/assets/img/blog/03.jpg" alt="blog" />
               </div>
-              <div className="flex items-center justify-between py-3">
-                <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaRegUserCircle/></span><h5>By Alicia Davis</h5></div>
-                <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><MdToday/></span><h5>March 17,2023</h5></div>
+              <div className="flex flex-wrap items-center justify-between py-3">
+                <div className="flex items-center space-x-2">
+                  <span className="text-[#4F5DEC]"><FaRegUserCircle/></span>
+                  <h5>By Alicia Davis</h5>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <span className="text-[#4F5DEC]"><MdToday/>
+                  </span><h5>March 17,2023</h5>
+                </div>
               </div>
               <hr />
               <div className="py-4">

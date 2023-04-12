@@ -26,7 +26,7 @@ const Nav = () => {
         <nav className='flex justify-between items-center px-4'>
           {/* Top Nav */}
           <div>
-            <img className="h-10 w-full" src="https://live.themewild.com/carway/assets/img/logo/logo.png" alt="LOGO" />
+            <img className="h-10" src="https://live.themewild.com/carway/assets/img/logo/logo.png" alt="LOGO" />
           </div>
           <ul className='hidden md:flex text-xl'>
             <li>

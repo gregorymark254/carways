@@ -40,7 +40,7 @@ html {
 }
 
 /* hero section */
-.hero h1 {
+#hero h1 {
   display: flex;
   justify-content: left;
   align-items: center;
@@ -51,7 +51,7 @@ html {
   margin-left: 20%;
 }
 
-.hero p {
+#hero p {
   display: inline-block;
   justify-content: left;
   align-items: center;
@@ -60,8 +60,7 @@ html {
   margin-left: 20%;
 }
 
-.hero img {
-  background-image : linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5));
+#hero img {
   height : 70vh;
   object-fit : cover;
 }
@@ -195,6 +194,34 @@ html {
     left:0px;
     right: 0px;
     z-index: 10;
+  }
+    #hero h1 {
+    display: block;
+    justify-content: left;
+    align-items: center;
+    text-align: left;
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    margin-left: 10%;
+  }
+
+  #hero p {
+    display: block;
+    justify-content: left;
+    align-items: center;
+    text-align: justify;
+    font-size: 1em;
+    margin: 0 10%;
+  }
+
+  #hero img {
+    linear-gradient : rgba(0, 0, 0, 1),rgba(0, 0, 0, 1);
+    height : 80vh;
+    object-fit : cover;
+  }
+  #about{
+    font-size: 2em;
   }
 }
 
