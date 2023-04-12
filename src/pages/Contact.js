@@ -109,7 +109,7 @@ const Contact = () => {
       </section>
 
       <section>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7918394092844!2d36.791479515369225!3d-1.299708099052045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f111f703d7323%3A0xe6c47f88e5410cbc!2sCars%20Guru%20kenya!5e0!3m2!1sen!2ske!4v1679695846899!5m2!1sen!2ske" 
+        <iframe className="w-full h-96" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7918394092844!2d36.791479515369225!3d-1.299708099052045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f111f703d7323%3A0xe6c47f88e5410cbc!2sCars%20Guru%20kenya!5e0!3m2!1sen!2ske!4v1679695846899!5m2!1sen!2ske" 
           width="1900" height="450"  allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="map">
         </iframe>
       </section>
