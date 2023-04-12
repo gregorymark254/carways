@@ -14,7 +14,6 @@ const Nav = () => {
   };
 
   const { state: { userInfo }, dispatch } = BookingState()
-
   const signOut = () => {
     dispatch({type:'USER_SIGNOUT', })
     localStorage.removeItem('userInfo')
@@ -24,10 +23,10 @@ const Nav = () => {
     <div>
       <div className="container mx-auto py-4">
       <ToastContainer />
-        <nav className='flex justify-between items-center  px-4'>
+        <nav className='flex justify-between items-center px-4'>
           {/* Top Nav */}
           <div>
-            <img className="h-10" src="https://live.themewild.com/carway/assets/img/logo/logo.png" alt="LOGO" />
+            <img className="h-10 w-full" src="https://live.themewild.com/carway/assets/img/logo/logo.png" alt="LOGO" />
           </div>
           <ul className='hidden md:flex text-xl'>
             <li>
@@ -46,7 +45,7 @@ const Nav = () => {
               <a href="/contact" className="hover:text-[#4F5DEC] px-3 py-2">Contact</a>
             </li>
           </ul>
-          <div className="md:flex items-center space-x-8">
+          <div className="md:flex hidden items-center space-x-8">
             <div className="flex items-center space-x-4">
               <h3 className="bg-[#4F5DEC] text-white rounded-lg p-2"><FiPhoneCall/></h3>
               <div>
@@ -72,37 +71,38 @@ const Nav = () => {
           
           
           {/* Responsive Nav */}
-          {!navIsShown && (
+          {!navIsShown ? (
             <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth={1.5} stroke='currentColor' className='w-6 h-6 md:hidden' onClick={toggleNavIsShown} >
+              <path strokeLinecap='round' strokeLinejoin='round' d='M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25' />
+            </svg>
+            
+          ) : (          
+            <svg
+              xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth={1.5} stroke='currentColor' className='w-7 h-7 z-50' onClick={toggleNavIsShown} >
               <path strokeLinecap='round' strokeLinejoin='round' d='M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25' />
             </svg>
           )}
           {navIsShown && (
-            <div className='md:hidden absolute z-10 top-0 left-0 w-full bg-gray-100/90 text-black px-4 py-6'>
-              <div className='flex justify-between border-b-2 border-b-gray-600'>
-                <div className="flex items-center ">
-                  <h3>Gregory</h3>
-                </div>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth={1.5} stroke='currentColor' className='w-6 h-6' onClick={toggleNavIsShown} >
-                  <path  strokeLinecap='round'  strokeLinejoin='round'  d='M6 18L18 6M6 6l12 12'/>
-                </svg>
-              </div>
-              <ul className=' mb-4'>
+            <div className='md:hidden absolute z-10 top-12 left-0  w-full  text-black'>
+              <ul className='text-center mb-2 bg-white p-2 mx-4'>
                 <li>
-                  <a href="/" className="px-3 py-2 text-lg">Home</a>
+                  <a href="/" className="px-3 text-lg hover:text-blue-600"><b>Home</b></a>
                 </li>
                 <li>
-                  <a href="/cars" className=" px-3 py-2 text-lg">Cars</a>
+                  <a href="/cars" className="px-3 text-lg hover:text-blue-600"><b>Cars</b></a>
                 </li>
                 <li>
-                  <a href="/about" className=" px-3 py-2 text-lg">About</a>
+                  <a href="/about" className=" px-3 py-2 text-lg hover:text-blue-600"><b>About</b></a>
                 </li>
                 <li>
-                  <a href="/services" className="px-3 py-2 text-lg">Services</a>
+                  <a href="/services" className="px-3 py-2 text-lg hover:text-blue-600"><b>Services</b></a>
                 </li>
                 <li>
-                  <a href="/contact" className="px-3 py-2 text-lg">Contact</a>
+                  <a href="/contact" className="px-3 py-2 text-lg hover:text-blue-600"><b>Contact</b></a>
+                </li>
+                <hr />
+                <li className="p-2">
+                  <a href="/login" className="px-3 py-2 text-lg bg-[#4F5DEC] text-white rounded-lg hover:bg-blue-400"><b>Login</b></a>
                 </li>
               </ul>
             </div>

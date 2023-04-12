@@ -184,7 +184,7 @@ html {
 }
 
 
-/* Responsiveness */
+/* Responsiveness mobile */
 @media only screen and (max-width: 768px) {
   header {
     display: none;
@@ -197,3 +197,4 @@ html {
     z-index: 10;
   }
 }
+
