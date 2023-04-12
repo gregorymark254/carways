@@ -5,12 +5,12 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 const About = () => {
   return (
     <div>
-      <section class="mb-40">
-        <div class="intro">
-          <div class="w-full h-full overflow-hidden bg-fixed">
-            <div class="flex items-center h-full">
-              <div class="text-white ml-40">
-                <h1 class="md:text-6xl font-bold tracking-tight mb-12">About Us </h1>
+      <section className="mb-40">
+        <div className="intro">
+          <div className="w-full h-full overflow-hidden bg-fixed">
+            <div className="flex items-center h-full">
+              <div className="text-white ml-40">
+                <h1 className="md:text-6xl font-bold tracking-tight mb-12">About Us </h1>
                 <button className="bg-[#4F5DEC] px-5 py-2 rounded-lg">Home // About Us</button>
               </div>
             </div>
@@ -94,18 +94,18 @@ const About = () => {
           <h1><b>What Clients <span className="text-[#4F5DEC]">Say's</span></b></h1>
           <div className="header-divider"></div>
         </div>
-        <div class="grid gap-6 text-center md:grid-cols-3">
+        <div className="grid gap-6 text-center md:grid-cols-3">
           <div>
-            <div class="block rounded-lg ">
-              <div class="h-28 overflow-hidden rounded-t-lg bg-[#4F5DEC]"></div>
-              <div class="mx-auto -mt-12 w-24 overflow-hidden rounded-full border-2 border-white ">
+            <div className="block rounded-lg ">
+              <div className="h-28 overflow-hidden rounded-t-lg bg-[#4F5DEC]"></div>
+              <div className="mx-auto -mt-12 w-24 overflow-hidden rounded-full border-2 border-white ">
                 <img src="https://tecdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp" alt="" />
               </div>
-              <div class="p-6">
-                <h4 class="mb-4 text-2xl font-semibold">Maria Smantha</h4>
+              <div className="p-6">
+                <h4 className="mb-4 text-2xl font-semibold">Maria Smantha</h4>
                 <hr />
-                <p class="mt-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="inline-block h-7 w-7 pr-2" viewBox="0 0 24 24">
+                <p className="mt-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="inline-block h-7 w-7 pr-2" viewBox="0 0 24 24">
                     <path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275zm-13 0c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275z" />
                   </svg>
                   Lorem ipsum dolor sit amet eos adipisci, consectetur
@@ -116,16 +116,16 @@ const About = () => {
             </div>
           </div>
           <div>
-            <div class="block rounded-lg ">
-              <div class="h-28 overflow-hidden rounded-t-lg bg-[#4F5DEC]"></div>
-              <div class="mx-auto -mt-12 w-24 overflow-hidden rounded-full border-2 border-white ">
+            <div className="block rounded-lg ">
+              <div className="h-28 overflow-hidden rounded-t-lg bg-[#4F5DEC]"></div>
+              <div className="mx-auto -mt-12 w-24 overflow-hidden rounded-full border-2 border-white ">
                 <img src="https://tecdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp" alt="" />
               </div>
-              <div class="p-6">
-                <h4 class="mb-4 text-2xl font-semibold">Maria Smantha</h4>
+              <div className="p-6">
+                <h4 className="mb-4 text-2xl font-semibold">Maria Smantha</h4>
                 <hr />
-                <p class="mt-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="inline-block h-7 w-7 pr-2" viewBox="0 0 24 24">
+                <p className="mt-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="inline-block h-7 w-7 pr-2" viewBox="0 0 24 24">
                     <path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275zm-13 0c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275z" />
                   </svg>
                   Lorem ipsum dolor sit amet eos adipisci, consectetur
@@ -136,16 +136,16 @@ const About = () => {
             </div>
           </div>
           <div>
-            <div class="block rounded-lg ">
-              <div class="h-28 overflow-hidden rounded-t-lg bg-[#4F5DEC]"></div>
-              <div class="mx-auto -mt-12 w-24 overflow-hidden rounded-full border-2 border-white ">
+            <div className="block rounded-lg ">
+              <div className="h-28 overflow-hidden rounded-t-lg bg-[#4F5DEC]"></div>
+              <div className="mx-auto -mt-12 w-24 overflow-hidden rounded-full border-2 border-white ">
                 <img src="https://tecdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp" alt="" />
               </div>
-              <div class="p-6">
-                <h4 class="mb-4 text-2xl font-semibold">Maria Smantha</h4>
+              <div className="p-6">
+                <h4 className="mb-4 text-2xl font-semibold">Maria Smantha</h4>
                 <hr />
-                <p class="mt-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="inline-block h-7 w-7 pr-2" viewBox="0 0 24 24">
+                <p className="mt-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="inline-block h-7 w-7 pr-2" viewBox="0 0 24 24">
                     <path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275zm-13 0c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275z" />
                   </svg>
                   Lorem ipsum dolor sit amet eos adipisci, consectetur
@@ -167,7 +167,7 @@ const About = () => {
           <h1><b>Meet Our <span className="text-[#4F5DEC]">Team</span></b></h1>
           <div className="header-divider"></div>
         </div>
-        <div class="grid gap-x-6 lg:gap-x-12 md:grid-cols-4">
+        <div className="grid gap-x-6 lg:gap-x-12 md:grid-cols-4">
           <div className="bg-[#4F5DEC] text-white rounded-xl mb-20">
             <div className="p-4 -mt-20">
               <img className="rounded-xl" src="https://live.themewild.com/carway/assets/img/team/01.jpg" alt="person1" />

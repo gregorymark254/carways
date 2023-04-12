@@ -38,12 +38,12 @@ const Contact = () => {
 
   return (
     <main>
-      <section class="mb-20">
-        <div class="intro">
-          <div class="w-full h-full overflow-hidden bg-fixed">
-            <div class="flex items-center h-full">
-              <div class="text-white ml-40 md:ml-20">
-                <h1 class="md:text-6xl font-bold tracking-tight mb-12">Contact Us </h1>
+      <section className="mb-20">
+        <div className="intro">
+          <div className="w-full h-full overflow-hidden bg-fixed">
+            <div className="flex items-center h-full">
+              <div className="text-white ml-40 md:ml-20">
+                <h1 className="md:text-6xl font-bold tracking-tight mb-12">Contact Us </h1>
                 <button className="bg-[#4F5DEC] px-5 py-2 rounded-lg">Home // Contact Us</button>
               </div>
             </div>
