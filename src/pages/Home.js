@@ -7,7 +7,6 @@ import { MdToday } from "react-icons/md";
 import { TbRoad,TbSteeringWheel } from "react-icons/tb";
 import axios from '../api/api'
 
-const URL = '/api/v5/all'
 
 const Home = () => {
 
@@ -16,7 +15,7 @@ const Home = () => {
   //Geting cars from mongodb
   useEffect(() => {
     const fetchCars = async () => {
-      const results = await axios.get(URL)
+      const results = await axios.get('/api/v5/all')
       setCars(results.data)
     }
     fetchCars()

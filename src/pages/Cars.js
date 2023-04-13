@@ -12,11 +12,7 @@ const Cars = () => {
   const navigate = useNavigate()
   const [cars,setCars] = useState([])
 
-  const handleClick = (e) => {
-    e.preventDefault()
-    navigate("/booking")
-  }
-
+  
   //Geting cars from mongodb
   useEffect(() => {
     const fetchCars = async () => {
@@ -24,9 +20,15 @@ const Cars = () => {
       setCars(results.data)
     }
     fetchCars()
-},[])
-  
+  },[])
 
+
+  const handleClick = async (e) => {
+    e.preventDefault()
+    navigate("/booking")
+  }
+
+  
   return (
     <div className="bg-[#F0F0F0]">
       {/* intro */}
@@ -70,38 +72,37 @@ const Cars = () => {
 
         <section>
           <div className="flex flex-wrap items-center gap-8 mb-20">
-            {
-              cars.length > 0 ? (
-                cars.map((cars) => (
-                  <div key={cars._id} className="bg-white p-4 rounded-lg">
-                    <img className="rounded-xl h-72 object-fit" src={cars.src} alt="car1" />
-                    <div>
-                      <div className="flex justify-between p-3">
-                        <h3><b>{cars.title}</b></h3>
-                        <span>5.0</span>
+            {cars.length > 0 ? (
+              cars.map((cars) => (
+                <div key={cars._id} className="bg-white p-4 rounded-lg">
+                  <img className="rounded-xl h-72 object-fit" src={cars.src} alt="car1" />
+                  <div>
+                    <div className="flex justify-between p-3">
+                      <h3><b>{cars.title}</b></h3>
+                      <span>5.0</span>
+                    </div>
+                    <div className="p-2">
+                      <div className="flex flex-wrap items-center justify-between mb-4">
+                        <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaCarAlt/></span><h5>Model: 2020</h5></div>
+                        <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><IoPeople/></span><h5>4 peolpe</h5></div>
+                        <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaGasPump/></span><h5>Hybrid</h5></div>
                       </div>
-                      <div className="p-2">
-                        <div className="flex flex-wrap items-center justify-between mb-4">
-                          <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaCarAlt/></span><h5>Model: 2020</h5></div>
-                          <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><IoPeople/></span><h5>4 peolpe</h5></div>
-                          <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaGasPump/></span><h5>Hybrid</h5></div>
-                        </div>
-                        <div className="flex flex-wrap items-center justify-between">
-                          <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><TbRoad/></span><h5>10.15km/1-litre</h5></div>
-                          <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><TbSteeringWheel/></span><h5>Automatic</h5></div>
-                        </div>
+                      <div className="flex flex-wrap items-center justify-between">
+                        <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><TbRoad/></span><h5>10.15km/1-litre</h5></div>
+                        <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><TbSteeringWheel/></span><h5>Automatic</h5></div>
                       </div>
-                      <hr />
-                      <div className="flex flex-wrap items-center space-x-3 justify-between py-2">
-                        <h4><span className="text-xl text-[#4F5DEC]">{cars.amount}</span>/day</h4>
-                        <div className="flex items-center space-x-3 mt-2">
-                          <span className="bg-[#4f5dec3d] text-[#4F5DEC] p-2 rounded-lg"><FaRegHeart/></span>
-                          <button onClick={handleClick} className="bg-[#4F5DEC] text-white px-4 py-2 rounded-lg">Rent Now</button>
-                        </div>
+                    </div>
+                    <hr />
+                    <div className="flex flex-wrap items-center space-x-3 justify-between py-2">
+                      <h4><span className="text-xl text-[#4F5DEC]">{cars.amount}</span>/day</h4>
+                      <div className="flex items-center space-x-3 mt-2">
+                        <span className="bg-[#4f5dec3d] text-[#4F5DEC] p-2 rounded-lg"><FaRegHeart/></span>
+                        <button onClick={handleClick} className="bg-[#4F5DEC] text-white px-4 py-2 rounded-lg">Rent Now</button>
                       </div>
                     </div>
                   </div>
-                ))
+                </div>
+              ))
               ) : (
                 <div>
                   <span>NO DATA</span>
