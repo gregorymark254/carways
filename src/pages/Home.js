@@ -7,7 +7,7 @@ import { MdToday } from "react-icons/md";
 import { TbRoad,TbSteeringWheel } from "react-icons/tb";
 import axios from '../api/api'
 
-const URL = '/api/v5'
+const URL = '/api/v5/all'
 
 const Home = () => {
 
