@@ -1,14 +1,27 @@
-import React from 'react'
+import React,{ useEffect,useState } from 'react'
 import 'tw-elements';
 import { IoCheckmarkCircleOutline,IoPeople } from "react-icons/io5";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { FaRegHeart,FaRegUserCircle,FaCarAlt,FaGasPump } from "react-icons/fa";
 import { MdToday } from "react-icons/md";
 import { TbRoad,TbSteeringWheel } from "react-icons/tb";
-import carData from "../Booking/CarData"
+import axios from '../api/api'
 
+const URL = '/api/v5/all'
 
 const Home = () => {
+
+  const [cars,setCars] = useState([])
+
+  //Geting cars from mongodb
+  useEffect(() => {
+    const fetchCars = async () => {
+      const results = await axios.get(URL)
+      setCars(results.data)
+    }
+    fetchCars()
+  })
+
   return (
     <div>
       {/* hero section */}
@@ -208,7 +221,7 @@ const Home = () => {
           </div>
           <div className="flex flex-wrap justify-center items-center gap-8 mb-20">
             {
-              carData.map((cars) => (
+              cars.map((cars) => (
                 <div key={cars.id}>
                   <img className="rounded-xl h-80" src={cars.src} alt="cars" />
                   <div>

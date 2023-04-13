@@ -73,7 +73,7 @@ const Login = () => {
               <button className="px-4 py-2 bg-[#4F5DEC] text-white rounded-xl">Login</button>
             </form>
             <br />
-            <span>Don't have an account? <a href="/register"><u>Register Here</u></a></span>
+            <span>Don't have an account? <a href="/register" className="text-blue-600"><u>Register Here</u></a></span>
           </div>
         </div>
       </div>

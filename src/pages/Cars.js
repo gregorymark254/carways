@@ -1,18 +1,30 @@
-import React from 'react'
-import carData from "../Booking/CarData"
+import React, { useEffect,useState } from 'react'
 import { FaRegHeart,FaCarAlt,FaGasPump } from "react-icons/fa";
 import { TbRoad,TbSteeringWheel } from "react-icons/tb";
 import { IoPeople } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom'
+import axios from '../api/api'
+
+const URL = '/api/v5/all'
 
 const Cars = () => {
 
   const navigate = useNavigate()
+  const [cars,setCars] = useState([])
 
   const handleClick = (e) => {
     e.preventDefault()
     navigate("/booking")
   }
+
+  //Geting cars from mongodb
+  useEffect(() => {
+    const fetchCars = async () => {
+      const results = await axios.get(URL)
+      setCars(results.data)
+    }
+    fetchCars()
+  })
   
 
   return (
@@ -59,8 +71,8 @@ const Cars = () => {
         <section>
           <div className="flex flex-wrap items-center gap-8 mb-20">
             {
-              carData.length > 0 ? (
-                carData.map((cars) => (
+              cars.length > 0 ? (
+                cars.map((cars) => (
                   <div key={cars.id} className="bg-white p-4 rounded-lg">
                     <img className="rounded-xl h-72 object-fit" src={cars.src} alt="car1" />
                     <div>

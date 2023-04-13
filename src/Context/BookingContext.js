@@ -1,16 +1,11 @@
 import React, { createContext,useReducer,useContext } from 'react'
-import carData from '../Booking/CarData'
+
 
 const Booking = createContext()
 
 const BookingContext = ({children}) => {
 
-  const product = {
-    carData
-  }
-
   const initialState = {
-    product,
     booking :  [],
     userInfo : localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')) : null
   }
