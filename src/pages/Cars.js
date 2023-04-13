@@ -24,7 +24,7 @@ const Cars = () => {
       setCars(results.data)
     }
     fetchCars()
-  })
+},[])
   
 
   return (
@@ -73,7 +73,7 @@ const Cars = () => {
             {
               cars.length > 0 ? (
                 cars.map((cars) => (
-                  <div key={cars.id} className="bg-white p-4 rounded-lg">
+                  <div key={cars._id} className="bg-white p-4 rounded-lg">
                     <img className="rounded-xl h-72 object-fit" src={cars.src} alt="car1" />
                     <div>
                       <div className="flex justify-between p-3">

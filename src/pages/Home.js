@@ -7,7 +7,7 @@ import { MdToday } from "react-icons/md";
 import { TbRoad,TbSteeringWheel } from "react-icons/tb";
 import axios from '../api/api'
 
-const URL = '/api/v5/all'
+const URL = '/api/v5'
 
 const Home = () => {
 
@@ -20,7 +20,7 @@ const Home = () => {
       setCars(results.data)
     }
     fetchCars()
-  })
+  },[])
 
   return (
     <div>
@@ -222,7 +222,7 @@ const Home = () => {
           <div className="flex flex-wrap justify-center items-center gap-8 mb-20">
             {
               cars.map((cars) => (
-                <div key={cars.id}>
+                <div key={cars._id}>
                   <img className="rounded-xl h-80" src={cars.src} alt="cars" />
                   <div>
                     <div className="flex justify-between p-3">
