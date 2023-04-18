@@ -218,11 +218,11 @@ const Home = () => {
             <h1><b>Featured <span className="text-[#4F5DEC]">Cars</span></b></h1>
             <div className="header-divider"></div>
           </div>
-          <div className="flex flex-wrap justify-center items-center gap-8 mb-20">
+          <div className="flex flex-wrap justify-evenly items-center gap-8 mb-20">
             {
               cars.map((cars) => (
                 <div key={cars._id}>
-                  <img className="rounded-xl h-80" src={cars.src} alt="cars" />
+                  <img className="rounded-xl" width={353} height={235} src={cars.src} alt="cars" />
                   <div>
                     <div className="flex justify-between p-3">
                       <h3><b>{cars.title}</b></h3>

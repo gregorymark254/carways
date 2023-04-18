@@ -21,7 +21,7 @@ const Cars = () => {
     }
     fetchCars()
   },[])
-
+ 
 
   const handleClick = async (e) => {
     e.preventDefault()
@@ -71,11 +71,11 @@ const Cars = () => {
         </section>
 
         <section>
-          <div className="flex flex-wrap items-center gap-8 mb-20">
+          <div className="flex flex-wrap items-center justify-evenly gap-8 mb-20">
             {cars.length > 0 ? (
               cars.map((cars) => (
                 <div key={cars._id} className="bg-white p-4 rounded-lg">
-                  <img className="rounded-xl h-72 object-fit" src={cars.src} alt="car1" />
+                  <img className="rounded-xl" width={353} height={235}  src={cars.src} alt="car1" />
                   <div>
                     <div className="flex justify-between p-3">
                       <h3><b>{cars.title}</b></h3>
