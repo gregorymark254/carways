@@ -8,10 +8,10 @@ const Footer = () => {
     <footer>
       <section className="bg-black text-white">
         <div className="container mx-auto py-4">
-          <div className="md:grid grid-cols-4 gap-5">
+          <div className="flex flex-wrap justify-between gap-10 ">
             <div className="space-y-4 p-4">
               <img className="h-12" src="https://live.themewild.com/carway/assets/img/logo/logo-light.png" alt="LOGO" />
-              <p>We are many variations of passages available but the majority have suffered alteration in some form by injected humour words believable.</p>
+              <p>We are many variations of passages available <br />but the majority have suffered alteration in <br />some form by injected humour words believable.</p>
               <div className="flex items-center space-x-4">
                 <h3 className="bg-[#4F5DEC] text-white rounded-lg p-2"><FiPhoneCall/></h3>
                 <div>
@@ -55,13 +55,13 @@ const Footer = () => {
               <div className="footer-widget">
                 <h2>Newsletter</h2>
               </div>
-              <p>Subscribe Our Newsletter To Get Latest Update And News</p>
+              <p>Subscribe Our Newsletter <br /> To Get Latest Update And News</p>
               <div>
                 <form action="">
                   <input 
                     type="email" 
                     placeholder="Your Email"
-                    className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
+                    className="block px-2 py-3 mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
                   />
                   <button className="bg-[#4F5DEC] text-white px-5 py-2 rounded-lg flex items-center">Send Message &nbsp;&nbsp;<span><MdSend/></span></button>
                 </form>

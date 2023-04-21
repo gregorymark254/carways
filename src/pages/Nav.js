@@ -1,9 +1,10 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { FaRegUserCircle } from "react-icons/fa";
 import { FiPhoneCall } from "react-icons/fi";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BookingState } from '../Context/BookingContext'
+import { useNavigate } from 'react-router-dom'
 
 
 const Nav = () => {
@@ -13,10 +14,12 @@ const Nav = () => {
     setnavIsShown((navIsShown) => !navIsShown);
   };
 
+  const navigate = useNavigate()
   const { state: { userInfo }, dispatch } = BookingState()
   const signOut = () => {
     dispatch({type:'USER_SIGNOUT', })
     localStorage.removeItem('userInfo')
+    navigate("/")
   }
 
   return (

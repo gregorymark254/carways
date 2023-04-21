@@ -4,6 +4,7 @@ const Unathorised = () => {
   return (
     <div>
       Unathorised
+      <a href="/">Go Back</a>
     </div>
   )
 }

@@ -6,6 +6,8 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Footer from "./pages/Footer";
+import Missing from "./pages/Missing"
+import Unathorised from "./pages/Unathorised"
 
 import Login from "./Account/Login"
 import Register from "./Account/Register"
@@ -27,6 +29,7 @@ function App() {
         <Route path="/register" element={<Register/>} />
         <Route path="/settings" element={<Settings/>} />
         <Route path="/admin" element={<Admin/>} />
+        <Route path="/unauthorised" element={<Unathorised/>} />
 
         <Route path="/booking" element={<Booking/>} />
         <Route path="/checkout" element={<CheckOut/>} />
@@ -37,6 +40,8 @@ function App() {
         <Route path="/about" element={<About/>} />
         <Route path="/services" element={<Services/>} />
         <Route path="/contact" element={<Contact/>} />
+
+        <Route path="*" element={<Missing/>} />
       </Routes>
       <Footer/>
     </main>

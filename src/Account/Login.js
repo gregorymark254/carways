@@ -29,9 +29,9 @@ const Login = () => {
       })
       dispatch({type:'USER_SIGNIN', payload:response.data})
       localStorage.setItem('userInfo', JSON.stringify(response.data))
+      const roles = response?.data?.roles
+      console.log(roles)
       toast.success("Login Succesful")
-      navigate('/')
-      console.log(response?.data)
     } catch (error) {
       console.log(error)
       toast.error("Wrong username or password")
@@ -43,6 +43,12 @@ const Login = () => {
       navigate(redirect)
     }
   },[navigate, redirect, userInfo])
+
+  // useEffect(() => {
+  //   if (roles !== 2001) {
+  //     navigate("/unauthorised")
+  //   }
+  // },[navigate,roles])
 
   return (
     <div className="bg-blue-100">
