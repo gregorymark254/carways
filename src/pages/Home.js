@@ -321,10 +321,10 @@ const Home = () => {
             <div className="header-divider"></div>
           </div>
           
-          <div className="md:grid grid-cols-3 gap-5">
+          <div className="flex flex-wrap items-center justify-center gap-10">
             <div className='py-4'>
               <div>
-                <img className="rounded-xl" src="https://live.themewild.com/carway/assets/img/blog/01.jpg" alt="blog" />
+                <img width={400} className="rounded-xl" src="https://live.themewild.com/carway/assets/img/blog/01.jpg" alt="blog" />
               </div>
               <div className="flex flex-wrap items-center justify-between py-3">
                 <div className="flex items-center space-x-2">
@@ -338,7 +338,7 @@ const Home = () => {
               </div>
               <hr />
               <div className="py-4">
-                <h3><b>There are many variations of the passages available suffered</b></h3>
+                <h3><b>There are many variations of <br /> the passages available suffered</b></h3>
               </div>
               <div>
                 <button className="flex items-center space-x-2 bg-[#4F5DEC] text-white px-5 py-3 rounded-lg">Read More <h3><IoIosArrowRoundForward/></h3></button>
@@ -346,7 +346,7 @@ const Home = () => {
             </div>
             <div className='py-4'>
               <div>
-                <img className="rounded-xl" src="https://live.themewild.com/carway/assets/img/blog/02.jpg" alt="blog" />
+                <img width={400} className="rounded-xl" src="https://live.themewild.com/carway/assets/img/blog/02.jpg" alt="blog" />
               </div>
               <div className="flex flex-wrap items-center justify-between py-3">
                 <div className="flex items-center space-x-2">
@@ -360,7 +360,7 @@ const Home = () => {
               </div>
               <hr />
               <div className="py-4">
-                <h3><b>There are many variations of the passages available suffered</b></h3>
+                <h3><b>There are many variations of <br /> the passages available suffered</b></h3>
               </div>
               <div>
                 <button className="flex items-center space-x-2 bg-[#4F5DEC] text-white px-5 py-3 rounded-lg">Read More <h3><IoIosArrowRoundForward/></h3></button>
@@ -368,7 +368,7 @@ const Home = () => {
             </div>
             <div className='py-4'>
               <div>
-                <img className="rounded-xl" src="https://live.themewild.com/carway/assets/img/blog/03.jpg" alt="blog" />
+                <img width={400} className="rounded-xl" src="https://live.themewild.com/carway/assets/img/blog/03.jpg" alt="blog" />
               </div>
               <div className="flex flex-wrap items-center justify-between py-3">
                 <div className="flex items-center space-x-2">
@@ -382,7 +382,7 @@ const Home = () => {
               </div>
               <hr />
               <div className="py-4">
-                <h3><b>There are many variations of the passages available suffered</b></h3>
+                <h3><b>There are many variations of <br /> the passages available suffered</b></h3>
               </div>
               <div>
                 <button className="flex items-center space-x-2 bg-[#4F5DEC] text-white px-5 py-3 rounded-lg">Read More <h3><IoIosArrowRoundForward/></h3></button>
