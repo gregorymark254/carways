@@ -1,9 +1,8 @@
-import React, { useState ,useContext }  from 'react'
+import React, { useState  }  from 'react'
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axios from "../api/api"
-import { Store } from '../Context/Store'
 
 const URL = "/api/v3/add"
 
@@ -52,8 +51,6 @@ const Booking = () => {
 
  
 
-  const { state } = useContext(Store)
-  const { cart:{cartItems} } = state
 
   return (
     <div className="bg-[#F0F0F0]">
@@ -77,7 +74,7 @@ const Booking = () => {
           <div className="md:flex flex-wrap justify-center gap-10 mb-20">
             <div className="bg-white p-6 rounded-xl xl:w-1/4 mb-3">
               <h4><b>Booking Car Type</b></h4>
-              {
+              {/* {
                 cartItems.map((cars) => (
                   <div>
                     <img className="w-30 rounded-lg" src={cars.src} alt="selected car" />
@@ -85,7 +82,7 @@ const Booking = () => {
                     <h5><span className="text-blue-700">{cars.amount}</span>/month</h5>
                   </div>
                 ))
-              }           
+              }            */}
               <br />
               <div>
                 <label htmlFor="">Your Perfect Car

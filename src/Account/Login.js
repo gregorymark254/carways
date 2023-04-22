@@ -29,8 +29,12 @@ const Login = () => {
       })
       dispatch({type:'USER_SIGNIN', payload:response.data})
       localStorage.setItem('userInfo', JSON.stringify(response.data))
-      const roles = response?.data?.roles
-      console.log(roles)
+      const roles = JSON.parse(response?.data?.roles)
+      if (roles === 2002) {
+        navigate("/admin")
+      } else {
+        navigate("/")
+      }
       toast.success("Login Succesful")
     } catch (error) {
       console.log(error)

@@ -26,14 +26,33 @@ const Checkout = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    const billingData ={
+      firstName,
+      lastName ,
+      email,
+      phone ,
+      address ,
+      address2 ,
+      city ,
+      state ,
+      zip : e.target.zip
+    }
+    const paymentData ={
+      cardName,
+      cardNumber,
+      expiryDate ,
+      cvv,
+      additionalNote
+    }
+    
     try {
-      await axios.post(URL,
-      JSON.stringify({firstName,lastName,email,phone,address,address2,city,state,zip,cardName,cardNumber,expiryDate,cvv,additionalNote}),
+      const response = await axios.post(URL, JSON.stringify({billingData,paymentData}),
     {
       headers : { 'Content-type' : 'application/json'},
       withCredentials : true
     });
     toast.success("Added Successfull")
+    console.log(response)
     navigate('/confirmBooking')
     } catch (error) {
       if (!error?.response) {
