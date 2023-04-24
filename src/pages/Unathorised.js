@@ -7,7 +7,7 @@ const Unathorised = () => {
         <div className="grid text-center place-content-center mt-52">
           <div>
             <h1>Unathorised</h1>
-            <span className="text-[#4F5DEC]"><a href="/home"><u>Home</u></a></span>
+            <span className="text-[#4F5DEC]"><a href="/"><u>Home</u></a></span>
           </div>
         </div>
       </div>

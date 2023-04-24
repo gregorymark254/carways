@@ -61,31 +61,32 @@ const Nav = () => {
               <a href="/cars" className="bg-[#4F5DEC] text-white py-3 px-5 rounded-lg">Explore</a>
               {userInfo ? (
                 <div className="relative" data-te-dropdown-ref>
-                <a className="flex items-center  px-3 py-2  transition duration-150 ease-in-out "
-                  href="/#"  id="dropdownMenuButton2" data-te-dropdown-toggle-ref aria-expanded="false" data-te-ripple-init data-te-ripple-color="light">
-                  {userInfo.email}
-                  <span className="ml-2 w-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5">
-                      <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
-                    </svg>
-                  </span>
-                </a>
-                <ul className="absolute w-full z-[1000] float-left  hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block" aria-labelledby="dropdownMenuButton2"data-te-dropdown-menu-ref>
-                  <li>
-                    <a className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100  "
-                      href="/profile"
-                      data-te-dropdown-item-ref>My profile</a>
-                  </li>
-                  <li>
-                    <a className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100"
-                      href="#logout"
-                      onClick={signOut}
-                      data-te-dropdown-item-ref>Log out</a>
-                  </li>
-                </ul>
-              </div>
-                ) 
-                : (<a href="/login" className="bg-[#4F5DEC] text-white rounded-lg p-3"><h3><FaRegUserCircle/></h3></a>)
+                  <a className="flex items-center  px-3 py-2  transition duration-150 ease-in-out "
+                    href="/#"  id="dropdownMenuButton2" data-te-dropdown-toggle-ref aria-expanded="false" data-te-ripple-init data-te-ripple-color="light">
+                    {userInfo.email}
+                    <span className="ml-2 w-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5">
+                        <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
+                      </svg>
+                    </span>
+                  </a>
+                  <ul className="absolute w-full z-[1000] float-left  hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block" aria-labelledby="dropdownMenuButton2"data-te-dropdown-menu-ref>
+                    <li>
+                      <a className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100  "
+                        href="/profile"
+                        data-te-dropdown-item-ref>My profile</a>
+                    </li>
+                    <li>
+                      <a className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100"
+                        href="#logout"
+                        onClick={signOut}
+                        data-te-dropdown-item-ref>Log out</a>
+                    </li>
+                  </ul>
+                </div>
+                ) : (                
+                  <a href="/login" className="bg-[#4F5DEC] text-white rounded-lg p-3"><h3><FaRegUserCircle/></h3></a>
+                )
               }
             </div>
             

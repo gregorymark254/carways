@@ -1,6 +1,45 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useNavigate, useParams } from "react-router-dom";
 
-const Settings = () => {
+
+const Profile = () => {
+
+  const [firstName,setFirstname] = useState('')
+  const [lastName,setLastname] = useState('')
+  const [email,setEmail] = useState('')
+  const [phone,setPhone] = useState('')
+  const navigate = useNavigate();
+  const { id } = useParams();
+
+  const getUserById = async () => {
+    const response = await axios.get(`https://carways-server.up.railway.app/api/v1/users/${id}`);
+    setFirstname(response.data.firstName);
+    setLastname(response.data.lastName);
+    setEmail(response.data.email);
+    setPhone(response.data.phone);
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.put(`https://carways-server.up.railway.app/api/v1/users/update/${id}`,{
+        firstName,
+        lastName,
+        email,
+        phone
+      });
+      navigate("/users");
+    } catch (error) {
+      console.log(error)
+    }
+  }
+ 
+  useEffect(() => {
+    getUserById();
+    // eslint-disable-next-line
+  }, []);
+
   return (
     <div>
       <div className="container mx-auto min-h-screen">
@@ -9,7 +48,7 @@ const Settings = () => {
           <hr />
         </div>
         <div className="p-4">
-          <form action="">
+          <form onSubmit={handleSubmit}>
             <div className="md:flex">
               <div className="mr-2">
                 <label htmlFor="">First Name
@@ -17,6 +56,8 @@ const Settings = () => {
                     type="text" 
                     placeholder="Your First Names"
                     required
+                    value={firstName}
+                    onChange = { (e) => setFirstname(e.target.value) }
                     className="block px-2 py-3 mb-4 w-full border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
                   />
                 </label>
@@ -27,6 +68,8 @@ const Settings = () => {
                     type="text" 
                     placeholder="Your Last Names"
                     required
+                    value={lastName}
+                    onChange = { (e) => setLastname(e.target.value) }
                     className="block px-2 py-3 mb-4 w-full border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
                   />
                 </label>
@@ -38,7 +81,8 @@ const Settings = () => {
                   <input 
                     type="email" 
                     placeholder="Your Email"
-                    required
+                    requiredvalue={email}
+                    onChange = { (e) => setEmail(e.target.value) }
                     className="block px-2 py-3 mb-4 w-full border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
                   />
                 </label>
@@ -49,6 +93,8 @@ const Settings = () => {
                     type="text" 
                     placeholder="Your Phone No."
                     required
+                    value={phone}
+                    onChange = { (e) => setPhone(e.target.value) }
                     className="block px-2 py-3 mb-4 w-full border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
                   />
                 </label>
@@ -64,4 +110,4 @@ const Settings = () => {
   )
 }
 
-export default Settings
+export default Profile

@@ -11,7 +11,7 @@ import Unathorised from "./pages/Unathorised"
 
 import Login from "./Account/Login"
 import Register from "./Account/Register"
-import Settings from "./Account/Settings"
+import Profile from "./Account/Profile"
 import Admin from "./Account/Admin"
 import Booking from "./Booking/Booking"
 import CheckOut from "./Booking/Checkout"
@@ -27,7 +27,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register/>} />
-        <Route path="/settings" element={<Settings/>} />
+        <Route path="/profile" element={<Profile/>} />
         <Route path="/admin" element={<Admin/>} />
         <Route path="/unauthorised" element={<Unathorised/>} />
 
