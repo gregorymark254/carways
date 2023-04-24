@@ -7,6 +7,7 @@ import { BookingState } from '../Context/BookingContext'
 import { useNavigate } from 'react-router-dom'
 
 
+
 const Nav = () => {
 
   const [navIsShown, setnavIsShown] = useState(false);
@@ -59,15 +60,30 @@ const Nav = () => {
               </div>
               <a href="/cars" className="bg-[#4F5DEC] text-white py-3 px-5 rounded-lg">Explore</a>
               {userInfo ? (
-                <div className="dropdown inline-block relative">
-                  <button title={userInfo.email} className=" text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center hover:text-[#de9631]">
-                    <span  onClick={signOut} className="mr-1">log Out</span>
-                    <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
-                  </button>
-                  <ul className="dropdown-menu absolute hidden text-gray-700 pt-1">
-                    <li><a href="#/" className="rounded-t bg-gray-200 hover:text-[#de9631] py-2 px-8 block whitespace-no-wrap">Sign Out</a></li>
-                  </ul>
-                </div>
+                <div className="relative" data-te-dropdown-ref>
+                <a className="flex items-center  px-3 py-2  transition duration-150 ease-in-out "
+                  href="/#"  id="dropdownMenuButton2" data-te-dropdown-toggle-ref aria-expanded="false" data-te-ripple-init data-te-ripple-color="light">
+                  {userInfo.email}
+                  <span className="ml-2 w-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5">
+                      <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
+                    </svg>
+                  </span>
+                </a>
+                <ul className="absolute w-full z-[1000] float-left  hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block" aria-labelledby="dropdownMenuButton2"data-te-dropdown-menu-ref>
+                  <li>
+                    <a className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
+                      href="/profile"
+                      data-te-dropdown-item-ref>My profile</a>
+                  </li>
+                  <li>
+                    <a className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
+                      href="#logout"
+                      onClick={signOut}
+                      data-te-dropdown-item-ref>Log out</a>
+                  </li>
+                </ul>
+              </div>
                 ) 
                 : (<a href="/login" className="bg-[#4F5DEC] text-white rounded-lg p-3"><h3><FaRegUserCircle/></h3></a>)
               }

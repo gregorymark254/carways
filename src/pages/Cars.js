@@ -23,8 +23,7 @@ const Cars = () => {
   },[])
  
 
-  const handleClick = async (e) => {
-    e.preventDefault()
+  const handleClick =  () => {
     navigate("/booking")
   }
 
@@ -97,7 +96,7 @@ const Cars = () => {
                       <h4><span className="text-xl text-[#4F5DEC]">{cars.amount}</span>/day</h4>
                       <div className="flex items-center space-x-3 mt-2">
                         <span className="bg-[#4f5dec3d] text-[#4F5DEC] p-2 rounded-lg"><FaRegHeart/></span>
-                        <button onClick={handleClick} className="bg-[#4F5DEC] text-white px-4 py-2 rounded-lg">Rent Now</button>
+                        <button onClick={() => handleClick()} className="bg-[#4F5DEC] text-white px-4 py-2 rounded-lg">Rent Now</button>
                       </div>
                     </div>
                   </div>
