@@ -35,7 +35,7 @@ const Checkout = () => {
       address2 ,
       city ,
       state ,
-      zip : e.target.zip
+      zip
     }
     const paymentData ={
       cardName,

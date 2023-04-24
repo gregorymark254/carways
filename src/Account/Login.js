@@ -29,8 +29,8 @@ const Login = () => {
       })
       dispatch({type:'USER_SIGNIN', payload:response.data})
       localStorage.setItem('userInfo', JSON.stringify(response.data))
-      const roles = JSON.parse(response?.data?.roles)
-      if (roles === 2002) {
+      const isAdmin = response?.data?.isAdmin
+      if (isAdmin === true) {
         navigate("/admin")
       } else {
         navigate("/")
@@ -48,11 +48,7 @@ const Login = () => {
     }
   },[navigate, redirect, userInfo])
 
-  // useEffect(() => {
-  //   if (roles !== 2001) {
-  //     navigate("/unauthorised")
-  //   }
-  // },[navigate,roles])
+
 
   return (
     <div className="bg-blue-100">

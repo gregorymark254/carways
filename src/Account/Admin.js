@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios";
-// import { Link } from "react-router-dom";
+import { useNavigate,useLocation } from "react-router-dom";
+import { BookingState } from '../Context/BookingContext'
 
 const Admin = () => {
 
   const [booking, setBooking] = useState([]);
   const [billing, setBilling] = useState([]);
+  const { state : { userInfo } } = BookingState()
+  const { search } = useLocation()
+  const redirectInUrl = new URLSearchParams(search).get('redirect')
+  const redirect = redirectInUrl ? redirectInUrl : '/login'
+  const navigate = useNavigate()
 
   const getBooking = async () => {
     const response = await axios.get("https://carways-server.up.railway.app/api/v3/all");
@@ -24,6 +30,19 @@ const Admin = () => {
   useEffect(() => {
     getBilling();
   }, []);
+
+  useEffect(() => {
+    if(!userInfo){
+      navigate(redirect)
+    }
+  },[navigate, redirect, userInfo])
+
+  useEffect(() => {
+    const storedItem = JSON.parse(localStorage.getItem("userInfo"));
+    if (storedItem && storedItem.isAdmin !== true) {
+      navigate("/unauthorised");
+    }
+  }, [navigate]);
 
   return (
     <div>
