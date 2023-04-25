@@ -382,7 +382,7 @@ const Home = () => {
               </div>
               <div className='py-4'>
                 <div>
-                  <img width={350} className="rounded-xl" src="https://live.themewild.com/carway/assets/img/blog/03.jpg" alt="blog" />
+                  <img width={300} className="rounded-xl" src="https://live.themewild.com/carway/assets/img/blog/03.jpg" alt="blog" />
                 </div>
                 <div className="flex flex-wrap items-center space-x-5 py-3">
                   <div className="flex items-center space-x-2">
