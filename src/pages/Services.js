@@ -3,7 +3,7 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 
 const Services = () => {
   return (
-    <div>
+    <main>
       {/* intro */}
       <section className="mb-10">
         <div className="intro">
@@ -84,7 +84,7 @@ const Services = () => {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   )
 }
 
