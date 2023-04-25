@@ -54,8 +54,12 @@ const Login = () => {
     <div className="bg-blue-100">
       <div className="container mx-auto min-h-screen">
         <div className="flex items-center justify-center">
-          <div className="bg-white p-4 mt-20 rounded-lg">
+          <div className="bg-white p-8 mt-20 rounded-lg">
             <form onSubmit={handleSubmit}>
+              <div className="text-center p-4 space-y-2">
+                <h2>Welcome Back !</h2>
+                <p>Log in to your account.</p>
+              </div>
               <label htmlFor="">
                 <input 
                   type="email" 
