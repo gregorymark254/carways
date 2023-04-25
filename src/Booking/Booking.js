@@ -10,7 +10,11 @@ const URL = "/api/v3/add"
 
 const Booking = () => {
 
-  const [car,setCar] = useState('')
+  const { state : { cart : { cartItems } } } = BookingState()
+  const item = localStorage.getItem('cartItems');
+  const parsedItem = JSON.parse(item)[0];
+
+  const [car,setCar] = useState(parsedItem)
   const [pickLocation,setPicklocation] = useState('')
   const [dropLocation,setDroplocation] = useState('')
   const [pickDate,setPickdate] = useState('')
@@ -23,13 +27,11 @@ const Booking = () => {
   const [services,setService] = useState('')
   const navigate = useNavigate();
 
-  const { state : { cart : { cartItems } } } = BookingState()
- 
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post(URL,
+      const response = await axios.post(URL,
       JSON.stringify({car,pickLocation,dropLocation,pickDate,pickTime,dropDate,dropTime,duration,quantity,people,services}),
     {
       headers : { 'Content-type' : 'application/json'},
@@ -37,6 +39,7 @@ const Booking = () => {
     });
     toast.success("Added Successful")
     navigate('/checkout')
+    console.log(response)
     } catch (error) {
       if (!error?.response) {
         toast.error('No Server Response');
@@ -95,8 +98,8 @@ const Booking = () => {
                     required
                     placeholder="Type car,model,brand"
                     className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
-                    value={car}
-                    onChange = {(e) => setCar(e.target.value)}
+                    value={car.title}
+                    onChange = {(e) => setCar({...car,title: e.target.value})}
                   />
                 </label>
               </div>

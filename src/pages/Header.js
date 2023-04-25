@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className="bg-[black] text-white">
       <div className="container mx-auto p-4">
-        <div className="flex flex-wrap items-center justify-between">
+        <div className="flex flex-wrap items-center justify-around">
           <div className="flex gap-6">
             <div className="flex flex-wrap items-center space-x-2">
               <h3 className="text-[#4649FF]"><MdMailOutline/></h3>
