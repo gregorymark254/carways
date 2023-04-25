@@ -2,8 +2,9 @@ import React, { useEffect,useState } from 'react'
 import { FaRegHeart,FaCarAlt,FaGasPump } from "react-icons/fa";
 import { TbRoad,TbSteeringWheel } from "react-icons/tb";
 import { IoPeople } from "react-icons/io5";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,useParams } from 'react-router-dom'
 import axios from '../api/api'
+import { BookingState } from '../Context/BookingContext'
 
 
 const URL = '/api/v5/all'
@@ -11,7 +12,9 @@ const URL = '/api/v5/all'
 const Cars = () => {
 
   const navigate = useNavigate()
-  const [cars,setCars] = useState([])
+  const [cars,setCars] = useState({})
+  const { state : { cart }, dispatch } = BookingState()
+
 
   
   //Geting cars from mongodb
@@ -24,7 +27,19 @@ const Cars = () => {
   },[])
  
 
-  const handleClick =  () => {
+  const handleClick = async () => {
+    const existItem = cart.cartItems.find((x) => x._id === cars._id);
+    const quantity = existItem ? existItem.quantity + 1 : 1;
+    const { data } = await axios.get(`http://localhost:4000/api/v5/all/64468a7acb4d8611e82202c0`);
+    if (data.isAvailable < quantity) {
+      window.alert('Sorry. Product is out of stock');
+      return;
+    }
+    dispatch({
+      type: 'CART_ADD_ITEM',
+      payload: { ...cars.__id, quantity },
+    });
+    console.log(data)
     navigate("/booking")
   }
 
