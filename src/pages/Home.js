@@ -22,7 +22,7 @@ const Home = () => {
   },[])
 
   return (
-    <div>
+    <main>
       {/* hero section */}
       <section className="relative overflow-hidden ">
         <main id="carouselExampleCaptions" className="relative " data-te-carousel-init data-te-carousel-slide>
@@ -64,250 +64,263 @@ const Home = () => {
         </main>
       </section>
 
-
-      {/* body */}
-      <main className="container mx-auto p-4">
-        {/* car search */}
-        <section className="flex items-center justify-center ">
-          <div className="shadow-md shadow-slate-500 p-6 rounded-lg w-full">
-            <div className="mb-8">
-              <h2><b>Let's Find Your Perfect Car</b></h2>
-            </div>
-            <div>
-              <form action="/cars">
-                <div className="xl:flex">
-                  <div className="w-full p-1">
-                    <label htmlFor="">Your Perfect Car
-                      <input 
-                        type="text" 
-                        required
-                        placeholder="Type car,model,brand"
-                        className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
-                      />
-                    </label>
+      {/* car search */}
+      <section>
+        <div className="container mx-auto p-4">
+          <div className="flex flex-wrap items-center justify-center">
+            <div className="shadow-md shadow-slate-500 p-6 rounded-lg w-full md:full lg:w-3/4">
+              <div className="mb-8 p-2">
+                <h2><b>Let's Find Your Perfect Car</b></h2>
+              </div>
+              <div>
+                <form action="/cars">
+                  <div className="flex flex-wrap ">
+                    <div className="p-1 md:w-2/6">
+                      <label htmlFor="">Your Perfect Car
+                        <input 
+                          type="text" 
+                          required
+                          placeholder="Type car,model,brand"
+                          className="block px-2 w-full py-3 mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
+                        />
+                      </label>
+                    </div>
+                    <div className="p-1 md:w-2/6">
+                      <label htmlFor="">Pick Up Location
+                        <input
+                          type="text" 
+                          required
+                          placeholder="Type city,airport,station"
+                          className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
+                        />
+                      </label>
+                    </div>
+                    <div className="p-1 md:w-2/6">
+                      <label htmlFor="">Drop Off Location
+                        <input 
+                          type="text" 
+                          required
+                          placeholder="Type city,airport,station"
+                          className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
+                        />
+                      </label>
+                    </div>
                   </div>
-                  <div className="w-full p-1">
-                    <label htmlFor="">Pick Up Location
-                      <input
-                        type="text" 
-                        required
-                        placeholder="Type city,airport,station"
-                        className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
-                      />
-                    </label>
+                  <div className="flex flex-wrap">
+                    <div className="p-1 w-full md:w-1/6">
+                      <label htmlFor="">Pick Up Date
+                        <input 
+                          type="date" 
+                          required
+                          className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
+                        />
+                      </label>
+                    </div>
+                    <div className="p-1 w-full md:w-1/6">
+                      <label htmlFor="">Pick Up Time
+                        <input 
+                          type="time" 
+                          required
+                          className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
+                        />
+                      </label>
+                    </div>
+                    <div className="p-1 w-full md:w-1/6">
+                      <label htmlFor="">Drop Up Date
+                        <input 
+                          type="date" 
+                          required
+                          className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
+                        />
+                      </label>
+                    </div>
+                    <div className="p-1 w-full md:w-1/6">
+                      <label htmlFor="">Drop Up Time
+                        <input 
+                          type="time" 
+                          required
+                          className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
+                        />
+                      </label>
+                    </div>
+                    <div className="items-center flex p-1 w-full md:w-1/3">
+                      <button className="flex items-center justify-center space-x-2 bg-[#4F5DEC] text-white px-5 py-3 rounded-lg w-full">Find Your Car<h3><IoIosArrowRoundForward/></h3></button>
+                    </div>
                   </div>
-                  <div className="w-full p-1">
-                    <label htmlFor="">Drop Off Location
-                      <input 
-                        type="text" 
-                        required
-                        placeholder="Type city,airport,station"
-                        className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
-                      />
-                    </label>
-                  </div>
-                </div>
-                <div className="xl:flex">
-                  <div className="w-full p-1">
-                    <label htmlFor="">Pick Up Date
-                      <input 
-                        type="date" 
-                        required
-                        className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
-                      />
-                    </label>
-                  </div>
-                  <div className="w-full p-1">
-                    <label htmlFor="">Pick Up Time
-                      <input 
-                        type="time" 
-                        required
-                        className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
-                      />
-                    </label>
-                  </div>
-                  <div className="w-full p-1">
-                    <label htmlFor="">Drop Up Date
-                      <input 
-                        type="date" 
-                        required
-                        className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
-                      />
-                    </label>
-                  </div>
-                  <div className="w-full p-1">
-                    <label htmlFor="">Drop Up Time
-                      <input 
-                        type="time" 
-                        required
-                        className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
-                      />
-                    </label>
-                  </div>
-                  <div className="items-center flex p-1 w-full">
-                    <button className="flex items-center justify-center space-x-2 bg-[#4F5DEC] text-white px-5 py-3 rounded-lg w-full">Find Your Car<h3><IoIosArrowRoundForward/></h3></button>
-                  </div>
-                </div>
-              </form>
+                </form>
+              </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
 
         {/* artcile */}
-        <section className="flex flex-wrap xl:flex-wrap items-center xl:justify-center gap-10 my-20">
-          <div className="text-center space-y-4 shadow-xl p-8">
-            <div className="flex justify-center text-justify items-center">
-              <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/quality-service.svg" alt="icon" />
+        <section>
+          <div className="container mx-auto p-4">
+            <div className="flex flex-wrap xl:flex-wrap items-center xl:justify-center gap-10 my-20">
+              <div className="text-center space-y-4 shadow-xl p-8 rounded-lg">
+                <div className="flex justify-center text-justify items-center">
+                  <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/quality-service.svg" alt="icon" />
+                </div>
+                <h3>Quality Service</h3>
+                <p>There are many variations of passages <br /> available but the majority have suffered <br />alteration in some form.</p>
+              </div>
+              <div className="text-center space-y-4 shadow-xl p-8 rounded-lg">
+                <div className="flex justify-center text-justify items-center">
+                  <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/booking.svg" alt="icon" />
+                </div>
+                <h3>Online Booking</h3>
+                <p>There are many variations of passages <br /> available but the majority have suffered<br /> alteration in some form.</p>
+              </div>
+              <div className="text-center space-y-4 shadow-xl p-8 rounded-lg">
+                <div className="flex justify-center text-justify items-center">
+                  <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/money.svg" alt="icon" />
+                </div>
+                <h3>Affordable Pricing</h3>
+                <p>There are many variations of passages <br /> available but the majority have suffered <br /> alteration in some form.</p>
+              </div>
             </div>
-            <h3>Quality Service</h3>
-            <p>There are many variations of passages <br /> available but the majority have suffered <br />alteration in some form.</p>
-          </div>
-          <div className="text-center space-y-4 shadow-xl p-8">
-            <div className="flex justify-center text-justify items-center">
-              <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/booking.svg" alt="icon" />
-            </div>
-            <h3>Online Booking</h3>
-            <p>There are many variations of passages <br /> available but the majority have suffered<br /> alteration in some form.</p>
-          </div>
-          <div className="text-center space-y-4 shadow-xl p-8">
-            <div className="flex justify-center text-justify items-center">
-              <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/money.svg" alt="icon" />
-            </div>
-            <h3>Affordable Pricing</h3>
-            <p>There are many variations of passages <br /> available but the majority have suffered <br /> alteration in some form.</p>
           </div>
         </section>
 
         {/* about */}
-        <section className="xl:flex items-center mb-28 gap-20">
-          <div className="w-full mb-8">
-            <div className="border-8 p-4 justify-center flex rounded-xl border-[#4F5DEC]">
-              <img className="rounded-lg" src="https://live.themewild.com/carway/assets/img/about/01.jpg" alt="" />
-            </div>
-          </div>
-          <div className="w-full space-y-5 mb-8">
-            <h3 className="text-[#4F5DEC]">ABOUT US</h3>
-            <h1 id="about"><b>We Provide Quality <span className="text-[#4F5DEC]">Car Rental</span> Services</b></h1>
-            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-            <div className="space-y-4">  
-              <div className="flex items-baseline space-x-3">
-                <p className="text-[#4F5DEC] font-bold"><IoCheckmarkCircleOutline/></p>
-                <p>At vero eos et accusamus et iusto odi</p>
+        <section>
+          <div className="container mx-auto p-4">
+            <div className="flex flex-wrap items-center justify-center my-20 gap-20">
+              <div>
+                <div className="border-8 p-4 justify-center rounded-xl border-[#4F5DEC]">
+                  <img className="rounded-lg" width={400} height={400} src="https://live.themewild.com/carway/assets/img/about/01.jpg" alt="" />
+                </div>
               </div>
-              <div className="flex items-baseline space-x-3">
-                <h5 className="text-[#4F5DEC] font-bold"><IoCheckmarkCircleOutline/></h5>
-                <p>Established fact that a reader will be distracted</p>
+              <div className="space-y-5 p-2">
+                <h3 className="text-[#4F5DEC]">ABOUT US</h3>
+                <h1><b>We Provide Quality <span className="text-[#4F5DEC]">Car <br /> Rental</span> Services</b></h1>
+                <p>There are many variations of passages of Lorem Ipsum available, but the <br /> majority have suffered alteration in some form, by injected humour, or <br /> randomised words which don't look even slightly believable.</p>
+                <div className="space-y-4">  
+                  <div className="flex items-center space-x-3">
+                    <p className="text-[#4F5DEC] font-bold"><IoCheckmarkCircleOutline/></p>
+                    <p>At vero eos et accusamus et iusto odi</p>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <h5 className="text-[#4F5DEC] font-bold"><IoCheckmarkCircleOutline/></h5>
+                    <p>Established fact that a reader will be distracted</p>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <h5 className="text-[#4F5DEC] font-bold"><IoCheckmarkCircleOutline/></h5>
+                    <p>Sed ut perspiciatis unde omnis iste natus sit</p>
+                  </div>
+                </div>
+                <br />
+                <div>
+                  <button onClick={(e) => window.location.assign("/cars")} className="flex items-center space-x-2 bg-[#4F5DEC] hover:bg-blue-500 text-white px-5 py-3 rounded-lg">Discover More <h3><IoIosArrowRoundForward/></h3></button>
+                </div>
               </div>
-              <div className="flex items-baseline space-x-3">
-                <h5 className="text-[#4F5DEC] font-bold"><IoCheckmarkCircleOutline/></h5>
-                <p>Sed ut perspiciatis unde omnis iste natus sit</p>
-              </div>
-            </div>
-            <br />
-            <div>
-              <button onClick={(e) => window.location.assign("/cars")} className="flex items-center space-x-2 bg-[#4F5DEC] hover:bg-blue-500 text-white px-5 py-3 rounded-lg">Discover More <h3><IoIosArrowRoundForward/></h3></button>
             </div>
           </div>
         </section>
 
         {/* cars */}
         <section>
-          <div className="text-center mb-20">
-            <h4 className="text-[#4F5DEC]"><b>CARS</b></h4>
-            <h1><b>Featured <span className="text-[#4F5DEC]">Cars</span></b></h1>
-            <div className="header-divider"></div>
-          </div>
-          <div className="flex flex-wrap justify-evenly items-center gap-8 mb-20">
-            {
-              cars.map((cars) => (
-                <div key={cars._id}>
-                  <img className="rounded-xl" width={353} height={235} src={cars.src} alt="cars" />
-                  <div>
-                    <div className="flex justify-between p-3">
-                      <h3><b>{cars.title}</b></h3>
-                      <span>5.0</span>
-                    </div>
-                    <div className="p-2">
-                      <div className="flex flex-wrap items-center justify-between mb-4">
-                        <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaCarAlt/></span><h5>Model: 2020</h5></div>
-                        <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><IoPeople/></span><h5>4 peolpe</h5></div>
-                        <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaGasPump/></span><h5>Hybrid</h5></div>
+          <div className="container mx-auto p-4">
+            <div className="text-center">
+              <h4 className="text-[#4F5DEC]"><b>CARS</b></h4>
+              <h1><b>Featured <span className="text-[#4F5DEC]">Cars</span></b></h1>
+              <div className="header-divider"></div>
+            </div>
+            <div className="flex flex-wrap justify-evenly items-center gap-8 mb-20">
+              {
+                cars.map((cars) => (
+                  <div key={cars._id}>
+                    <img className="rounded-xl" width={353} height={235} src={cars.src} alt="cars" />
+                    <div>
+                      <div className="flex justify-between p-3">
+                        <h3><b>{cars.title}</b></h3>
+                        <span>5.0</span>
                       </div>
-                      <div className="flex flex-wrap items-center justify-between">
-                        <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><TbRoad/></span><h5>10.15km/1-litre</h5></div>
-                        <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><TbSteeringWheel/></span><h5>Automatic</h5></div>
+                      <div className="p-2">
+                        <div className="flex flex-wrap items-center justify-between mb-4">
+                          <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaCarAlt/></span><h5>Model: 2020</h5></div>
+                          <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><IoPeople/></span><h5>4 peolpe</h5></div>
+                          <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaGasPump/></span><h5>Hybrid</h5></div>
+                        </div>
+                        <div className="flex flex-wrap items-center justify-between">
+                          <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><TbRoad/></span><h5>10.15km/1-litre</h5></div>
+                          <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><TbSteeringWheel/></span><h5>Automatic</h5></div>
+                        </div>
                       </div>
-                    </div>
-                    <hr />
-                    <div className="flex flex-wrap items-center space-x-3 justify-between py-2">
-                      <h4><span className="text-xl text-[#4F5DEC]">{cars.amount}</span>/day</h4>
-                      <div className="flex items-center space-x-3 mt-2">
-                        <span className="bg-[#4f5dec3d] text-[#4F5DEC] p-2 rounded-lg"><FaRegHeart/></span>
-                        <button className="bg-[#4F5DEC] text-white px-4 py-2 rounded-lg">Rent Now</button>
+                      <hr />
+                      <div className="flex flex-wrap items-center space-x-3 justify-between py-2">
+                        <h4><span className="text-xl text-[#4F5DEC]">{cars.amount}</span>/day</h4>
+                        <div className="flex items-center space-x-3 mt-2">
+                          <span className="bg-[#4f5dec3d] text-[#4F5DEC] p-2 rounded-lg"><FaRegHeart/></span>
+                          <button className="bg-[#4F5DEC] text-white px-4 py-2 rounded-lg">Rent Now</button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))
-            }
+                ))
+              }
+            </div>
           </div>
         </section>
 
         {/* process */}
         <section>
-          <div className="text-center mb-8">
-            <h4 className="text-[#4F5DEC]">PROCESS</h4>
-            <h1><b>How It <span className="text-[#4F5DEC]">Works</span></b></h1>
-            <div className="header-divider"></div>
-          </div>
-          <div className="md:flex items-center justify-evenly mb-20">
-            <div className="text-center p-4">
-              <div className="flex justify-center mb-4">
-                <span>01</span>
-                <div className="bg-[#4F5DEC] w-32 border-3 border-[#4F5DEC] p-5 rounded-full mb-5">
-                  <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/destination.svg" alt="work1" />
-                </div>
-              </div>
-              <div className="space-y-3">
-                <h3><b>Pick Destination</b></h3>
-                <p>It is a long established fact that a reader will be distracted readable content of a page.</p>
-              </div>
+          <div className="container mx-auto p-4 my-20">
+            <div className="text-center mb-8">
+              <h4 className="text-[#4F5DEC]">PROCESS</h4>
+              <h1><b>How It <span className="text-[#4F5DEC]">Works</span></b></h1>
+              <div className="header-divider"></div>
             </div>
-            <div className="text-center p-4">
-              <div className="flex justify-center mb-4">
-                <span>02</span>
-                <div className="bg-[#4F5DEC] w-32 border-3 border-[#4F5DEC] p-5 rounded-full mb-5">
-                  <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/choose-car.svg" alt="work1" />
+            <div className="flex flex-wrap items-center justify-center">
+              <div className="text-center p-4">
+                <div className="flex justify-center mb-4">
+                  <span>01</span>
+                  <div className="bg-[#4F5DEC] w-32 border-3 border-[#4F5DEC] p-5 rounded-full mb-5">
+                    <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/destination.svg" alt="work1" />
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <h3><b>Pick Destination</b></h3>
+                  <p>It is a long established fact that a reader will be <br /> distracted readable content of a page.</p>
                 </div>
               </div>
-              <div className="space-y-3">
-                <h3><b>Choose Perfect Car</b></h3>
-                <p>It is a long established fact that a reader will be distracted readable content of a page.</p>
-              </div>
-            </div>
-            <div className="text-center p-4">
-              <div className="flex justify-center mb-4">
-                <span>03</span>
-                <div className="bg-[#4F5DEC] w-32 border-3 border-[#4F5DEC] p-5 rounded-full mb-5">
-                  <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/online-payment.svg" alt="work1" />
+              <div className="text-center p-4">
+                <div className="flex justify-center mb-4">
+                  <span>02</span>
+                  <div className="bg-[#4F5DEC] w-32 border-3 border-[#4F5DEC] p-5 rounded-full mb-5">
+                    <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/choose-car.svg" alt="work1" />
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <h3><b>Choose Perfect Car</b></h3>
+                  <p>It is a long established fact that a reader will be <br />distracted readable content of a page.</p>
                 </div>
               </div>
-              <div className="space-y-3">
-                <h3><b>Choose Perfect Car</b></h3>
-                <p>It is a long established fact that a reader will be distracted readable content of a page.</p>
-              </div>
-            </div>
-            <div className="text-center p-4">
-              <div className="flex justify-center mb-4">
-                <span>04</span>
-                <div className="bg-[#4F5DEC] w-32 border-3 border-[#4F5DEC] p-5 rounded-full mb-5">
-                  <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/confirm-ride.svg" alt="work1" />
+              <div className="text-center p-4">
+                <div className="flex justify-center mb-4">
+                  <span>03</span>
+                  <div className="bg-[#4F5DEC] w-32 border-3 border-[#4F5DEC] p-5 rounded-full mb-5">
+                    <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/online-payment.svg" alt="work1" />
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <h3><b>Choose Perfect Car</b></h3>
+                  <p>It is a long established fact that a reader will be <br />distracted readable content of a page.</p>
                 </div>
               </div>
-              <div className="space-y-3">
-                <h3><b>Enjoy Your Car Ride</b></h3>
-                <p>It is a long established fact that a reader will be distracted readable content of a page.</p>
+              <div className="text-center p-4">
+                <div className="flex justify-center mb-4">
+                  <span>04</span>
+                  <div className="bg-[#4F5DEC] w-32 border-3 border-[#4F5DEC] p-5 rounded-full mb-5">
+                    <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/confirm-ride.svg" alt="work1" />
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <h3><b>Enjoy Your Car Ride</b></h3>
+                  <p>It is a long established fact that a reader will be <br />distracted readable content of a page.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -315,83 +328,84 @@ const Home = () => {
 
         {/* our blog */}
         <section className="mb-20">
-          <div className="text-center mb-20">
-            <h4 className="text-[#4F5DEC]"><b>OUR BLOG</b></h4>
-            <h1><b>latest News & <span className="text-[#4F5DEC]">Blog</span></b></h1>
-            <div className="header-divider"></div>
-          </div>
-          
-          <div className="flex flex-wrap items-center justify-center gap-10">
-            <div className='py-4'>
-              <div>
-                <img width={400} className="rounded-xl" src="https://live.themewild.com/carway/assets/img/blog/01.jpg" alt="blog" />
-              </div>
-              <div className="flex flex-wrap items-center justify-between py-3">
-                <div className="flex items-center space-x-2">
-                  <span className="text-[#4F5DEC]"><FaRegUserCircle/></span>
-                  <h5>By Alicia Davis</h5>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <span className="text-[#4F5DEC]"><MdToday/></span>
-                  <h5>March 17,2023</h5>
-                </div>
-              </div>
-              <hr />
-              <div className="py-4">
-                <h3><b>There are many variations of <br /> the passages available suffered</b></h3>
-              </div>
-              <div>
-                <button className="flex items-center space-x-2 bg-[#4F5DEC] text-white px-5 py-3 rounded-lg">Read More <h3><IoIosArrowRoundForward/></h3></button>
-              </div>
+          <div className="container mx-auto p-4">
+            <div className="text-center mb-8">
+              <h4 className="text-[#4F5DEC]"><b>OUR BLOG</b></h4>
+              <h1><b>latest News & <span className="text-[#4F5DEC]">Blog</span></b></h1>
+              <div className="header-divider"></div>
             </div>
-            <div className='py-4'>
-              <div>
-                <img width={400} className="rounded-xl" src="https://live.themewild.com/carway/assets/img/blog/02.jpg" alt="blog" />
-              </div>
-              <div className="flex flex-wrap items-center justify-between py-3">
-                <div className="flex items-center space-x-2">
-                  <span className="text-[#4F5DEC]"><FaRegUserCircle/></span>
-                  <h5>By Alicia Davis</h5>
+            
+            <div className="flex flex-wrap items-center justify-start gap-10 mb-20 lg:justify-center">
+              <div className='py-4'>
+                <div>
+                  <img width={300} className="rounded-xl" src="https://live.themewild.com/carway/assets/img/blog/01.jpg" alt="blog" />
                 </div>
-                <div className="flex items-center space-x-2">
-                  <span className="text-[#4F5DEC]"><MdToday/>
-                  </span><h5>March 17,2023</h5>
+                <div className="flex flex-wrap items-center space-x-5 py-3">
+                  <div className="flex items-center space-x-2">
+                    <span className="text-[#4F5DEC]"><FaRegUserCircle/></span>
+                    <h5>By Alicia Davis</h5>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span className="text-[#4F5DEC]"><MdToday/></span>
+                    <h5>March 17,2023</h5>
+                  </div>
                 </div>
-              </div>
-              <hr />
-              <div className="py-4">
-                <h3><b>There are many variations of <br /> the passages available suffered</b></h3>
-              </div>
-              <div>
-                <button className="flex items-center space-x-2 bg-[#4F5DEC] text-white px-5 py-3 rounded-lg">Read More <h3><IoIosArrowRoundForward/></h3></button>
-              </div>
-            </div>
-            <div className='py-4'>
-              <div>
-                <img width={400} className="rounded-xl" src="https://live.themewild.com/carway/assets/img/blog/03.jpg" alt="blog" />
-              </div>
-              <div className="flex flex-wrap items-center justify-between py-3">
-                <div className="flex items-center space-x-2">
-                  <span className="text-[#4F5DEC]"><FaRegUserCircle/></span>
-                  <h5>By Alicia Davis</h5>
+                <hr />
+                <div className="py-4">
+                  <h3><b>There are many variations of <br /> the passages available </b></h3>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <span className="text-[#4F5DEC]"><MdToday/>
-                  </span><h5>March 17,2023</h5>
+                <div>
+                  <button className="flex items-center space-x-2 bg-[#4F5DEC] text-white px-5 py-3 rounded-lg">Read More <h3><IoIosArrowRoundForward/></h3></button>
                 </div>
               </div>
-              <hr />
-              <div className="py-4">
-                <h3><b>There are many variations of <br /> the passages available suffered</b></h3>
+              <div className='py-4'>
+                <div>
+                  <img width={300} className="rounded-xl" src="https://live.themewild.com/carway/assets/img/blog/02.jpg" alt="blog" />
+                </div>
+                <div className="flex flex-wrap items-center space-x-5 py-3">
+                  <div className="flex items-center space-x-2">
+                    <span className="text-[#4F5DEC]"><FaRegUserCircle/></span>
+                    <h5>By Alicia Davis</h5>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span className="text-[#4F5DEC]"><MdToday/>
+                    </span><h5>March 17,2023</h5>
+                  </div>
+                </div>
+                <hr />
+                <div className="py-4">
+                  <h3><b>There are many variations of <br /> the passages available </b></h3>
+                </div>
+                <div>
+                  <button className="flex items-center space-x-2 bg-[#4F5DEC] text-white px-5 py-3 rounded-lg">Read More <h3><IoIosArrowRoundForward/></h3></button>
+                </div>
               </div>
-              <div>
-                <button className="flex items-center space-x-2 bg-[#4F5DEC] text-white px-5 py-3 rounded-lg">Read More <h3><IoIosArrowRoundForward/></h3></button>
+              <div className='py-4'>
+                <div>
+                  <img width={350} className="rounded-xl" src="https://live.themewild.com/carway/assets/img/blog/03.jpg" alt="blog" />
+                </div>
+                <div className="flex flex-wrap items-center space-x-5 py-3">
+                  <div className="flex items-center space-x-2">
+                    <span className="text-[#4F5DEC]"><FaRegUserCircle/></span>
+                    <h5>By Alicia Davis</h5>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span className="text-[#4F5DEC]"><MdToday/>
+                    </span><h5>March 17,2023</h5>
+                  </div>
+                </div>
+                <hr />
+                <div className="py-4">
+                  <h3><b>There are many variations of <br /> the passages available </b></h3>
+                </div>
+                <div>
+                  <button className="flex items-center space-x-2 bg-[#4F5DEC] text-white px-5 py-3 rounded-lg">Read More <h3><IoIosArrowRoundForward/></h3></button>
+                </div>
               </div>
             </div>
           </div>
         </section>
-      </main>
-    </div>
+    </main>
   )
 }
 

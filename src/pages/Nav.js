@@ -52,7 +52,7 @@ const Nav = () => {
                 </li>
               </ul>
             </div>
-            <div className="flex items-center space-x-8">
+            <div className="flex items-center space-x-8" id="links">
               <div className="flex items-center space-x-4 p-2" id="links">
                 <h3 className="bg-[#4F5DEC] text-white rounded-lg p-2"><FiPhoneCall/></h3>
                 <div className="p-1">
