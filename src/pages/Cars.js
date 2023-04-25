@@ -2,46 +2,25 @@ import React, { useEffect,useState } from 'react'
 import { FaRegHeart,FaCarAlt,FaGasPump } from "react-icons/fa";
 import { TbRoad,TbSteeringWheel } from "react-icons/tb";
 import { IoPeople } from "react-icons/io5";
-import { useNavigate,useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from '../api/api'
 import { BookingState } from '../Context/BookingContext'
 
 
-const URL = '/api/v5/all'
-
 const Cars = () => {
 
   const navigate = useNavigate()
-  const [cars,setCars] = useState({})
-  const { state : { cart }, dispatch } = BookingState()
+  const [cars,setCars] = useState([])
+  const { dispatch } = BookingState()
 
-
-  
   //Geting cars from mongodb
   useEffect(() => {
     const fetchCars = async () => {
-      const results = await axios.get(URL)
+      const results = await axios.get("http://localhost:4000/api/v5/all")
       setCars(results.data)
     }
     fetchCars()
   },[])
- 
-
-  const handleClick = async () => {
-    const existItem = cart.cartItems.find((x) => x._id === cars._id);
-    const quantity = existItem ? existItem.quantity + 1 : 1;
-    const { data } = await axios.get(`http://localhost:4000/api/v5/all/64468a7acb4d8611e82202c0`);
-    if (data.isAvailable < quantity) {
-      window.alert('Sorry. Product is out of stock');
-      return;
-    }
-    dispatch({
-      type: 'CART_ADD_ITEM',
-      payload: { ...cars.__id, quantity },
-    });
-    console.log(data)
-    navigate("/booking")
-  }
 
   
   return (
@@ -88,12 +67,12 @@ const Cars = () => {
         <section>
           <div className="flex flex-wrap items-center justify-evenly gap-8 mb-20">
             {cars.length > 0 ? (
-              cars.map((cars) => (
-                <div key={cars._id} className="bg-white p-4 rounded-lg">
-                  <img className="rounded-xl" width={353} height={235}  src={cars.src} alt="car1" />
+              cars.map((car) => (
+                <div key={car._id} className="bg-white p-4 rounded-lg">
+                  <img className="rounded-xl" width={353} height={235}  src={car.src} alt="car1" />
                   <div>
                     <div className="flex justify-between p-3">
-                      <h3><b>{cars.title}</b></h3>
+                      <h3><b>{car.title}</b></h3>
                       <span>5.0</span>
                     </div>
                     <div className="p-2">
@@ -109,10 +88,10 @@ const Cars = () => {
                     </div>
                     <hr />
                     <div className="flex flex-wrap items-center space-x-3 justify-between py-2">
-                      <h4><span className="text-xl text-[#4F5DEC]">{cars.amount}</span>/day</h4>
+                      <h4><span className="text-xl text-[#4F5DEC]">{car.amount}</span>/day</h4>
                       <div className="flex items-center space-x-3 mt-2">
                         <span className="bg-[#4f5dec3d] text-[#4F5DEC] p-2 rounded-lg"><FaRegHeart/></span>
-                        <button onClick={handleClick} className="bg-[#4F5DEC] text-white px-4 py-2 rounded-lg">Rent Now</button>
+                        <button onClick={() => {dispatch({ type: 'CART_ADD_ITEM', payload: car }); navigate("/booking")}} className="bg-[#4F5DEC] text-white px-4 py-2 rounded-lg">Rent Now</button>
                       </div>
                     </div>
                   </div>

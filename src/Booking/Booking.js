@@ -23,7 +23,7 @@ const Booking = () => {
   const [services,setService] = useState('')
   const navigate = useNavigate();
 
-  const { state : { cart  } } = BookingState()
+  const { state : { cart : { cartItems } } } = BookingState()
  
 
   const handleSubmit = async (e) => {
@@ -79,11 +79,11 @@ const Booking = () => {
             <div className="bg-white p-6 rounded-xl xl:w-1/4 mb-3">
               <h4><b>Booking Car Type</b></h4>
               {
-                cart.cartItems.map((cars) => (
-                  <div key={cars._id}>
-                    <img className=" rounded-lg" src={cars.src} alt="selected car" />
-                    <h4>{cars.title}</h4>
-                    <h5><span className="text-blue-700">{cars.amount}</span>/month</h5>
+                cartItems.map((car) => (
+                  <div key={car._id}>
+                    <img className=" rounded-lg" src={car.src} alt="selected car" />
+                    <h4>{car.title}</h4>
+                    <h5><span className="text-blue-700">{car.amount}</span>/month</h5>
                   </div>
                 ))
               }           
