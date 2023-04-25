@@ -5,13 +5,13 @@ const Services = () => {
   return (
     <div>
       {/* intro */}
-      <section className="mb-20">
+      <section className="mb-10">
         <div className="intro">
           <div className="w-full h-full overflow-hidden bg-fixed">
             <div className="flex items-center h-full">
               <div className="text-white ml-40">
-                <h1 className="md:text-6xl font-bold tracking-tight mb-12">Services </h1>
-                <button className="bg-[#4F5DEC] px-5 py-2 rounded-lg">Home // Services</button>
+                <h1 className="md:text-6xl font-bold tracking-tight mb-12">Services</h1>
+                <button className="bg-[#4F5DEC] px-5 py-2 rounded-lg">Home // Services </button>
               </div>
             </div>
           </div>
@@ -19,14 +19,14 @@ const Services = () => {
       </section>
 
       {/* body */}
-      <main className="container mx-auto p-2 mb-20">
-        <section>
+      <section>
+        <div className="container mx-auto p-2 mb-10">
           <div className="text-center mb-10">
             <h4 className="text-[#4F5DEC]"><b>SERVICES</b></h4>
             <h1><b>What We <span className="text-[#4F5DEC]">Offer</span></b></h1>
             <div className="header-divider"></div>
           </div>
-          <div className="md:grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6 mb-20 md:grid-cols-2 lg:grid-cols-3">
             <div className="p-5 mb-4 shadow-md shadow-slate-400 space-y-4">
               <div className="flex justify-between">
                 <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/car-rent-2.svg" alt="icon" />
@@ -82,8 +82,8 @@ const Services = () => {
               <button className="flex items-center space-x-2 bg-[#4F5DEC] text-white px-5 py-3 rounded-lg">Read More <span><IoIosArrowRoundForward/></span></button>
             </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
     </div>
   )
 }

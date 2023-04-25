@@ -6,7 +6,7 @@ const About = () => {
   return (
     <main>
       {/* intro */}
-      <section className="mb-40">
+      <section className="mb-10">
         <div className="intro">
           <div className="w-full h-full overflow-hidden bg-fixed">
             <div className="flex items-center h-full">
