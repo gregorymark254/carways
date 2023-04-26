@@ -65,11 +65,11 @@ const Cars = () => {
         </section>
 
         <section>
-          <div className="flex flex-wrap items-center justify-evenly gap-8 mb-20">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {cars.length > 0 ? (
               cars.map((car) => (
                 <div key={car._id} className="bg-white p-4 rounded-lg">
-                  <img className="rounded-xl" width={353} height={235}  src={car.src} alt="car1" />
+                  <img className="rounded-xl" width={500} height={235}  src={car.src} alt="car1" />
                   <div>
                     <div className="flex justify-between p-3">
                       <h3><b>{car.title}</b></h3>
