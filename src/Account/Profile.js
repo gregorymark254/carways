@@ -13,7 +13,7 @@ const Profile = () => {
   const { id } = useParams();
 
   const getUserById = async () => {
-    const response = await axios.get(`https://carways-server.up.railway.app/api/v1/users/${id}`);
+    const response = await axios.get(`https://carways.cleverapps.io/api/v1/users/${id}`);
     setFirstname(response.data.firstName);
     setLastname(response.data.lastName);
     setEmail(response.data.email);
@@ -23,7 +23,7 @@ const Profile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`https://carways-server.up.railway.app/api/v1/users/update/${id}`,{
+      await axios.put(`https://carways.cleverapps.io/api/v1/users/update/${id}`,{
         firstName,
         lastName,
         email,

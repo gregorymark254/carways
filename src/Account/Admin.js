@@ -14,7 +14,7 @@ const Admin = () => {
   const navigate = useNavigate()
 
   const getBooking = async () => {
-    const response = await axios.get("https://carways-server.up.railway.app/api/v3/all");
+    const response = await axios.get("https://carways.cleverapps.io/api/v3/all");
     setBooking(response.data);
   };
 
@@ -23,7 +23,7 @@ const Admin = () => {
   }, []);
 
   const getBilling = async () => {
-    const response = await axios.get("https://carways-server.up.railway.app/api/v2/all");
+    const response = await axios.get("https://carways.cleverapps.io/api/v2/all");
     setBilling(response.data);
   };
 
