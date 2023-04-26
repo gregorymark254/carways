@@ -5,10 +5,12 @@ import { IoPeople } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom'
 import axios from '../api/api'
 import { BookingState } from '../Context/BookingContext'
+import Loader from './Loader'
 
 
 const Cars = () => {
 
+  const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate()
   const [cars,setCars] = useState([])
   const { dispatch } = BookingState()
@@ -20,6 +22,10 @@ const Cars = () => {
       setCars(results.data)
     }
     fetchCars()
+
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
   },[])
 
   
@@ -65,45 +71,51 @@ const Cars = () => {
         </section>
 
         <section>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {cars.length > 0 ? (
-              cars.map((car) => (
-                <div key={car._id} className="bg-white p-4 rounded-lg">
-                  <img className="rounded-xl" width={500} height={235}  src={car.src} alt="car1" />
-                  <div>
-                    <div className="flex justify-between p-3">
-                      <h3><b>{car.title}</b></h3>
-                      <span>5.0</span>
-                    </div>
-                    <div className="p-2">
-                      <div className="flex flex-wrap items-center justify-between mb-4">
-                        <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaCarAlt/></span><h5>Model: 2020</h5></div>
-                        <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><IoPeople/></span><h5>4 peolpe</h5></div>
-                        <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaGasPump/></span><h5>Hybrid</h5></div>
+          {isLoading ? (
+            <div>
+              <Loader/>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {cars.length > 0 ? (
+                cars.map((car) => (
+                  <div key={car._id} className="bg-white p-4 rounded-lg">
+                    <img className="rounded-xl" width={500} height={235}  src={car.src} alt="car1" />
+                    <div>
+                      <div className="flex justify-between p-3">
+                        <h3><b>{car.title}</b></h3>
+                        <span>5.0</span>
                       </div>
-                      <div className="flex flex-wrap items-center justify-between">
-                        <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><TbRoad/></span><h5>10.15km/1-litre</h5></div>
-                        <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><TbSteeringWheel/></span><h5>Automatic</h5></div>
+                      <div className="p-2">
+                        <div className="flex flex-wrap items-center justify-between mb-4">
+                          <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaCarAlt/></span><h5>Model: 2020</h5></div>
+                          <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><IoPeople/></span><h5>4 peolpe</h5></div>
+                          <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><FaGasPump/></span><h5>Hybrid</h5></div>
+                        </div>
+                        <div className="flex flex-wrap items-center justify-between">
+                          <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><TbRoad/></span><h5>10.15km/1-litre</h5></div>
+                          <div className="flex items-center space-x-2"><span className="text-[#4F5DEC]"><TbSteeringWheel/></span><h5>Automatic</h5></div>
+                        </div>
                       </div>
-                    </div>
-                    <hr />
-                    <div className="flex flex-wrap items-center space-x-3 justify-between py-2">
-                      <h4><span className="text-xl text-[#4F5DEC]">{car.amount}</span>/day</h4>
-                      <div className="flex items-center space-x-3 mt-2">
-                        <span className="bg-[#4f5dec3d] text-[#4F5DEC] p-2 rounded-lg"><FaRegHeart/></span>
-                        <button onClick={() => {dispatch({ type: 'CART_ADD_ITEM', payload: car }); navigate("/booking")}} className="bg-[#4F5DEC] text-white px-4 py-2 rounded-lg">Rent Now</button>
+                      <hr />
+                      <div className="flex flex-wrap items-center space-x-3 justify-between py-2">
+                        <h4><span className="text-xl text-[#4F5DEC]">{car.amount}</span>/day</h4>
+                        <div className="flex items-center space-x-3 mt-2">
+                          <span className="bg-[#4f5dec3d] text-[#4F5DEC] p-2 rounded-lg"><FaRegHeart/></span>
+                          <button onClick={() => {dispatch({ type: 'CART_ADD_ITEM', payload: car }); navigate("/booking")}} className="bg-[#4F5DEC] text-white px-4 py-2 rounded-lg">Rent Now</button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))
-              ) : (
-                <div>
-                  <span>NO DATA</span>
-                </div>
-              )
-            }
-          </div>
+                ))
+                ) : (
+                  <div>
+                    <span>NO DATA</span>
+                  </div>
+                )
+              }
+            </div>
+          )}
         </section>
       </div>
     </div>
