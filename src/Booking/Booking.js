@@ -12,7 +12,7 @@ const Booking = () => {
 
   const { state : { cart : { cartItems } } } = BookingState()
   const item = localStorage.getItem('cartItems');
-  const parsedItem = JSON.parse(item)[0];
+  const parsedItem = JSON.parse(item)[0].title;
 
   const [car,setCar] = useState(parsedItem)
   const [pickLocation,setPicklocation] = useState('')
@@ -98,7 +98,7 @@ const Booking = () => {
                     required
                     placeholder="Type car,model,brand"
                     className="block px-2 py-3 w-full mb-4 border border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]"
-                    value={car.title}
+                    value={car}
                     onChange = {(e) => setCar({...car,title: e.target.value})}
                   />
                 </label>

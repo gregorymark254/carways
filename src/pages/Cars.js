@@ -27,6 +27,7 @@ const Cars = () => {
       setIsLoading(false);
     }, 2000);
   },[])
+  
 
   
   return (
