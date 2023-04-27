@@ -28,12 +28,10 @@ const Checkout = () => {
   const parsedItem = JSON.parse(item);
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    const billingData = {firstName,lastName ,email,phone ,address ,address2 ,city ,state ,zip}
-    const paymentData = {cardName,cardNumber,expiryDate ,cvv,additionalNote}    
+    e.preventDefault()  
     try {
       const response = await axios.post(URL, 
-      JSON.stringify({billingData,paymentData}),
+      JSON.stringify(firstName,lastName ,email,phone ,address ,address2 ,city ,state ,zip,cardName,cardNumber,expiryDate ,cvv,additionalNote),
       {
         headers : { 'Content-type' : 'application/json'},
         withCredentials : true
