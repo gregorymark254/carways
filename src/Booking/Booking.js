@@ -77,16 +77,16 @@ const Booking = () => {
         </div>
       </section>
 
-      <section className="container mx-auto p-4">
+      <section className="container mx-auto">
         {/* Car Booking */}
         <form onSubmit={handleSubmit}>
-          <div className="md:flex flex-wrap justify-center gap-10 mb-20">
-            <div className="bg-white p-6 rounded-xl xl:w-1/4 mb-3">
+          <div className="flex flex-wrap justify-center gap-10">
+            <div className="bg-white p-6 rounded-xl w-full xl:w-1/4 mb-20">
               <h4><b>Booking Car Type</b></h4>
               {
                 cartItems.map((car) => (
-                  <div key={car._id}>
-                    <img className=" rounded-lg" src={car.src} alt="selected car" />
+                  <div key={car._id} className="space-y-2">
+                    <img className="rounded-lg w-full" width={300} height={300} src={car.src} alt="selected car" />
                     <h4>{car.title}</h4>
                     <h5><span className="text-blue-700">{car.amount}</span>/month</h5>
                   </div>
@@ -174,7 +174,7 @@ const Booking = () => {
                 </label>
               </div>
             </div>
-            <div className="bg-white p-6 rounded-xl xl:w-1/2 h-1/2">
+            <div className="bg-white p-6 rounded-xl w-full xl:w-1/2 h-1/2">
               <h4><b>Booking Info</b></h4>
               <br />
               <div className="md:flex justify-center">

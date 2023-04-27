@@ -74,9 +74,9 @@ const Checkout = () => {
 
       {/* checkout */}
       <section>
-        <div className="container mx-auto p-4">
-          <div className="flex flex-wrap justify-center gap-10 mb-20">
-            <div className="bg-white p-6 rounded-xl xl:w-1/4 ">
+        <div className="container mx-auto">
+          <div className="flex flex-wrap justify-center gap-10 ">
+            <div className="bg-white p-6 rounded-xl w-full h-full xl:w-1/4">
               <div className="space-y-2 py-4">
                 <h5><b>Car info</b></h5>
                 <div className="flex justify-between">
@@ -165,11 +165,11 @@ const Checkout = () => {
                 <h5 className="text-blue-800 text-xl">Ksh.3000</h5>
               </div>
             </div>
-            <div className="bg-white p-6 rounded-xl">
+            <div className="bg-white p-6 rounded-xl mb-20">
               <h3><b>Billing Info</b></h3>
               <br />
               <form onSubmit={handleSubmit}>
-                <div className="flex">
+                <div className="md:flex">
                   <div className="w-full p-1">
                     <label htmlFor="">First Name
                       <input 
@@ -195,7 +195,7 @@ const Checkout = () => {
                     </label>
                   </div>
                 </div>
-                <div className="flex">
+                <div className="md:flex">
                   <div className="w-full p-1">
                     <label htmlFor="">Email
                       <input 
@@ -244,8 +244,8 @@ const Checkout = () => {
                     />
                   </label>
                 </div>
-                <div className="flex">
-                  <div className="w-1/2 p-1">
+                <div className="md:flex">
+                  <div className="p-1 w-full md:w-1/2">
                     <label htmlFor="">City
                       <input 
                         type="text" 
@@ -257,7 +257,7 @@ const Checkout = () => {
                       />
                     </label>
                   </div>
-                  <div className="w-1/2 p-1">
+                  <div className="p-1 w-full md:w-1/2">
                     <label htmlFor="">State
                       <input 
                         type="text" 
@@ -269,7 +269,7 @@ const Checkout = () => {
                       />
                     </label>
                   </div>
-                  <div className="w-1/2 p-1">
+                  <div className="p-1 w-full md:w-1/2">
                     <label htmlFor="">Zip
                       <input 
                         type="text" 
@@ -282,7 +282,7 @@ const Checkout = () => {
                   </div>
                 </div>
                 <h3><b>Payment Info</b></h3>
-                <div className="flex">
+                <div className="md:flex">
                   <div className="w-full p-1">
                     <label htmlFor="">Card Holder Name
                       <input 
@@ -308,7 +308,7 @@ const Checkout = () => {
                     </label>
                   </div>
                 </div>
-                <div className="flex">
+                <div className="md:flex">
                   <div className="w-full p-1">
                     <label htmlFor="">Expiry Date
                       <input 
