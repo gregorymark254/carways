@@ -2,7 +2,7 @@ import React, { useEffect,useState } from 'react'
 import { FaRegHeart,FaCarAlt,FaGasPump } from "react-icons/fa";
 import { TbRoad,TbSteeringWheel } from "react-icons/tb";
 import { IoPeople } from "react-icons/io5";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,useLocation } from 'react-router-dom'
 import axios from '../api/api'
 import { BookingState } from '../Context/BookingContext'
 import Loader from './Loader'
@@ -13,7 +13,10 @@ const Cars = () => {
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate()
   const [cars,setCars] = useState([])
-  const { dispatch } = BookingState()
+  const { state : { bookingInfo }, dispatch } = BookingState()
+  const { search } = useLocation()
+  const redirectInUrl = new URLSearchParams(search).get('redirect')
+  const redirect = redirectInUrl ? redirectInUrl : '/checkout'
 
   //Geting cars from mongodb
   useEffect(() => {
@@ -27,6 +30,12 @@ const Cars = () => {
       setIsLoading(false);
     }, 2000);
   },[])
+
+  useEffect(() => {
+    if(bookingInfo){
+      navigate(redirect)
+    }
+  },[navigate,redirect, bookingInfo])
   
 
   
