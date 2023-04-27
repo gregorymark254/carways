@@ -7,7 +7,8 @@ const BookingContext = ({children}) => {
 
   const initialState = {
     userInfo : localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')) : null,
-    cart : {cartItems: localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [],}
+    cart : {cartItems: localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [],},
+    bookinginfo : localStorage.getItem('bookingInfo') ? JSON.parse(localStorage.getItem('bookingInfo')) : null
   }
 
   const bookingReducer = (state,action) => {
@@ -29,6 +30,8 @@ const BookingContext = ({children}) => {
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
         return { ...state, cart: { ...state.cart, cartItems } };
       }
+      case "BOOKING" :
+        return {...state, bookingInfo:action.payload} 
       default:
         return state;
     }

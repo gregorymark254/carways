@@ -10,7 +10,7 @@ const URL = "/api/v3/add"
 
 const Booking = () => {
 
-  const { state : { cart : { cartItems } } } = BookingState()
+  const { state : { cart : { cartItems } }, dispatch } = BookingState()
   const item = localStorage.getItem('cartItems');
   const parsedItem = JSON.parse(item)[0].title;
 
@@ -37,6 +37,8 @@ const Booking = () => {
       headers : { 'Content-type' : 'application/json'},
       withCredentials : true
     });
+    dispatch({type:'BOOKING', payload:response.data})
+    localStorage.setItem('bookingInfo', JSON.stringify(response.data))
     toast.success("Added Successful")
     navigate('/checkout')
     console.log(response)

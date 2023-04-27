@@ -31,7 +31,7 @@ const Cars = () => {
 
   
   return (
-    <div className="bg-[#F0F0F0]">
+    <div className="bg-[#f7f3f3]">
       {/* intro */}
       <section className="mb-20">
         <div className="intro">
@@ -77,7 +77,7 @@ const Cars = () => {
               <Loader/>
             </div>
           ) : (
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 mb-20">
               {cars.length > 0 ? (
                 cars.map((car) => (
                   <div key={car._id} className="bg-white p-4 rounded-lg">
@@ -110,7 +110,7 @@ const Cars = () => {
                   </div>
                 ))
                 ) : (
-                  <div>
+                  <div className="flex justify-center h-96 items-center">
                     <span>NO DATA</span>
                   </div>
                 )

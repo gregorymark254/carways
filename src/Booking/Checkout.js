@@ -24,36 +24,23 @@ const Checkout = () => {
   const [additionalNote, setAdditional] = useState('')
   const navigate = useNavigate();
 
+  const item = localStorage.getItem('bookingInfo');
+  const parsedItem = JSON.parse(item);
+
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const billingData ={
-      firstName,
-      lastName ,
-      email,
-      phone ,
-      address ,
-      address2 ,
-      city ,
-      state ,
-      zip
-    }
-    const paymentData ={
-      cardName,
-      cardNumber,
-      expiryDate ,
-      cvv,
-      additionalNote
-    }
-    
+    const billingData = {firstName,lastName ,email,phone ,address ,address2 ,city ,state ,zip}
+    const paymentData = {cardName,cardNumber,expiryDate ,cvv,additionalNote}    
     try {
-      const response = await axios.post(URL, JSON.stringify({billingData,paymentData}),
-    {
-      headers : { 'Content-type' : 'application/json'},
-      withCredentials : true
-    });
-    toast.success("Added Successfull")
-    console.log(response)
-    navigate('/confirmBooking')
+      const response = await axios.post(URL, 
+      JSON.stringify({billingData,paymentData}),
+      {
+        headers : { 'Content-type' : 'application/json'},
+        withCredentials : true
+      });
+      toast.success("Added Successfull")
+      console.log(response)
+      navigate('/confirmBooking')
     } catch (error) {
       if (!error?.response) {
         toast.error('No Server Response');
@@ -94,19 +81,19 @@ const Checkout = () => {
                 <h5><b>Car info</b></h5>
                 <div className="flex justify-between">
                   <p>Car </p>
-                  <p>Toyota</p>
+                  <p>{parsedItem.car}</p>
                 </div>
                 <div className="flex justify-between">  
                   <p>Rent</p>
-                  <p>1 car</p>
+                  <p>{parsedItem.quantity}</p>
                 </div>
                 <div className="flex justify-between"> 
                   <p>People</p>
-                  <p>2 people</p>
+                  <p>{parsedItem.people}</p>
                 </div>
                 <div className="flex justify-between">
                   <p>Driving services</p>
-                  <p>No</p>
+                  <p>{parsedItem.services}</p>
                 </div>
                 <hr />
               </div>
@@ -114,15 +101,15 @@ const Checkout = () => {
                 <h5><b>Rent Date & Time</b></h5>
                 <div className="flex justify-between">
                   <p>From </p>
-                  <p>21/01/2023</p>
+                  <p>{parsedItem.pickDate}</p>
                 </div>
                 <div className="flex justify-between">
                   <p>To </p>
-                  <p>25/01/2023</p>
+                  <p>{parsedItem.dropDate}</p>
                 </div>
                 <div className="flex justify-between">
                   <p>Duration</p>
-                  <p>10 days</p>
+                  <p>{parsedItem.duration}</p>
                 </div>
                 <hr />
               </div>
@@ -130,11 +117,11 @@ const Checkout = () => {
                 <h5><b>Rent Location</b></h5>
                 <div className="flex justify-between">
                   <p>Pick up </p>
-                  <p>Nairobi</p>
+                  <p>{parsedItem.pickLocation}</p>
                 </div>
                 <div className="flex justify-between">
                   <p>Drop off </p>
-                  <p>Nakuru</p>
+                  <p>{parsedItem.dropLocation}</p>
                 </div>
                 <hr />
               </div>
@@ -149,7 +136,7 @@ const Checkout = () => {
                 <div className="flex justify-between">
                    
                   <p>1xGps </p>
-                  <p>$2</p>
+                  <p>Ksh.3,000</p>
                 </div>
                 <div className="flex justify-between">
                   <p>Insurance Fee</p>
@@ -175,7 +162,7 @@ const Checkout = () => {
               </div>
               <div className="flex justify-between py-4">
                 <h5><b>Total Pay </b></h5>
-                <h5 className="text-blue-800 text-xl">KSH.3900</h5>
+                <h5 className="text-blue-800 text-xl">Ksh.3000</h5>
               </div>
             </div>
             <div className="bg-white p-6 rounded-xl">
