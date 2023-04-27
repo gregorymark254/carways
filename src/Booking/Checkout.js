@@ -3,6 +3,7 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axios from "../api/api"
+import { BookingState } from '../Context/BookingContext'
 
 const URL = '/api/v2/add'
 
@@ -23,6 +24,7 @@ const Checkout = () => {
   const [cvv, setCvv] = useState('')
   const [additionalNote, setAdditional] = useState('')
   const navigate = useNavigate();
+  const { dispatch } = BookingState()
 
   const item = localStorage.getItem('bookingInfo');
   const parsedItem = JSON.parse(item);
@@ -31,11 +33,12 @@ const Checkout = () => {
     e.preventDefault()  
     try {
       const response = await axios.post(URL, 
-      JSON.stringify(firstName,lastName ,email,phone ,address ,address2 ,city ,state ,zip,cardName,cardNumber,expiryDate ,cvv,additionalNote),
+      JSON.stringify({firstName,lastName ,email,phone ,address ,address2 ,city ,state ,zip,cardName,cardNumber,expiryDate ,cvv,additionalNote}),
       {
         headers : { 'Content-type' : 'application/json'},
         withCredentials : true
       });
+      dispatch({type:'CHECKOUT'})
       toast.success("Added Successfull")
       console.log(response)
       navigate('/confirmBooking')

@@ -7,7 +7,7 @@ const BookingContext = ({children}) => {
 
   const initialState = {
     userInfo : localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')) : null,
-    cart : {cartItems: localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [],},
+    cart : {cartItems: localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : []},
     bookingInfo : localStorage.getItem('bookingInfo') ? JSON.parse(localStorage.getItem('bookingInfo')) : null
   }
 
@@ -32,6 +32,9 @@ const BookingContext = ({children}) => {
       }
       case "BOOKING" :
         return {...state, bookingInfo:action.payload} 
+      case "CHECKOUT":
+        localStorage.removeItem('bookingInfo')
+        return {...state, bookingInfo:null}
       default:
         return state;
     }

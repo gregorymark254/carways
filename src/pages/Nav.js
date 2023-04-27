@@ -18,7 +18,7 @@ const Nav = () => {
   const navigate = useNavigate()
   const { state: { userInfo }, dispatch } = BookingState()
   const signOut = () => {
-    dispatch({type:'USER_SIGNOUT', })
+    dispatch({type:'USER_SIGNOUT'})
     localStorage.removeItem('userInfo')
     navigate("/")
   }
