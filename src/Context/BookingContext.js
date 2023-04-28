@@ -31,6 +31,7 @@ const BookingContext = ({children}) => {
         return { ...state, cart: { ...state.cart, cartItems } };
       }
       case "BOOKING" :
+        localStorage.removeItem('cartItems')
         return {...state, bookingInfo:action.payload} 
       case "CHECKOUT":
         localStorage.removeItem('bookingInfo')
