@@ -30,6 +30,15 @@ html {
   scroll-behavior: smooth;
 }
 
+/* table */
+th,tr:nth-child(even) {
+  background-color: #EEF1FF;
+}
+
+tr:hover {
+  background-color: #EEF1FF;
+}
+
 /* navbar */
 .nav{
   position: sticky;

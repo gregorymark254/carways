@@ -5,6 +5,8 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import { FaRegHeart,FaRegUserCircle,FaCarAlt,FaGasPump } from "react-icons/fa";
 import { MdToday } from "react-icons/md";
 import { TbRoad,TbSteeringWheel } from "react-icons/tb";
+import { useNavigate } from 'react-router-dom'
+import { BookingState } from '../Context/BookingContext'
 import axios from '../api/api'
 import Loader from './Loader'
 
@@ -13,6 +15,8 @@ const Home = () => {
 
   const [cars,setCars] = useState([])
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate()
+  const { dispatch } = BookingState()
 
 
   //Geting cars from mongodb
@@ -22,10 +26,14 @@ const Home = () => {
       setCars(results.data)
     }
     fetchCars()
+  },[])
+
+  //loading
+  useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);
-  },[])
+  })
 
   return (
     <main>
@@ -241,12 +249,12 @@ const Home = () => {
             ) : (
               <div className="grid grid-cols-1 gap-8 mb-20 md:grid-cols-2 lg:grid-cols-3">
                 {
-                  cars.map((cars) => (
-                    <div key={cars._id}>
-                      <img className="rounded-xl" width={500} height={235}  src={cars.src} alt="car1" />
+                  cars.map((car) => (
+                    <div key={car._id}>
+                      <img className="rounded-xl" width={500} height={235}  src={car.src} alt="car1" />
                       <div>
                         <div className="flex justify-between p-3">
-                          <h3><b>{cars.title}</b></h3>
+                          <h3><b>{car.title}</b></h3>
                           <span>5.0</span>
                         </div>
                         <div className="p-2">
@@ -262,10 +270,10 @@ const Home = () => {
                         </div>
                         <hr />
                         <div className="flex flex-wrap items-center space-x-3 justify-between py-2">
-                          <h4><span className="text-xl text-[#4F5DEC]">{cars.amount}</span>/day</h4>
+                          <h4><span className="text-xl text-[#4F5DEC]">{car.amount}</span>/day</h4>
                           <div className="flex items-center space-x-3 mt-2">
                             <span className="bg-[#4f5dec3d] text-[#4F5DEC] p-2 rounded-lg"><FaRegHeart/></span>
-                            <button className="bg-[#4F5DEC] text-white px-4 py-2 rounded-lg">Rent Now</button>
+                            <button onClick={() => {dispatch({ type: 'CART_ADD_ITEM', payload: car }); navigate("/booking")}} className="bg-[#4F5DEC] text-white px-4 py-2 rounded-lg">Rent Now</button>
                           </div>
                         </div>
                       </div>

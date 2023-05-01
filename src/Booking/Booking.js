@@ -40,7 +40,7 @@ const Booking = () => {
     dispatch({type:'BOOKING', payload:response.data})
     localStorage.setItem('bookingInfo', JSON.stringify(response.data))
     toast.success("Added Successful")
-    navigate('/checkout')
+    navigate('/login?redirect=/checkout')
     console.log(response)
     } catch (error) {
       if (!error?.response) {
@@ -184,6 +184,7 @@ const Booking = () => {
                       value={duration}
                       onChange = {(e) => setDuration(e.target.value)}
                       className="block px-2 py-3 w-full mb-4 border bg-white border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]">
+                      <option value="">Select</option>
                       <option value="1 Month">For 1 month</option>
                       <option value="1 Day">For 1 day</option>
                       <option value="5 Days">For 5 days</option>
@@ -198,6 +199,7 @@ const Booking = () => {
                       value={quantity}
                       onChange = {(e) => setQuantity(e.target.value)}
                       className="block px-2 py-3 w-full mb-4 border bg-white border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]">
+                      <option value="">Select</option>
                       <option value="1 Car">1 Car</option>
                       <option value="2 Cars">2 Cars</option>
                       <option value="3 Cars">3 Cars</option>
@@ -214,6 +216,7 @@ const Booking = () => {
                       value={people}
                       onChange = {(e) => setPeople(e.target.value)}
                       className="block px-2 py-3 w-full mb-4 border bg-white border-slate-300 rounded-lg focus:outline-none focus:border-[#4F5DEC]">
+                      <option value="">Select</option>
                       <option value="1 person">1 person</option>
                       <option value="2 People">2 people</option>
                       <option value="3 People">3 people</option>
