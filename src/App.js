@@ -12,10 +12,14 @@ import Unathorised from "./pages/Unathorised"
 import Login from "./Account/Login"
 import Register from "./Account/Register"
 import Profile from "./Account/Profile"
-import Admin from "./Account/Admin"
 import Booking from "./Booking/Booking"
 import CheckOut from "./Booking/Checkout"
 import ConfirmBooking from "./Booking/ConfirmBooking"
+
+import Admin from "./Admin/Admin"
+import UsersData from "./Admin/Users"
+import BookingData from './Admin/Bookings'
+import BillingData from './Admin/Billings'
 
 import { Routes, Route } from "react-router-dom"
 
@@ -28,8 +32,12 @@ function App() {
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register/>} />
         <Route path="/profile" element={<Profile/>} />
-        <Route path="/admin" element={<Admin/>} />
         <Route path="/unauthorised" element={<Unathorised/>} />
+
+        <Route path="/admin" element={<Admin/>} />
+        <Route path="/usersData" element={<UsersData/>} />
+        <Route path="/bookingData" element={<BookingData/>} />
+        <Route path="/billingData" element={<BillingData/>} />
 
         <Route path="/booking" element={<Booking/>} />
         <Route path="/checkout" element={<CheckOut/>} />
