@@ -3,7 +3,9 @@ import axios from "axios";
 import { Link } from 'react-router-dom'
 import { FaEdit } from 'react-icons/fa'
 import { MdDelete } from 'react-icons/md'
-const Bookings = () => {
+
+
+const BookingsData = () => {
 
   const [booking, setBooking] = useState([]);
 
@@ -156,4 +158,4 @@ const Bookings = () => {
   )
 }
 
-export default Bookings
+export default BookingsData

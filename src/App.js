@@ -18,8 +18,8 @@ import ConfirmBooking from "./Booking/ConfirmBooking"
 
 import Admin from "./Admin/Admin"
 import UsersData from "./Admin/Users"
-import BookingData from './Admin/Bookings'
-import BillingData from './Admin/Billings'
+import BookingData from './Admin/BookingsData'
+import BillingData from './Admin/BillingsData'
 
 import { Routes, Route } from "react-router-dom"
 

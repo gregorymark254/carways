@@ -3,7 +3,9 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { FaEdit } from 'react-icons/fa'
 import { MdDelete } from 'react-icons/md'
-const Billings = () => {
+
+
+const BillingsData = () => {
 
   const [billing, setBilling] = useState([]);
 
@@ -176,4 +178,4 @@ const Billings = () => {
   )
 }
 
-export default Billings
+export default BillingsData
