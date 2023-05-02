@@ -42,13 +42,13 @@ const Home = () => {
         <main id="carouselExampleCaptions" className="relative " data-te-carousel-init data-te-carousel-slide>
           <div className="relative w-full overflow-hidden after:clear-both after:block after:content-['']" id="hero">
             <div className="brightness-50 relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none hero" data-te-carousel-active data-te-carousel-item >
-              <img height={500} width={500} src="https://live.themewild.com/carway/assets/img/slider/slider-1.jpg" className="block w-full" alt="..." />
+              <img height={400} width={600} src="https://live.themewild.com/carway/assets/img/slider/slider-1.jpg" className="block w-full" alt="..." />
             </div>
             <div className="brightness-50 relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none" data-te-carousel-item>
-              <img height={500} width={500} src="https://live.themewild.com/carway/assets/img/slider/slider-2.jpg" className="block w-full" alt="..." />
+              <img height={400} width={600} src="https://live.themewild.com/carway/assets/img/slider/slider-2.jpg" className="block w-full" alt="..." />
             </div>
             <div className="brightness-50 relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none" data-te-carousel-item>
-              <img height={500} width={500} src="https://live.themewild.com/carway/assets/img/slider/slider-3.jpg" className="block w-full" alt="..." />
+              <img height={400} width={600} src="https://live.themewild.com/carway/assets/img/slider/slider-3.jpg" className="block w-full" alt="..." />
             </div>
             <div className="carousel-caption md:block top-36 absolute text-center text-white">
               <h1 className="text-xl font-bold">Car Rental In Your</h1>
@@ -175,21 +175,21 @@ const Home = () => {
           <div className="flex flex-wrap xl:flex-wrap items-center xl:justify-center gap-10 my-20">
             <div className="text-center space-y-4 shadow-xl p-8 rounded-lg">
               <div className="flex justify-center text-justify items-center">
-                <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/quality-service.svg" alt="icon" />
+                <img width={80} height={80} src="https://live.themewild.com/carway/assets/img/icon/quality-service.svg" alt="icon" />
               </div>
               <h3>Quality Service</h3>
               <p>There are many variations of passages <br /> available but the majority have suffered <br />alteration in some form.</p>
             </div>
             <div className="text-center space-y-4 shadow-xl p-8 rounded-lg">
               <div className="flex justify-center text-justify items-center">
-                <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/booking.svg" alt="icon" />
+                <img width={80} height={80} src="https://live.themewild.com/carway/assets/img/icon/booking.svg" alt="icon" />
               </div>
               <h3>Online Booking</h3>
               <p>There are many variations of passages <br /> available but the majority have suffered<br /> alteration in some form.</p>
             </div>
             <div className="text-center space-y-4 shadow-xl p-8 rounded-lg">
               <div className="flex justify-center text-justify items-center">
-                <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/money.svg" alt="icon" />
+                <img width={80} height={80} src="https://live.themewild.com/carway/assets/img/icon/money.svg" alt="icon" />
               </div>
               <h3>Affordable Pricing</h3>
               <p>There are many variations of passages <br /> available but the majority have suffered <br /> alteration in some form.</p>
@@ -204,7 +204,7 @@ const Home = () => {
           <div className="flex flex-wrap items-center justify-center my-20 gap-20">
             <div>
               <div className="border-8 p-4 justify-center rounded-xl border-[#4F5DEC]">
-                <img className="rounded-lg" width={400} height={400} src="https://live.themewild.com/carway/assets/img/about/01.jpg" alt="" />
+                <img className="rounded-lg" width={400} height={200} src="https://live.themewild.com/carway/assets/img/about/01.jpg" alt="" />
               </div>
             </div>
             <div className="space-y-5 p-2">
@@ -270,7 +270,7 @@ const Home = () => {
                       </div>
                       <hr />
                       <div className="flex flex-wrap items-center space-x-3 justify-between py-2">
-                        <h4><span className="text-xl text-[#4F5DEC]">{car.amount}</span>/day</h4>
+                        <h6><span className="text-xl text-[#4F5DEC]">{car.amount}</span>/day</h6>
                         <div className="flex items-center space-x-3 mt-2">
                           <span className="bg-[#4f5dec3d] text-[#4F5DEC] p-2 rounded-lg"><FaRegHeart/></span>
                           <button onClick={() => {dispatch({ type: 'CART_ADD_ITEM', payload: car }); navigate("/booking")}} className="bg-[#4F5DEC] text-white px-4 py-2 rounded-lg">Rent Now</button>

@@ -51,15 +51,15 @@ const Nav = () => {
                 </li>
               </ul>
             </div>
-            <div className="flex items-center space-x-8" id="links">
-              <div className="flex items-center space-x-4 p-2" id="links">
+            <div className="flex items-center space-x-8">
+              <div className="flex items-center space-x-4 p-2">
                 <h3 className="bg-[#4F5DEC] text-white rounded-lg p-2"><FiPhoneCall/></h3>
                 <div className="p-1">
                   <p>Need Car Rent?</p>
                   <p className="text-[#4F5DEC] font-bold text-lg">+254 798 551 178</p>
                 </div>
               </div>
-              <a id="links" href="/cars" className="bg-[#4F5DEC] text-white py-3 px-5 rounded-lg">Explore</a>
+              <a href="/cars" className="bg-[#4F5DEC] text-white py-3 px-5 rounded-lg">Explore</a>
               {userInfo ? (
                 <div className="relative" data-te-dropdown-ref>
                   <a className="flex items-center  px-3 py-2  transition duration-150 ease-in-out "
@@ -86,7 +86,7 @@ const Nav = () => {
                   </ul>
                 </div>
                 ) : (                
-                  <a href="/login" className="bg-[#4F5DEC] text-white rounded-lg p-3"><h3><FaRegUserCircle/></h3></a>
+                  <a href="/login" className="bg-[#4F5DEC] text-white rounded-lg p-3"><h3><FaRegUserCircle/><span className='hidden'>login</span></h3></a>
                 )
               }
             </div>

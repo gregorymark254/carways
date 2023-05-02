@@ -109,7 +109,7 @@ const Cars = () => {
                       </div>
                       <hr />
                       <div className="flex flex-wrap items-center space-x-3 justify-between py-2">
-                        <h4><span className="text-xl text-[#4F5DEC]">{car.amount}</span>/day</h4>
+                        <h6><span className="text-xl text-[#4F5DEC]">{car.amount}</span>/day</h6>
                         <div className="flex items-center space-x-3 mt-2">
                           <span className="bg-[#4f5dec3d] text-[#4F5DEC] p-2 rounded-lg"><FaRegHeart/></span>
                           <button onClick={() => {dispatch({ type: 'CART_ADD_ITEM', payload: car }); navigate("/booking")}} className="bg-[#4F5DEC] text-white px-4 py-2 rounded-lg">Rent Now</button>

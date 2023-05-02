@@ -203,9 +203,6 @@ tr:hover {
     right: 0px;
     z-index: 10;
   }
-  #links{
-    display : none;
-  }
   #hero h1 {
     display: block;
     justify-content: left;
@@ -233,12 +230,6 @@ tr:hover {
   }
   #about{
     font-size: 2em;
-  }
-}
-
-@media (max-width : 900px){
-  #links{
-    display : none;
   }
 }
 
