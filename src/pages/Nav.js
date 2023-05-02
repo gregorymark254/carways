@@ -30,7 +30,7 @@ const Nav = () => {
           <nav className='flex justify-around items-center px-4'>
             {/* Top Nav */}
             <div className="p-2">
-              <img className="h-10" src="https://live.themewild.com/carway/assets/img/logo/logo.png" alt="LOGO" />
+              <img width={200} height={100} src="https://live.themewild.com/carway/assets/img/logo/logo.png" alt="LOGO" />
             </div>
             <div>
               <ul className='hidden md:flex text-xl p-2'>

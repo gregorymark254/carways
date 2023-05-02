@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="container mx-auto py-4">
           <div className="flex flex-wrap justify-between gap-10 ">
             <div className="space-y-4 p-4">
-              <img className="h-12" src="https://live.themewild.com/carway/assets/img/logo/logo-light.png" alt="LOGO" />
+              <img width={200} height={100} src="https://live.themewild.com/carway/assets/img/logo/logo-light.png" alt="LOGO" />
               <p>We are many variations of passages available <br />but the majority have suffered alteration in <br />some form by injected humour words believable.</p>
               <div className="flex items-center space-x-4">
                 <h3 className="bg-[#4F5DEC] text-white rounded-lg p-2"><FiPhoneCall/></h3>
@@ -75,7 +75,7 @@ const Footer = () => {
         <div className="container mx-auto p-4">
           <div className="flex flex-wrap justify-between">
             <div className="p-1">
-              <h4>&copy; copyright 2023 <span className="text-[#4F5DEC]">carway</span> All Rights Reserved.</h4>
+              <h4>&copy; copyright 2023 <b className="text-[#4F5DEC]">carway</b> All Rights Reserved.</h4>
             </div>
             <div className="flex space-x-4 p-1 text-[#4F5DEC]">
               <h4 className="bg-white p-2 rounded-lg"><FaFacebookF/></h4>
