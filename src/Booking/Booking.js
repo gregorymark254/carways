@@ -40,7 +40,7 @@ const Booking = () => {
     dispatch({type:'BOOKING', payload:response.data})
     localStorage.setItem('bookingInfo', JSON.stringify(response.data))
     toast.success("Added Successful")
-    navigate('/login?redirect=/checkout')
+    navigate('/checkout')
     console.log(response)
     } catch (error) {
       if (!error?.response) {
@@ -56,9 +56,6 @@ const Booking = () => {
       console.log(error.response)
     }
   }
-
-
- 
 
 
   return (

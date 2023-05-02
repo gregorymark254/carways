@@ -1,7 +1,6 @@
 import React, {  useEffect } from 'react'
-import { useNavigate,useLocation } from "react-router-dom";
+import { useNavigate,useLocation,Link } from "react-router-dom";
 import { BookingState } from '../Context/BookingContext'
-import { Link } from 'react-router-dom'
 
 const Admin = () => {
 
@@ -30,9 +29,9 @@ const Admin = () => {
       <div className="container mx-auto min-h-screen">
         <h1>Admin</h1>
         <ul>
+          <li><Link to="/bookingData">Booking</Link></li>
+          <li><Link to="/billingData">Billing</Link></li>
           <li><Link to="/usersData">Users</Link></li>
-          <li><Link to="/bookingData">Bookings</Link></li>
-          <li><Link to="/billingData">Billings</Link></li>
         </ul>
       </div>
     </div>

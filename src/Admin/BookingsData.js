@@ -3,11 +3,12 @@ import axios from "axios";
 import { Link } from 'react-router-dom'
 import { FaEdit } from 'react-icons/fa'
 import { MdDelete } from 'react-icons/md'
-
+import Loader from '../pages/Loader'
 
 const BookingsData = () => {
 
   const [booking, setBooking] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   //getting booking data
   const getBooking = async () => {
@@ -29,14 +30,20 @@ const BookingsData = () => {
     getBooking();
   }, []);
 
+  //seting loading
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  })
 
   return (
     <div>
       <div className="container mx-auto p-4">
         <div className="flex justify-center">
-          <div>
+          <div className="overflow-x-auto overflow-y-scroll border border-slate-300">
             <h1>Bookings</h1>
-            <table className="w-full text-sm text-left mt-10 overflow-x-hidden">
+            <table className="w-full text-sm text-left mt-10">
               <thead className="text-gray-700 bg-gray-50 ">
                 <tr>
                   <th className="py-3 px-6">No.</th>
@@ -126,30 +133,42 @@ const BookingsData = () => {
                   </th>
                 </tr>
               </thead>
-              <tbody>
-                {booking.map((booking, index) => (
-                  <tr key={booking.id} className="bg-white border-b border-slate-500">
-                    <td className="py-4 px-6">{index + 1}</td>
-                    <td className="py-4 px-6">{booking.car}</td>
-                    <td className="py-4 px-6">{booking.pickLocation}</td>
-                    <td className="py-4 px-6">{booking.dropLocation}</td>
-                    <td className="py-4 px-6">{booking.pickDate}</td>
-                    <td className="py-4 px-6">{booking.pickTime}</td>
-                    <td className="py-4 px-6">{booking.dropDate}</td>
-                    <td className="py-4 px-6">{booking.dropTime}</td>
-                    <td className="py-4 px-6">{booking.duration}</td>
-                    <td className="py-4 px-6">{booking.quantity}</td>
-                    <td className="py-4 px-6">{booking.people}</td>
-                    <td className="py-4 px-6">{booking.services}</td>
-                    <td className="py-4 px-6">{booking.createdAt}</td>
-                    <td className="py-4 px-6">{booking.updatedAt}</td>
-                    <td className="flex items-center text-xl py-4 px-6 space-x-2">
-                      <Link to={`/edit/${booking.id}`} className="bg-teal-500 p-1 text-md text-white mr-1"><FaEdit/></Link>
-                      <button onClick={() => deletebooking(booking.id)} className="bg-red-500 p-1 text-md text-white"><MdDelete/></button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
+              {isLoading ? (
+                <div className="flex justify-center h-96 items-center">
+                  <Loader/>
+                </div>
+              ) : (
+                <tbody>
+                  {booking.length > 0 ? (
+                    booking.map((booking, index) => (
+                      <tr key={booking.id} className="bg-white border-b border-slate-500">
+                        <td className="py-4 px-6">{index + 1}</td>
+                        <td className="py-4 px-6">{booking.car}</td>
+                        <td className="py-4 px-6">{booking.pickLocation}</td>
+                        <td className="py-4 px-6">{booking.dropLocation}</td>
+                        <td className="py-4 px-6">{booking.pickDate}</td>
+                        <td className="py-4 px-6">{booking.pickTime}</td>
+                        <td className="py-4 px-6">{booking.dropDate}</td>
+                        <td className="py-4 px-6">{booking.dropTime}</td>
+                        <td className="py-4 px-6">{booking.duration}</td>
+                        <td className="py-4 px-6">{booking.quantity}</td>
+                        <td className="py-4 px-6">{booking.people}</td>
+                        <td className="py-4 px-6">{booking.services}</td>
+                        <td className="py-4 px-6">{booking.createdAt}</td>
+                        <td className="py-4 px-6">{booking.updatedAt}</td>
+                        <td className="flex items-center text-xl py-4 px-6 space-x-2">
+                          <Link to={`/edit/${booking.id}`} className="bg-teal-500 p-1 text-md text-white mr-1"><FaEdit/></Link>
+                          <button onClick={() => deletebooking(booking.id)} className="bg-red-500 p-1 text-md text-white"><MdDelete/></button>
+                        </td>
+                      </tr>
+                    ))
+                  ) : (
+                    <span className="flex justify-center h-96 items-center">
+                      <td>NO DATA</td>
+                    </span>
+                  )}
+                </tbody>
+              )}
             </table>
           </div>
         </div>

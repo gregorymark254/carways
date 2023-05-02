@@ -7,7 +7,6 @@ import { BookingState } from '../Context/BookingContext'
 import { useNavigate } from 'react-router-dom'
 
 
-
 const Nav = () => {
 
   const [navIsShown, setnavIsShown] = useState(false);

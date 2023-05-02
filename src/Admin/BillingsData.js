@@ -3,11 +3,13 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { FaEdit } from 'react-icons/fa'
 import { MdDelete } from 'react-icons/md'
+import Loader from '../pages/Loader'
 
 
 const BillingsData = () => {
 
   const [billing, setBilling] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   //getting billing data
   const getBilling = async () => {
@@ -29,13 +31,20 @@ const BillingsData = () => {
     getBilling();
   }, []);
 
+  //seting loading
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  })
+
   return (
     <div>
       <div className="container mx-auto p-4">
         <div className="flex justify-center">
-          <div>
+          <div className="overflow-x-auto overflow-y-scroll border border-slate-300 ">
             <h1>Billing</h1>
-            <table className="w-full text-sm text-left mt-10 md:overflow-x-auto">
+            <table className="text-sm text-left mt-10">
               <thead className="text-gray-700 bg-gray-50 ">
                 <tr>
                   <th className="py-3 px-6">No.</th>
@@ -143,33 +152,45 @@ const BillingsData = () => {
                   </th>
                 </tr>
               </thead>
-              <tbody>
-                {billing.map((billing, index) => (
-                  <tr key={billing.id} className="bg-white border-b border-slate-500">
-                    <td className="py-4 px-6">{index + 1}</td>
-                    <td className="py-4 px-6">{billing.firstName}</td>
-                    <td className="py-4 px-6">{billing.lastName}</td>
-                    <td className="py-4 px-6">{billing.email}</td>
-                    <td className="py-4 px-6">{billing.phone}</td>
-                    <td className="py-4 px-6">{billing.address}</td>
-                    <td className="py-4 px-6">{billing.address2}</td>
-                    <td className="py-4 px-6">{billing.city}</td>
-                    <td className="py-4 px-6">{billing.state}</td>
-                    <td className="py-4 px-6">{billing.zip}</td>
-                    <td className="py-4 px-6">{billing.cardName}</td>
-                    <td className="py-4 px-6">{billing.cardNumber}</td>
-                    <td className="py-4 px-6">{billing.expiryDate}</td>
-                    <td className="py-4 px-6">{billing.cvv}</td>
-                    <td className="py-4 px-6">{billing.additionalNote}</td>
-                    <td className="py-4 px-6">{billing.createdAt}</td>
-                    <td className="py-4 px-6">{billing.updatedAt}</td>
-                    <td className="flex items-center text-xl py-4 px-6 space-x-2">
-                      <Link to={`/edit/${billing.id}`} className="bg-teal-500 p-1 text-md text-white mr-1"><FaEdit/></Link>
-                      <button onClick={() => deletebilling(billing.id)} className="bg-red-500 p-1 text-md text-white"><MdDelete/></button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
+              {isLoading ? (
+                <div className="flex justify-center h-96 items-center">
+                  <Loader/>
+                </div>
+              ) : (
+                <tbody>
+                  {billing.length > 0 ? (
+                    billing.map((billing, index) => (
+                      <tr key={billing.id} className="bg-white border-b border-slate-500">
+                        <td className="py-4 px-6">{index + 1}</td>
+                        <td className="py-4 px-6">{billing.firstName}</td>
+                        <td className="py-4 px-6">{billing.lastName}</td>
+                        <td className="py-4 px-6">{billing.email}</td>
+                        <td className="py-4 px-6">{billing.phone}</td>
+                        <td className="py-4 px-6">{billing.address}</td>
+                        <td className="py-4 px-6">{billing.address2}</td>
+                        <td className="py-4 px-6">{billing.city}</td>
+                        <td className="py-4 px-6">{billing.state}</td>
+                        <td className="py-4 px-6">{billing.zip}</td>
+                        <td className="py-4 px-6">{billing.cardName}</td>
+                        <td className="py-4 px-6">{billing.cardNumber}</td>
+                        <td className="py-4 px-6">{billing.expiryDate}</td>
+                        <td className="py-4 px-6">{billing.cvv}</td>
+                        <td className="py-4 px-6">{billing.additionalNote}</td>
+                        <td className="py-4 px-6">{billing.createdAt}</td>
+                        <td className="py-4 px-6">{billing.updatedAt}</td>
+                        <td className="flex items-center text-xl py-4 px-6 space-x-2">
+                          <Link to={`/edit/${billing.id}`} className="bg-teal-500 p-1 text-md text-white mr-1"><FaEdit/></Link>
+                          <button onClick={() => deletebilling(billing.id)} className="bg-red-500 p-1 text-md text-white"><MdDelete/></button>
+                        </td>
+                      </tr>
+                    ))
+                  ) : (
+                    <span className="flex justify-center h-96 items-center">
+                      <td>NO DATA</td>
+                    </span>
+                  )}
+                </tbody>
+              )}
             </table>
           </div>
         </div>
