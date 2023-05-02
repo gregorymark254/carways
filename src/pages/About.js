@@ -62,7 +62,7 @@ const About = () => {
             <div className="flex flex-wrap items-center justify-evenly gap-20">
               <div className="text-center p-4">
                 <div className="flex items-center justify-center bg-black border-4 border-white w-32 rounded-full p-5 mb-5">
-                  <img  className="h-20" src="https://live.themewild.com/carway/assets/img/icon/car.svg" alt="car1" />
+                  <img  width={80} height={80} src="https://live.themewild.com/carway/assets/img/icon/car.svg" alt="car1" />
                 </div>
                 <div>
                   <h1>500</h1>
@@ -72,7 +72,7 @@ const About = () => {
               </div>
               <div className="text-center p-4">
                 <div className="flex items-center justify-center bg-black border-4 border-white w-32 rounded-full p-5 mb-5">
-                  <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/car-rent.svg" alt="car1" />
+                  <img width={80} height={80} src="https://live.themewild.com/carway/assets/img/icon/car-rent.svg" alt="car1" />
                 </div>
                 <div>
                   <h1>900</h1>
@@ -82,7 +82,7 @@ const About = () => {
               </div>
               <div className="text-center p-4">
                 <div className="flex items-center justify-center bg-black border-4 border-white w-32 rounded-full p-5 mb-5">
-                  <img className="h-20 " src="https://live.themewild.com/carway/assets/img/icon/driver.svg" alt="car1" />
+                  <img width={80} height={80} src="https://live.themewild.com/carway/assets/img/icon/driver.svg" alt="car1" />
                 </div>
                 <div>
                   <h1>1500</h1>
@@ -92,7 +92,7 @@ const About = () => {
               </div>
               <div className="text-center p-4">
                 <div className="flex items-center justify-center bg-black border-4 border-white w-32 rounded-full p-5 mb-5">
-                  <img  className="h-20" src="https://live.themewild.com/carway/assets/img/icon/experince.svg" alt="car1" />
+                  <img width={80} height={80} src="https://live.themewild.com/carway/assets/img/icon/experince.svg" alt="car1" />
                 </div>
                 <div>
                   <h1>30</h1>
@@ -189,7 +189,7 @@ const About = () => {
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
             <div className="bg-[#4F5DEC] text-white rounded-xl mb-20">
               <div className="p-4 -mt-20">
-                <img className="rounded-xl" src="https://live.themewild.com/carway/assets/img/team/01.jpg" alt="person1" />
+                <img width={300} height={200} className="rounded-xl" src="https://live.themewild.com/carway/assets/img/team/01.jpg" alt="person1" />
               </div>
               <div className="p-4 text-center space-y-2">
                 <h3>Chad Smith</h3>
@@ -198,7 +198,7 @@ const About = () => {
             </div>
             <div className="bg-[#4F5DEC] text-white rounded-xl mb-20">
               <div className="p-4 -mt-20">
-                <img className="rounded-xl" src="https://live.themewild.com/carway/assets/img/team/02.jpg" alt="person2" />
+                <img width={300} height={200} className="rounded-xl" src="https://live.themewild.com/carway/assets/img/team/02.jpg" alt="person2" />
               </div>
               <div className="p-4 text-center space-y-2">
                 <h3>Gregory Mark</h3>
@@ -207,7 +207,7 @@ const About = () => {
             </div>
             <div className="bg-[#4F5DEC] text-white rounded-xl mb-20">
               <div className="p-4 -mt-20">
-                <img className="rounded-xl" src="https://live.themewild.com/carway/assets/img/team/03.jpg" alt="person1" />
+                <img width={300} height={200} className="rounded-xl" src="https://live.themewild.com/carway/assets/img/team/03.jpg" alt="person1" />
               </div>
               <div className="p-4 text-center space-y-2">
                 <h3>Alphine Oduor</h3>
@@ -216,7 +216,7 @@ const About = () => {
             </div>
             <div className="bg-[#4F5DEC] text-white rounded-xl mb-20">
               <div className="p-4 -mt-20">
-                <img className="rounded-xl" src="https://live.themewild.com/carway/assets/img/team/04.jpg" alt="person1" />
+                <img width={300} height={200} className="rounded-xl" src="https://live.themewild.com/carway/assets/img/team/04.jpg" alt="person1" />
               </div>
               <div className="p-4 text-center space-y-2">
                 <h3>Joseck Osugo</h3>

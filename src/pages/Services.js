@@ -29,7 +29,7 @@ const Services = () => {
           <div className="grid grid-cols-1 gap-6 mb-20 md:grid-cols-2 lg:grid-cols-3">
             <div className="p-5 mb-4 shadow-md shadow-slate-400 space-y-4">
               <div className="flex justify-between">
-                <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/car-rent-2.svg" alt="icon" />
+                <img width={80} height={80} src="https://live.themewild.com/carway/assets/img/icon/car-rent-2.svg" alt="icon" />
                 <h1 className="service-count">01</h1>
               </div>
               <h4><b>Car Rentals</b></h4>
@@ -38,7 +38,7 @@ const Services = () => {
             </div>
             <div className="p-4 mb-4 shadow-md shadow-slate-400 space-y-4">
               <div className="flex justify-between">
-                <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/airport.svg" alt="icon" />
+                <img width={80} height={80} src="https://live.themewild.com/carway/assets/img/icon/airport.svg" alt="icon" />
                 <h1 className="service-count">02</h1>
               </div>
               <h4><b>Airport Transfer</b></h4>
@@ -47,7 +47,7 @@ const Services = () => {
             </div>
             <div className="p-4 mb-4 shadow-md shadow-slate-400 space-y-4">
               <div className="flex justify-between">
-                <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/airport.svg" alt="icon" />
+                <img width={80} height={80} src="https://live.themewild.com/carway/assets/img/icon/airport.svg" alt="icon" />
                 <h1 className="service-count">03</h1>
               </div>
               <h4><b>Wedding Ceremony</b></h4>
@@ -56,7 +56,7 @@ const Services = () => {
             </div>
             <div className="p-4 mb-4 shadow-md shadow-slate-400 space-y-4">
               <div className="flex justify-between">
-                <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/city-tour.svg" alt="icon" />
+                <img width={80} height={80} src="https://live.themewild.com/carway/assets/img/icon/city-tour.svg" alt="icon" />
                 <h1 className="service-count">04</h1>
               </div>
               <h4><b>Whole City Tour</b></h4>
@@ -65,7 +65,7 @@ const Services = () => {
             </div>
             <div className="p-4 mb-4 shadow-md shadow-slate-400 space-y-4">
               <div className="flex justify-between">
-                <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/hospital.svg" alt="icon" />
+                <img width={80} height={80} src="https://live.themewild.com/carway/assets/img/icon/hospital.svg" alt="icon" />
                 <h1 className="service-count">05</h1>
               </div>
               <h4><b>Hospital Transfer</b></h4>
@@ -74,7 +74,7 @@ const Services = () => {
             </div>
             <div className="p-4 mb-4 shadow-md shadow-slate-400 space-y-4">
               <div className="flex justify-between">
-                <img className="h-20" src="https://live.themewild.com/carway/assets/img/icon/baggage.svg" alt="icon" />
+                <img width={80} height={80} src="https://live.themewild.com/carway/assets/img/icon/baggage.svg" alt="icon" />
                 <h1 className="service-count">06</h1>
               </div>
               <h4><b>Luggage Transport</b></h4>
