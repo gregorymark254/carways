@@ -65,7 +65,7 @@ const Users = () => {
             </div>
 
             <div className="ooverflow-x-auto overflow-y-scroll border border-slate-300 ">
-              <table className="text-sm text-left">
+              <table className="table-auto">
                 <thead className="text-gray-700 bg-gray-50 ">
                   <tr>
                     <th className="py-3 px-6">No.</th>
@@ -143,9 +143,9 @@ const Users = () => {
                         </tr>
                       ))
                     ) : (
-                      <span className="flex justify-center h-96 items-center">
-                        <td>NO DATA</td>
-                      </span>
+                      <div className="flex justify-center h-screen items-center">
+                        <span>NO DATA</span>
+                      </div>
                     )}
                   </tbody>
                 )}

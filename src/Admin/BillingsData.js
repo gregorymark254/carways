@@ -44,7 +44,7 @@ const BillingsData = () => {
         <div className="flex justify-center">
           <div className="overflow-x-auto overflow-y-scroll border border-slate-300 ">
             <h1>Billing</h1>
-            <table className="text-sm text-left mt-10">
+            <table className="table-auto mt-10">
               <thead className="text-gray-700 bg-gray-50 ">
                 <tr>
                   <th className="py-3 px-6">No.</th>
@@ -185,9 +185,9 @@ const BillingsData = () => {
                       </tr>
                     ))
                   ) : (
-                    <span className="flex justify-center h-96 items-center">
-                      <td>NO DATA</td>
-                    </span>
+                    <div className="flex justify-center h-96 items-center">
+                      <span>NO DATA</span>
+                    </div>
                   )}
                 </tbody>
               )}
