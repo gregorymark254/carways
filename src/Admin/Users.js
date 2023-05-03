@@ -42,7 +42,7 @@ const Users = () => {
 
   return (
     <div>
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto p-4 min-h-screen">
         <div className="flex justify-center">
           <div>
             <h1>Users</h1>

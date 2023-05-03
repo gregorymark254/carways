@@ -39,7 +39,7 @@ const BookingsData = () => {
 
   return (
     <div>
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto p-4 min-h-screen">
         <div className="flex justify-center">
           <div className="overflow-x-auto overflow-y-scroll border border-slate-300">
             <h1>Bookings</h1>
