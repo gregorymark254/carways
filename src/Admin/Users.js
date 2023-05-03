@@ -65,7 +65,7 @@ const Users = () => {
             </div>
 
             <div className="ooverflow-x-auto overflow-y-scroll border border-slate-300 ">
-              <table className="table-auto">
+              <table className="text-sm text-lef">
                 <thead className="text-gray-700 bg-gray-50 ">
                   <tr>
                     <th className="py-3 px-6">No.</th>
