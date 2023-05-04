@@ -64,7 +64,7 @@ const Users = () => {
               </div>
             </div>
 
-            <div className="ooverflow-x-auto overflow-y-scroll border border-slate-300 ">
+            <div className="w-full overflow-x-auto border border-slate-300 ">
               <table className="text-sm text-lef">
                 <thead className="text-gray-700 bg-gray-50 ">
                   <tr>
