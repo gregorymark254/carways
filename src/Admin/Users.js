@@ -60,7 +60,7 @@ const Users = () => {
                 <span>{users.length} Users</span>
               </div>
               <div>
-                <span className="bg-[#4F5DEC] text-white px-3 py-2 rounded-lg hover:bg-[#6c76e4]"><Link to="">Add new user</Link></span>
+                <span className="bg-[#4F5DEC] text-white px-3 py-2 rounded-lg hover:bg-[#6c76e4]"><Link to="/register">Add new user</Link></span>
               </div>
             </div>
 
@@ -135,10 +135,10 @@ const Users = () => {
                           <td className="py-4 px-6">{user.phone}</td>
                           <td className="py-4 px-6">{user.isAdmin}</td>
                           <td className="py-4 px-6">{user.createdAt}</td>
-                          <td className="py-4 px-6">{user.updatedAt}</td>
+                          <td className="py-4 px-6">{user.createdAt}</td>
                           <td className="flex items-center text-xl py-4 px-6 space-x-2">
-                            <Link to={`/edit/${user.id}`} className="bg-teal-500 p-1 text-md text-white mr-1"><FaEdit/></Link>
-                            <button onClick={() => deleteUser(user.id)} className="bg-red-500 p-1 text-md text-white"><MdDelete/></button>
+                            <Link to={`/edit/${user._id}`} className="bg-teal-500 p-1 text-md text-white mr-1"><FaEdit/></Link>
+                            <button onClick={() => deleteUser(user._id)} className="bg-red-500 p-1 text-md text-white"><MdDelete/></button>
                           </td>
                         </tr>
                       ))
