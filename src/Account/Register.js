@@ -117,10 +117,10 @@ const Register = () => {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                 />
               </label>
-              <button className="px-5 py-2 bg-[#4F5DEC] text-white rounded-xl">Sign Up</button>
+              <button className="px-5 py-2 bg-[#4F5DEC] hover:bg-[#6f79f0] text-white rounded-xl">Sign Up</button>
             </form>
             <br />
-            <span>Already have an account? <a href="/login" className="text-blue-600"><u>Sign In</u></a></span>
+            <span>Already have an account? <a href="/login" className="text-blue-600 hover:text-[#6f79f0]"><u>Sign In</u></a></span>
           </div>
         </div>
       </div>

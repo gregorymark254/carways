@@ -86,7 +86,7 @@ const Nav = () => {
                   </ul>
                 </div>
                 ) : (                
-                  <a href="/login" className="bg-[#4F5DEC] text-white rounded-lg p-3"><h3><FaRegUserCircle/><span className='hidden'>login</span></h3></a>
+                  <a href="/login" className="bg-[#4F5DEC] hover:bg-[#6f79f0] text-white rounded-lg p-3"><h3><FaRegUserCircle/><span className='hidden'>login</span></h3></a>
                 )
               }
             </div>

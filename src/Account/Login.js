@@ -80,10 +80,10 @@ const Login = () => {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </label>
-              <button className="px-4 py-2 bg-[#4F5DEC] text-white rounded-xl">Login</button>
+              <button className="px-4 py-2 bg-[#4F5DEC] hover:bg-[#6f79f0] text-white rounded-xl">Login</button>
             </form>
             <br />
-            <span>Don't have an account? <a href="/register" className="text-blue-600"><u>Register Here</u></a></span>
+            <span>Don't have an account? <a href="/register" className="text-blue-600 hover:text-[#6f79f0]"><u>Register Here</u></a></span>
           </div>
         </div>
       </div>
