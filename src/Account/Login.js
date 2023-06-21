@@ -86,6 +86,11 @@ const Login = () => {
             <span>Don't have an account? <a href="/register" className="text-blue-600 hover:text-[#6f79f0]"><u>Register Here</u></a></span>
           </div>
         </div>
+        <div>
+            <h4>Admin login</h4>
+            <p>email:greg@gmail.com</p>
+            <p>password:12345</p>
+          </div>
       </div>
     </div>
   )
