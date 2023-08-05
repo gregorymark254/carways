@@ -21,7 +21,7 @@ const Cars = () => {
   //Geting cars from mongodb
   useEffect(() => {
     const fetchCars = async () => {
-      const results = await axios.get("https://carways.cleverapps.io/api/v5/all")
+      const results = await axios.get("https://carways-server-production.up.railway.app/api/v5/all")
       setCars(results.data)
     }
     fetchCars()
