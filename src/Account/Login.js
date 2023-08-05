@@ -38,6 +38,7 @@ const Login = () => {
       toast.success("Login Succesful")
     } catch (error) {
       console.log(error)
+      console.log(error?.response)
       toast.error("Wrong username or password")
     }
   }
