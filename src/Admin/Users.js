@@ -12,14 +12,14 @@ const Users = () => {
 
   //getting user data
   const getUser = async () => {
-    const response = await axios.get("https://carways.cleverapps.io/api/v1/users");
+    const response = await axios.get("https://carways-server-production.up.railway.app/api/v1/users");
     setUsers(response.data);
   };
 
   const deleteUser = async (id) => {
     window.confirm("Are you sure you want to delete this account")
     try {
-      await axios.delete(`https://carways.cleverapps.io/api/v1/users/delete/${id}`);
+      await axios.delete(`https://carways-server-production.up.railway.app/api/v1/users/delete/${id}`);
       getUser();
     } catch (error) {
       console.log(error);

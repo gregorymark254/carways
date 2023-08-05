@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export default axios.create({
-    baseURL: 'https://carways.cleverapps.io'
+    baseURL: 'carways-server-production.up.railway.app'
 });

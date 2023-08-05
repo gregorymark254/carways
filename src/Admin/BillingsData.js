@@ -13,14 +13,14 @@ const BillingsData = () => {
 
   //getting billing data
   const getBilling = async () => {
-    const response = await axios.get("https://carways.cleverapps.io/api/v2/all");
+    const response = await axios.get("https://carways-server-production.up.railway.app/api/v2/all");
     setBilling(response.data);
   };
 
   const deletebilling = async (id) => {
     window.confirm("Are you sure you want to delete this account")
     try {
-      await axios.delete(`https://carways.cleverapps.io/api/v2/delete/${id}`);
+      await axios.delete(`https://carways-server-production.up.railway.app/api/v2/delete/${id}`);
       getBilling();
     } catch (error) {
       console.log(error);
