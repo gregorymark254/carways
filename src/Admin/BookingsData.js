@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import axios from "axios";
+import axios from "../api/api";
 import { Link } from 'react-router-dom'
 import { FaEdit } from 'react-icons/fa'
 import { MdDelete } from 'react-icons/md'
@@ -12,14 +12,14 @@ const BookingsData = () => {
 
   //getting booking data
   const getBooking = async () => {
-    const response = await axios.get("https://carways-server-production.up.railway.app/api/v3/all");
+    const response = await axios.get("/api/v3/all");
     setBooking(response.data);
   };
 
   const deletebooking = async (id) => {
     window.confirm("Are you sure you want to delete this account")
     try {
-      await axios.delete(`https://carways-server-production.up.railway.app/api/v3/delete/${id}`);
+      await axios.delete(`/api/v3/delete/${id}`);
       getBooking();
     } catch (error) {
       console.log(error);

@@ -227,7 +227,6 @@ tr:hover {
   }
 
   #hero img {
-    linear-gradient : rgba(0, 0, 0, 1),rgba(0, 0, 0, 1);
     height : 80vh;
     object-fit : cover;
   }
@@ -265,7 +264,6 @@ tr:hover {
   height: 100%;
   border-radius: 30px;
   animation: moving 1s ease-in-out infinite;
-  ;
 }
 
 @keyframes moving {

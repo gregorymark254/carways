@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axios from "../api/api";
 import { useNavigate, useParams } from "react-router-dom";
 
 
@@ -13,7 +13,7 @@ const Profile = () => {
   const { id } = useParams();
 
   const getUserById = async () => {
-    const response = await axios.get(`https://carways-server-production.up.railway.app/api/v1/users/${id}`);
+    const response = await axios.get(`/api/v1/users/${id}`);
     setFirstname(response.data.firstName);
     setLastname(response.data.lastName);
     setEmail(response.data.email);
@@ -23,7 +23,7 @@ const Profile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`https://carways-server-production.up.railway.app/api/v1/users/update/${id}`,{
+      await axios.put(`/api/v1/users/update/${id}`,{
         firstName,
         lastName,
         email,

@@ -1,5 +1,5 @@
 import React, { useEffect,useState } from 'react'
-import axios from 'axios'
+import axios from '../api/api'
 import { Link } from 'react-router-dom'
 import { FaEdit } from 'react-icons/fa'
 import { MdDelete } from 'react-icons/md'
@@ -12,14 +12,14 @@ const Users = () => {
 
   //getting user data
   const getUser = async () => {
-    const response = await axios.get("https://carways-server-production.up.railway.app/api/v1/users");
+    const response = await axios.get("/api/v1/users");
     setUsers(response.data);
   };
 
   const deleteUser = async (id) => {
     window.confirm("Are you sure you want to delete this account")
     try {
-      await axios.delete(`https://carways-server-production.up.railway.app/api/v1/users/delete/${id}`);
+      await axios.delete(`/api/v1/users/delete/${id}`);
       getUser();
     } catch (error) {
       console.log(error);
@@ -36,9 +36,6 @@ const Users = () => {
       setIsLoading(false);
     }, 2000);
   })
-
-  // const date = new Date();
-  // const formattedDate = date.toLocaleString();
 
   return (
     <div>
