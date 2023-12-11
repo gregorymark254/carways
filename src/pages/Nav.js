@@ -63,7 +63,7 @@ const Nav = () => {
               {userInfo ? (
                 <div className="relative" data-te-dropdown-ref>
                   <a className="flex items-center  px-3 py-2  transition duration-150 ease-in-out "
-                    href="/#"  id="dropdownMenuButton2" data-te-dropdown-toggle-ref aria-expanded="false" data-te-ripple-init data-te-ripple-color="light">
+                    href="/#"  id="dropdownMenuButton2" data-te-dropdown-toggle-ref aria-expanded="false" data-te-ripple-init data-te-ripple-color="dark">
                     {userInfo.email}
                     <span className="ml-2 w-2">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5">
@@ -71,7 +71,12 @@ const Nav = () => {
                       </svg>
                     </span>
                   </a>
-                  <ul className="absolute w-full z-[1000] float-left  hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block" aria-labelledby="dropdownMenuButton2"data-te-dropdown-menu-ref>
+                  <ul className="absolute w-full z-[1000] float-left  hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg [&[data-te-dropdown-show]]:block" aria-labelledby="dropdownMenuButton2"data-te-dropdown-menu-ref>
+                  <li>
+                      <a className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100  "
+                        href="/admin"
+                        data-te-dropdown-item-ref>Admin</a>
+                    </li>
                     <li>
                       <a className="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100  "
                         href="/profile"
